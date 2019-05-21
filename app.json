@@ -21,9 +21,10 @@
     "pages/renyuanhetong/renyuanhetongdetailed"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Me平台",
+    "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -52,6 +53,9 @@
       }
     ],
     "position": "bottom"
+  },
+  "usingComponents": {
+    "cu-custom": "utils/colorui/components/cu-custom"
   },
   "sitemapLocation": "sitemap.json"
 }
