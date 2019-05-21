@@ -1,0 +1,10 @@
+<view class='dkuang'>
+<view style='margin-top:-250rpx'>
+<image src='/images/login/ren.png' style='height:300rpx;width:400rpx'></image>
+</view>
+<view ><text class='ziti'>{{name}}</text></view>
+</view>
+
+<view class='dkuang1'>
+手机：  {{modle}}
+</view>

@@ -1,0 +1,50 @@
+<view class='container'>
+  <view class='content'>
+
+    <view class='productNav'>
+      <view class='proNavLeft' bindtap='back'>
+        <image src='../../images/btn_back.png' class='proNavImage01'></image>
+      </view>
+
+
+      <view class='proNavCon'>
+        {{typename}}
+      </view>
+      <view class='proNavRight'>
+        <image src='../../images/search.png' class='proNavImagesearch' bindtap="modalinput"></image>
+        <text decode="{{true}}">&nbsp;</text>
+        <image src='../../images/add.png' class='proNavImagesearch2' bindtap='add'></image>
+      </view>
+
+
+
+      <modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+        <input type='text' placeholder="请输入内容" auto-focus/>
+      </modal>
+
+
+      <view class='contentView' bindtap='mingxi'>
+        <view class='contentView02_1'>
+          合同编号:
+        </view>
+        <view class='riqi'>
+          2019-05-20
+        </view>
+        <view class='contentView02_1'>
+          合同类型:
+        </view>
+        <view class='contentView02_1'>
+          员工名称:
+        </view>
+      </view>
+
+
+
+    </view>
+
+    <!-- show -->
+
+
+
+  </view>
+</view>

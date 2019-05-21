@@ -1,0 +1,33 @@
+<!--pages/login/login.wxml-->
+
+<view class='content'>
+  <view class='ul'>
+    <view class='li'>
+      <image src="../../images/login/qiye.png" /> 企业id:
+      <input name="qyid" type="text" bindinput='qycidInput' />
+      <br />
+      <hr />
+    </view>
+    <view class='li'>
+      <image src="../../images/login/ren.png" /> 用户名:
+      <input name="yhName" type="text" bindinput='userNameInput' />
+      <br />
+      <hr />
+    </view>
+    <view class='li'>
+      <image src="../../images/login/suo.png" /> 密 码:
+      <input name="input" type="password" bindinput="passWdInput" />
+      <br />
+      <hr />
+    </view>
+    <view class='li'>
+      <radio name="checkcss" value="" checked="" class='check' /> 记住密码
+    </view>
+    <view class='li'>
+      <input class='btnsavecss' open-type='switchTab' type="button" value="登   录" bindtap='check' />
+    </view>
+    <view class='li'>
+      <image class='imgMe' src="../../images/login/biaoz.png" />
+    </view>
+  </view>
+</view>

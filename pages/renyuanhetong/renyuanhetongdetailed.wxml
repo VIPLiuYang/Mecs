@@ -1,0 +1,27 @@
+<view class='container'>
+  <view class='content'>
+
+    <view class='productNav'>
+      <view class='proNavLeft' bindtap='back'>
+        <image src='../../images/btn_back.png' class='proNavImage01'></image>
+      </view>
+
+
+      <view class='proNavCon'>
+        {{typename}}
+      </view>
+    
+
+
+
+
+
+
+
+
+
+
+
+    </view>
+  </view>
+</view>

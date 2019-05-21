@@ -1,0 +1,33 @@
+<view class='dkuang'>
+  <image src="/images/login/ren.png" class="slide-image" />  
+{{employ}} 
+{{mobile}}
+</view>
+
+<view class='dkuang1' bindtap='diaozhuan' data-name='1'>
+  我的明信片
+</view>
+<view class='hengxian'></view>
+<view class='dkuang2'>
+  我的设置
+</view>
+<view class='hengxian'></view>
+<view class='dkuang2' bindtap='diaozhuan' data-name='3'>
+  修改密码
+</view>
+
+<view class='dkuang1' bindtap='diaozhuan' data-name='4'>
+  公司信息
+</view>
+<view class='hengxian'></view>
+<view class='dkuang2' bindtap='diaozhuan' data-name='5'>
+  我的帮助
+</view>
+<view class='hengxian'></view>
+<view class='dkuang2'>
+  版本更新
+</view>
+
+<view class='dkuang1' bindtap='tuilogin'>
+  退出登录
+</view>

@@ -1,0 +1,37 @@
+.dkuang {
+  width: 100%;
+  height: 140rpx;
+  line-height: 62rpx;
+  background-color:rgba(219, 219, 212, 0.836);
+  border-radius: 10px;
+   display: flex;
+  flex-direction:column;
+  justify-content: center;
+
+}
+.dkuang1 {
+  width: 100%;
+  height: 70rpx;
+  line-height: 62rpx;
+  background-color:rgba(219, 219, 212, 0.836);
+  margin-top: 30rpx;
+}
+.dkuang2 {
+  width: 100%;
+  height: 70rpx;
+  line-height: 62rpx;
+  background-color: rgba(219, 219, 212, 0.836);
+
+}
+.hengxian{
+  /* 虚线 */
+/* border-top:1px #111 dashed; */
+/* 实线 */
+border-bottom: 1px white solid;
+
+}
+.slide-image {
+  width: 10%;
+  height: 30rpx;
+  vertical-align: middle;
+}

@@ -1,0 +1,49 @@
+<!--pages/dakaguanli/dakaguanli.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='productNav'>
+      <view class='proNavLeft'>
+        <image src='../../images/btn_back.png' class='proNavImage01'></image>
+      </view>
+      <view class='proNavCon'>
+        {{typename}}
+      </view>
+      <view class='proNavRight'>
+        <image src='../../images/search.png' class='proNavImagesearch'></image>
+      </view>
+    </view>
+    <view class='contentcss'>
+
+      <view class='contentcss01'>
+        <view class='contentcss01_1'>
+          <image src='http://mecs.ip165.com/WeiXin/Style/Image/tubiao/come_from_lbs.png' class='contentcss01_img'></image>
+        </view>
+        <view class='contentcss01_2'>
+          <input type='text' class='contentcss01_2input'></input>
+        </view>
+        <view class='contentcss01_3'>
+          <image src='../../images/refresh.png' class='contentcss01_3img'></image>
+        </view>
+      </view>
+
+      <view class='contentcss02'>
+        <view class='contentcss02_1'>
+          描述：
+        </view>
+        <view class='contentcss02_2'>
+          <textarea class='contentcss02_2text'></textarea>
+        </view>
+      </view>
+
+      <view class='contentcss03'>
+      </view>
+
+      <view class='contentcss04'>
+      </view>
+
+      <view class='contentcss05'>
+      </view>
+
+    </view>
+  </view>
+</view>
