@@ -1,41 +1,63 @@
-<!--pages/dakaguanli/dakaguanli.wxml-->
 <view class='container'>
   <view class='content'>
-    <view class='productNav'>
-      <view class='proNavLeft'>
-        <image src='../../images/btn_back.png' class='proNavImage01'></image>
-      </view>
-      <view class='proNavCon'>
-        {{typename}}
-      </view>
-      <view class='proNavRight'>
-        <image src='../../images/search.png' class='proNavImagesearch'></image>
+    <!-- 顶部空格  -->
+    <view class="container">
+      <text>\n</text>
+    </view>
+    <!-- 顶部空格end  -->
+    <!-- 地址 -->
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/come_from_lbs.png" style="margin-right: 5px;vertical-align: middle;width:11px; height: 30px;"></image>
+        </view>
+        <view class="weui-cell__bd">济南市历城区历山北路</view>
+        <image src="../../images/refresh.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
       </view>
     </view>
-    <view class='contentcss'>
+    <!-- 地址end -->
 
-      <view class='contentcss01'>
-        <view class='contentcss01_1'>
-          <image src='http://mecs.ip165.com/WeiXin/Style/Image/tubiao/come_from_lbs.png' class='contentcss01_img'></image>
-        </view>
-        <view class='contentcss01_2'>
-          <input type='text' class='contentcss01_2input'></input>
-        </view>
-        <view class='contentcss01_3'>
-          <image src='../../images/refresh.png' class='contentcss01_3img'></image>
+
+
+
+
+    <!-- 描述 -->
+    <view class="weui-cells__title">描述</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="请输入文本" style="height: 3.3em" />
+          <view class="weui-textarea-counter">0/200</view>
         </view>
       </view>
+      <!-- 描述end -->
 
-      <view class='contentcss02'>
-        <view class='contentcss02_1'>
-          描述：
-        </view>
-        <view class='contentcss02_2'>
-          <textarea class='contentcss02_2text'></textarea>
-        </view>
-      </view>
 
-      <view class='contentcss03'>
+      <view class="page__bd">
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">添加图片</view>
+                  <view class="weui-uploader__info">{{files.length}}/3</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files" id="uploaderFiles">
+                    <block wx:for="{{files}}" wx:key="*this">
+                      <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
       </view>
 
       <view class='contentcss04'>
