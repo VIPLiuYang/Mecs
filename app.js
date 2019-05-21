@@ -1,4 +1,4 @@
-//app.js33333
+//app.js33333123
 App({
   onLaunch: function () {
     // 展示本地存储能力
