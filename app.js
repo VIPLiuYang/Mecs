@@ -1,4 +1,4 @@
-//app.js33333123
+﻿//app.js  wqf
 App({
   onLaunch: function () {
     // 展示本地存储能力
