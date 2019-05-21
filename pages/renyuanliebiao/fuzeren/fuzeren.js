@@ -1,18 +1,32 @@
-// pages/renyuanliebiao/renyuanliebiao.js
+// pages/renyuanliebiao/fuzeren/fuzeren.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    typename: "人员列表",
+    typename: '负责人',
+    leftbindcolor: 'bindbackcolo',
+    rightbindcolor: '',
   },
-  
-  fuzeren:function(){
-    wx.navigateTo({
-      url: '/pages/renyuanliebiao/fuzeren/fuzeren',
-    })
+  statcolor: function() {
+    var zhi = this.data.leftbindcolor;
+    if (zhi == "") {
+      this.setData({
+        leftbindcolor: 'bindbackcolo',
+        rightbindcolor: ''
+      });
 
+    }
+  },
+  ziliaocolor: function() {
+    var zhi = this.data.rightbindcolor;
+    if (zhi == "") {
+      this.setData({
+        rightbindcolor: 'bindbackcolo',
+        leftbindcolor: '',
+      });
+    }
   },
   /**
    * 生命周期函数--监听页面加载

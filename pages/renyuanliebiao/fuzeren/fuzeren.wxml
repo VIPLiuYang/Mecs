@@ -1,0 +1,46 @@
+<view class='container'>
+  <view class='content'>
+
+    <view class='productNav'>
+      <view class='proNavLeft' bindtap='back'>
+        <image src='/images/btn_back.png' class='proNavImage01'></image>
+      </view>
+
+
+      <view class='proNavCon'>
+        {{typename}}
+      </view>
+
+      <view class='pag_top'>
+        <image class="photoImg" src="http://mecs.ip165.com/Style/image/mxpimage.png"></image>
+        <view class='fontStyle'>哈哈哈</view>
+      </view>
+
+
+      <view class='statbutt {{leftbindcolor}}' bindtap='statcolor'>
+        <text style='font-size: large;'>工作状态</text>
+      </view>
+
+      <view class='ziliaobutt {{rightbindcolor}}' bindtap='ziliaocolor'>
+        <text style='font-size: large;'>详细资料</text>
+      </view>
+
+
+<view wx:if="{{leftbindcolor=='bindbackcolo'}}">
+<view class=''>
+<view class='gzdtImgRed'></view>
+老K对客户1111111进行了拍照
+2018/8/31 15:50:00
+</view>
+</view>
+
+<view wx:if="{{rightbindcolor=='bindbackcolo'}}">
+
+</view>
+
+
+
+
+    </view>
+  </view>
+</view>

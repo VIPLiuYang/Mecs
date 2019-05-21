@@ -14,7 +14,7 @@
     </view>
     <view class='contentcss'>
 
-      <view class='contentView'>
+      <view class='contentView' bindtap='fuzeren'>
         <view class='contentView01'>
           <image src='http://mecs.ip165.com/Style/image/mxpimage.png' class='contentViewimg'></image>
         </view>
