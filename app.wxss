@@ -1,5 +1,5 @@
-@import "utils/colorui/main.wxss";
-@import "utils/colorui/icon.wxss";
+@import 'style/weui.wxss';
+@import 'utils/icon/iconfont.wxss';
 /**app.wxss**/
 .container {
   display: flex;

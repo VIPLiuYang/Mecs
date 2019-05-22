@@ -22,9 +22,9 @@
   ],
   "window": {
     
-    "navigationBarBackgroundColor": "#000",
+    "navigationBarBackgroundColor": "#42BDBD",
     "navigationBarTitleText": "Me平台",
-    "navigationStyle": "custom",
+   
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -54,8 +54,6 @@
     ],
     "position": "bottom"
   },
-  "usingComponents": {
-    "cu-custom": "utils/colorui/components/cu-custom"
-  },
+   
   "sitemapLocation": "sitemap.json"
 }

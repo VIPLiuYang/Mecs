@@ -1,58 +1,51 @@
-// pages/myPage/myPage.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     employ: '',
     mobile: '',
+    Column: [{
+      namekey: '我的明信片',
+      namevalue: 'C1',
+      url: '../myPage/mingxinpian'
+    }, {
+      namekey: '我的设置',
+      namevalue: 'C2',
+      url: ''
+    }, {
+      namekey: '修改密码',
+      namevalue: 'C3',
+      url: '../myPage/padupdate'
+    }, {
+      namekey: '公司信息',
+      namevalue: 'C4',
+      url: '../myPage/gongsixinxi'
+    }, {
+      namekey: '我的帮助',
+      namevalue: 'C5',
+      url: ''
+    }, {
+      namekey: '退出登录',
+      namevalue: 'C6',
+      url: ''
+    }]
   },
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
     var em = wx.getStorageSync('employ');
     var mo = wx.getStorageSync('mobile');
     this.setData({
-      employ: em, mobile: mo
+      employ: em,
+      mobile: mo
     });
+    wx.setNavigationBarTitle({
+      title: '个人中心'
+    })
   },
-  diaozhuan:function(e){
-    var can = e.currentTarget.dataset.name;
-    if(can=='1'){
-      wx.navigateTo({
 
-        url: '../myPage/mingxinpian',
-      })
-
-    }
-    if (can == '3') {
-      wx.navigateTo({
-
-        url: '../myPage/padupdate',
-      })
-
-    }
-    if (can == '4') {
-      wx.navigateTo({
-
-        url: '../myPage/gongsixinxi',
-      })
-
-    }
-    if (can == '5') {
-      wx.showToast({
-        title: '暂无帮助文档',
-        icon: 'none',
-        duration: 2000
-      })
-
-    }
-  },
-  tuilogin:function(){
+  tuilogin: function() {
     wx.showToast({
       title: '退出成功',
       icon: 'none',
@@ -112,6 +105,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: 'Me平台',
+      path: '/pages/yingyong/yingyong',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })
