@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/renyuanliebiao/fuzeren/fuzeren",
     "pages/login/login",
-   
+    "pages/renyuanliebiao/fuzeren/fuzeren",
     
     "pages/qixin/qixin",
     "pages/renyuanhetong/renyuanhetong",
@@ -21,13 +20,12 @@
     "pages/myPage/mingxinpian",
     "pages/myPage/padupdate",
     "pages/myPage/gongsixinxi",
-    "pages/renyuanhetong/renyuanhetongdetailed"
+    "pages/renyuanhetong/renyuanhetongdetailed",
+    "pages/renyuanliebiao/kehu/kehuliebiao"
   ],
   "window": {
-    
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Me平台",
-    "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
