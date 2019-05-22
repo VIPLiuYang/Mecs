@@ -1,0 +1,130 @@
+@import "/utils/icon/iconfont.wxss";
+
+.content {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
+
+.productNav {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #16b4ee;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.productNav {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #16b4ee;
+}
+
+.proNavLeft {
+  width: 20%;
+  height: 75rpx;
+  float: left;
+  margin-top: 5rpx;
+}
+
+.proNavImage01 {
+  width: 50%;
+  height: 40rpx;
+  margin: 0px auto;
+}
+
+.proNavCon {
+  width: 60%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  float: left;
+  color: #fff;
+  letter-spacing: 0.2em;
+  font-size: 35rpx;
+}
+
+.proNavRight {
+  width: 10%;
+  height: 72rpx;
+  float: right;
+  padding-top: 8rpx;
+  padding-right: 18rpx;
+}
+
+.proNavImage {
+  width: 80%;
+  height: 60rpx;
+}
+
+.proNavImagesearch {
+  width: 42%;
+  height: 40rpx;
+}
+
+.pag_top {
+  height: 410rpx;
+  text-shadow: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20rpx;
+  color: #fff;
+  margin-top: 80rpx;
+  /* border: 1rpx black solid */
+  background-image: url(http://mecs.ip165.com/WeiXin/Style/Image/tubiao/客户.png);
+}
+
+.fontStyle {
+  text-align: center;
+  /* padding-top: 9px; */
+  font-size: large;
+}
+.photoImg {
+    width: 25%;
+    height: 35%;
+}
+
+.statbutt{
+width: 49%;
+float: left;
+text-align: center;
+border: 1px solid #16b4ee;
+margin-top: 40rpx;
+
+}
+
+.ziliaobutt{
+width: 49%;
+float: right;
+text-align: center;
+border: 1px solid #16b4ee;
+margin-top: 40rpx;
+
+}
+
+.bindbackcolo{
+background-color: #16b4ee;
+}
+
+.gzdtImgRed {
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    border: none rgb(100,100,100) 1px;
+    float: left;
+    margin-left: 9px;
+    background-color: red;
+    margin-top: 2px;
+}
