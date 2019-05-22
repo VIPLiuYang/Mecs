@@ -1,6 +1,8 @@
 {
+ 
   "pages": [ 
     "pages/login/login",
+ 
     "pages/qixin/qixin",
     "pages/renyuanhetong/renyuanhetong",
     "pages/yingyong/yingyong",
@@ -18,13 +20,16 @@
     "pages/myPage/mingxinpian",
     "pages/myPage/padupdate",
     "pages/myPage/gongsixinxi",
-    "pages/renyuanhetong/renyuanhetongdetailed"
+    "pages/renyuanhetong/renyuanhetongdetailed",
+    "pages/renyuanliebiao/kehu/kehuliebiao"
   ],
   "window": {
+
+
     
     "navigationBarBackgroundColor": "#42BDBD",
     "navigationBarTitleText": "Me平台",
-   
+
     "navigationBarTextStyle": "white"
   },
   "tabBar": {

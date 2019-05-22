@@ -9,6 +9,12 @@ Page({
     leftbindcolor: 'bindbackcolo',
     rightbindcolor: '',
   },
+  kehu:function(){
+    wx.navigateTo({
+      url: '/pages/renyuanliebiao/kehu/kehuliebiao',
+    })
+
+  },
   statcolor: function() {
     var zhi = this.data.leftbindcolor;
     if (zhi == "") {
