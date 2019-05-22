@@ -3,6 +3,17 @@ page{
     height: 100%;
     width: 100%;
 }
+/*隐藏滚动条*/
+
+::-webkit-scrollbar{
+
+width: 0;
+
+height: 0;
+
+color: transparent;
+
+}
 .scr{
     position: relative;
     height: 100%;

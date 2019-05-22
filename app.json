@@ -24,8 +24,12 @@
     "pages/renyuanliebiao/kehu/kehuliebiao"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#000",
+
+
+    
+    "navigationBarBackgroundColor": "#42BDBD",
     "navigationBarTitleText": "Me平台",
+
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -55,8 +59,6 @@
     ],
     "position": "bottom"
   },
-  "usingComponents": {
-    "cu-custom": "utils/colorui/components/cu-custom"
-  },
+   
   "sitemapLocation": "sitemap.json"
 }
