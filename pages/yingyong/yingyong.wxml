@@ -28,7 +28,7 @@
                 <!-- <navigator url="../yingyong/AllChildMenu?menu={{JSON.stringify(item)}}"> -->
                 <view bindtap='tiaozhuan' data-postId="{{item.childmenu}}">
                   <view class='navConright02_1'>
-                    <icon class='iconfont {{item.WeChatIco}}'></icon>
+                    <icon class='imgs iconfont {{item.WeChatIco}}'></icon>
                   </view>
                   <view class='navConright02_2'>
                     {{item.menuname}}
@@ -39,7 +39,7 @@
               <view wx:else>
                 <navigator url="{{item.WeChatUrl}}">
                   <view class='navConright02_1'>
-                    <icon class='iconfont {{item.WeChatIco}}' style='width:50rpx;height:50rpx'></icon>
+                    <icon class='imgs iconfont {{item.WeChatIco}}' style='width:50rpx;height:50rpx'></icon>
                   </view>
                   <view class='navConright02_2'>
                     {{item.menuname}}

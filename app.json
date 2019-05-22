@@ -1,9 +1,6 @@
 {
-  "pages": [
-    "pages/renyuanliebiao/fuzeren/fuzeren",
+  "pages": [ 
     "pages/login/login",
-   
-    
     "pages/qixin/qixin",
     "pages/renyuanhetong/renyuanhetong",
     "pages/yingyong/yingyong",
