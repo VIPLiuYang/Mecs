@@ -5,15 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typename: '负责人',
+    tabs: ["通讯录", "部门"],
+    activeIndex: 0,
+    sliderOffset: 1,
+    sliderLeft: 0,
     leftbindcolor: 'bindbackcolo',
     rightbindcolor: '',
   },
-  kehu:function(){
+  kehu: function() {
     wx.navigateTo({
       url: '/pages/renyuanliebiao/kehu/kehuliebiao',
     })
 
+  },
+  tabClick: function (e) {
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
   },
   statcolor: function() {
     var zhi = this.data.leftbindcolor;
@@ -38,7 +47,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    wx.setNavigationBarTitle({
+      title: '负责人',
+    })
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
+      }
+    });
   },
 
   /**

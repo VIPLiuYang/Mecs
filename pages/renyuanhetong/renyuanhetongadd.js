@@ -6,9 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typename: '人员合同添加',
-    select: false,
-    tihuoWay: '请选择',
+    accounts: ["劳动合同", "保密协议", "聘用合同", "其他"],
+    accountIndex: 0,
     dates: '',
     startdate: '',
     enddate: ''
@@ -33,22 +32,12 @@ Page({
     }
   },
 
-  bindShowMsg() {
+  bindAccountChange: function (e) {
+    console.log('picker account 发生选择改变，携带值为', e.detail.value);
+
     this.setData({
-      select: !this.data.select
+      accountIndex: e.detail.value
     })
-  },
-  mySelect(e) {
-    var name = e.currentTarget.dataset.name
-    this.setData({
-      tihuoWay: name,
-      select: false
-    })
-  },
-
-  baocun: function() {
-
-
   },
   /**
    * 生命周期函数--监听页面加载
@@ -63,7 +52,9 @@ Page({
       startdate: shijain,
       enddate: shijain
     })
-   
+   wx.setNavigationBarTitle({
+     title: '人员合同添加',
+   })
   },
 
   /**

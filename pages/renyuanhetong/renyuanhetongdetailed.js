@@ -5,14 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typename:'人员合同详情',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+wx.setNavigationBarTitle({
+  title: '人员合同详情',
+})
   },
 
   /**

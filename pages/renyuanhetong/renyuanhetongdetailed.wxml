@@ -1,27 +1,29 @@
-<view class='container'>
-  <view class='content'>
-
-    <view class='productNav'>
-      <view class='proNavLeft' bindtap='back'>
-        <image src='../../images/btn_back.png' class='proNavImage01'></image>
+ <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">合同编号：YH20182242895</view>
       </view>
-
-
-      <view class='proNavCon'>
-        {{typename}}
+      <view class="weui-cell">
+        <view class="weui-cell__bd">合同类型：哈哈</view>
       </view>
-    
-
-
-
-
-
-
-
-
-
-
-
+      <view class="weui-cell">
+        <view class="weui-cell__bd">员工名称：呵呵</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">签订日期：1998-10-01</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">开始日期：1998-10-01</view>
+      </view>
+       <view class="weui-cell">
+        <view class="weui-cell__bd">结束日期：1998-10-01</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">经办人：主席</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">合同摘要：主席</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">附件：暂无附件</view>
+      </view>
     </view>
-  </view>
-</view>

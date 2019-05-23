@@ -1,20 +1,3 @@
-<!-- <view class='container'>
-  <view class='content'>
-
-    <view class='productNav'>
-      <view class='proNavLeft' bindtap='back'>
-        <image src='/images/btn_back.png' class='proNavImage01'></image>
-      </view>
-
-
-      <view class='proNavCon'>
-        {{typename}}
-      </view> -->
-<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content">负责人</view>
-</cu-custom>
-
 <view class='pag_top'>
   <image class="photoImg" src="http://mecs.ip165.com/Style/image/mxpimage.png"></image>
   <view class='fontStyle'>哈哈哈</view>
@@ -22,28 +5,37 @@
   <view class='viewsuo'>
     <scroll-view scroll-x style='display: flex;white-space:nowrap;'>
 
-      <block class='jianxi' >
+      <!-- <block class='jianxi' >
         <text bindtap='kehu'>1客户\t\t\t\t\t\t</text>
       </block>
       <block class='jianxi'>
         <text>2合同\t\t\t\t\t\t</text>
-      </block>
-      
+      </block> -->
+
     </scroll-view>
   </view>
 </view>
-
-
+<view class="weui-navbar" style='margin-top:400rpx;'>
+  <block wx:for="{{tabs}}" wx:key="*this">
+    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+      <view class="weui-navbar__title">{{item}}</view>
+    </view>
+  </block>
+  <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+</view>
+<!-- 
 <view class='statbutt {{leftbindcolor}}' bindtap='statcolor'>
   <text style='font-size: large;'>工作状态</text>
 </view>
 
 <view class='ziliaobutt {{rightbindcolor}}' bindtap='ziliaocolor'>
   <text style='font-size: large;'>详细资料</text>
-</view>
+</view> -->
 
 
-<view wx:if="{{leftbindcolor=='bindbackcolo'}}">
+
+<view hidden="{{activeIndex != 0}}" style='margin-top:100rpx'>
+
   <view class='gongxinxi'>
     <view style='width:1200rpx'>
       <view class='gzdtImgRed'></view>
@@ -53,34 +45,27 @@
   </view>
 </view>
 
-<view wx:if="{{rightbindcolor=='bindbackcolo'}}">
+<view hidden="{{activeIndex !=1 }}">
   <view class='ziview'>
-    <view class='ziview2'>
-      负责人编号：YH20182242895
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">负责人编号：YH20182242895</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">负责人名称：哈哈</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">负责人性别：男</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">负责人生日：1998-10-01</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">负责人电话：110</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">负责人职务：主席</view>
+      </view>
     </view>
-    <view class='ziview2'>
-      负责人名称：哈哈
-    </view>
-    <view class='ziview2'>
-      负责人性别：男
-    </view>
-    <view class='ziview2'>
-      负责人生日：1998-10-01
-    </view>
-    <view class='ziview2'>
-      负责人电话：110
-    </view>
-    <view class='ziview2'>
-      负责人职务：主席
-    </view>
-
   </view>
-
 </view>
-
-
-
-
-<!-- </view>
-  </view>
-</view> -->

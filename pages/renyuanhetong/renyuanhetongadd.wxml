@@ -1,90 +1,89 @@
-<view class='container'>
-  <view class='content'>
-    <view class='productNav'>
-      <view class='proNavLeft' bindtap='back'>
-        <image src='../../images/btn_back.png' class='proNavImage01'></image>
-      </view>
-      <view class='proNavCon'>
-        {{typename}}
-      </view>
-      <view class='proNavRight' bindtap='baocun'>
-        提交
-      </view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">合同编号</view>
     </view>
-
-
-
-    <view class='xaiyi'>
-      <view class='font'>
-        <b class='font' style='color: red'>*</b>
-        <text class='font'>合同编号:</text>
-        <input name="input" type="text" class='biank' />
-      </view>
-
-      <view class='font'>
-        <b class='font' style='color: red'>*</b>
-        <text class='font'>合同类型:</text>
-        <!-- <input name="input" type="text" class='biank' /> -->
-        <!-- <view bindtap='bindShowMsg'> -->
-        <!-- <text class='biank'>{{tihuoWay}}</text> -->
-        <!-- <image style='height:20rpx;width:20rpx;' src='/images/down.png'></image> -->
-        <!-- </view> -->
-
-        <input name="input" type="text" class='xila' value='{{tihuoWay}}' bindtap='bindShowMsg' />
-
-        <view class="select_box" wx:if="{{select}}">
-          <view class="select_one" bindtap="mySelect" data-name="劳动合同">劳动合同</view>
-          <view class="select_one" bindtap="mySelect" data-name="保密协议">保密协议</view>
-          <view class="select_one" bindtap="mySelect" data-name="聘用合同">聘用合同</view>
-          <view class="select_one" bindtap="mySelect" data-name="其他">其他</view>
-        </view>
-
-
-      </view>
-      <view class='font'>
-        <b class='font' style='color: red'>*</b>
-        <text class='font'>员工名称:</text>
-        <input name="input" type="text" class='biank' />
-      </view>
-
-      <view class='font'>
-        <b class='font' style='color: red'>*</b>
-        <text class='font'>签订日期:</text>
-        <picker mode="date" value="{{dates}}" bindchange="bindDateChange" data-can='1' style='float:left'>
-          <input name="input" type="text" class='biank' value='{{dates}}' />
-        </picker>
-      </view>
-
-      <view class='font'>
-        <b class='font' style='color: red'>*</b>
-        <text class='font'>开始日期:</text>
-        <picker mode="date" value="{{startdate}}" bindchange="bindDateChange" data-can='2' style='float:left'>
-          <input name="input" type="text" class='biank' value='{{startdate}}' />
-        </picker>
-      </view>
-
-      <view class='font'>
-        <b class='font' style='color: red'>*</b>
-        <text class='font'>结束日期:</text>
-        <picker mode="date" value="{{enddate}}" bindchange="bindDateChange" data-can='3' style='float:left'>
-          <input name="input" type="text" class='biank' value='{{enddate}}' />
-        </picker>
-      </view>
-      
-      <view class='font'>
-        <b class='font' style='color: red'>*</b>
-        <text class='font'>经 办 人 :</text>
-        <input name="input" type="text" class='biank' />
-      </view>
-
- <view class='font'>
-        <b class='font' style='color: red'>*</b>
-        <text class='font'>合同摘要:</text>
-        <input name="input" type="text" class='biank' />
-      </view>
-
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="只能输入字母和数字" />
     </view>
-
-
   </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">合同类型</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
+        <!-- <input class="weui-input" value="{{accounts[accountIndex]}}"/> -->
+        <view class="weui-select">{{accounts[accountIndex]}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">员工名称</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" readonly="readonly" placeholder="点击进行选择" />
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">签订日期</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="date" value="{{dates}}" bindchange="bindDateChange" data-can='1'>
+        <view class="weui-input">{{dates}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">开始日期</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="date" value="{{startdate}}" bindchange="bindDateChange" data-can='2'>
+        <view class="weui-input">{{startdate}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">结束日期</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="date" value="{{enddate}}" bindchange="bindDateChange" data-can='3'>
+        <view class="weui-input">{{enddate}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">经办人</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="点击输入..." />
+    </view>
+  </view>
+
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">合同摘要</view>
+    </view>
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" placeholder="请输入合同摘要" style="height: 3.3em" />
+      <view class="weui-textarea-counter">0/200</view>
+    </view>
+  </view>
+
 </view>
+
+<view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="showTopTips">提交</button>
+        </view>

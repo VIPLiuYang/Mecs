@@ -20,8 +20,7 @@
     "pages/myPage/mingxinpian",
     "pages/myPage/padupdate",
     "pages/myPage/gongsixinxi",
-    "pages/renyuanhetong/renyuanhetongdetailed",
-    "pages/renyuanliebiao/kehu/kehuliebiao"
+    "pages/renyuanhetong/renyuanhetongdetailed"
   ],
   "window": {
 
