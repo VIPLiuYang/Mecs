@@ -1,8 +1,7 @@
 {
- 
-  "pages": [ 
+  "pages": [
     "pages/login/login",
- 
+    "pages/phonebumen/qixin",
     "pages/qixin/qixin",
     "pages/renyuanhetong/renyuanhetong",
     "pages/yingyong/yingyong",
@@ -20,15 +19,12 @@
     "pages/myPage/mingxinpian",
     "pages/myPage/padupdate",
     "pages/myPage/gongsixinxi",
-    "pages/renyuanhetong/renyuanhetongdetailed"
+    "pages/renyuanhetong/renyuanhetongdetailed",
+    "pages/mingxinpian/mingxinpian"
   ],
   "window": {
-
-
-    
     "navigationBarBackgroundColor": "#42BDBD",
     "navigationBarTitleText": "Me平台",
-
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -58,6 +54,5 @@
     ],
     "position": "bottom"
   },
-   
   "sitemapLocation": "sitemap.json"
 }

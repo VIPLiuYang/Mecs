@@ -1,0 +1,127 @@
+@import "/utils/icon/iconfont.wxss";
+page{
+    height: 100%;
+    width: 100%;
+}
+/*隐藏滚动条*/
+
+::-webkit-scrollbar{
+
+width: 0;
+
+height: 0;
+
+color: transparent;
+
+}
+.scr{
+    position: relative;
+    height: 100%;
+}
+.bailie{
+
+    position: fixed;
+    /* top: 10rpx; */
+    right: 10rpx;
+ /* margin-left: 2rpx */
+
+}
+.content {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
+.lineSencondshow {
+ display:block;
+}
+.lineSencond {
+ 
+  display:none;
+}
+.productNav {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #16b4ee;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+}
+
+.proNavCon {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  float: left;
+  color: #fff;
+  letter-spacing: 0.2em;
+  font-size: 35rpx;
+}
+
+.updiv {
+  width: 100%;
+  height: 120rpx;
+  border: 1rpx solid #16b4ee;
+  margin-top: 82rpx;
+}
+
+.tongxunlu {
+  background-color: rgba(219, 219, 212, 0.836);
+  width: 40%;
+  height: 80rpx;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+}
+
+.bumen {
+  background-color: rgba(219, 219, 212, 0.836);
+  width: 40%;
+  height: 80rpx;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+}
+
+.contentcss {
+  width: 100%;
+  height: auto;
+  margin-top: 80rpx;
+}
+
+.contentView {
+  width: 90%;
+  height: 140rpx;
+  margin: 10rpx auto;
+  border-bottom: 1rpx solid #ccc;
+  overflow: hidden;
+}
+
+.biaozhi {
+  width: 100%;
+  height: 70rpx;
+  line-height: 62rpx;
+  background-color: rgba(219, 219, 212, 0.836);
+}
+
+.contentView02_1 {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  font-size: 34rpx;
+  line-height: 62rpx;
+}
+
+.contentView02_2_02 {
+  width: 100%;
+  height: auto;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  margin: 0px auto;
+}
