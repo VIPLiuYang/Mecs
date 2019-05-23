@@ -1,2 +1,12 @@
-<!--pages/mingxinpian/mingxinpian.wxml-->
-<text>pages/mingxinpian/mingxinpian.wxml</text>
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-grids">
+            <block wx:for="{{grids}}" wx:key="*this">
+                <navigator url="/pages/myPage/mingxinpian" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="http://mecs.ip165.com/Style/image/mxpimage.png" style='width:145rpx;height:155rpx'/>
+                    <view class="weui-grid__label">Grid</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+</view>
