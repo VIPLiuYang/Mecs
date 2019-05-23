@@ -1,18 +1,20 @@
-// pages/renyuanliebiao/kehu/kehuliebiao.js
+// pages/mingxinpian/mingxinpian.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    grids: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+wx.setNavigationBarTitle({
+  title: '更多明信片',
+})
   },
 
   /**

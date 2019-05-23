@@ -5,20 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typename: "人员列表",
+    inputShowed: false,
+    inputVal: ""
+  },
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
+  hideInput: function () {
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
+  },
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
+  inputTyping: function (e) {
+    this.setData({
+      inputVal: e.detail.value
+    });
   },
   
-  fuzeren:function(){
-    wx.navigateTo({
-      url: '/pages/renyuanliebiao/fuzeren/fuzeren',
-    })
-
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    wx.setNavigationBarTitle({
+      title: '人员列表',
+    })
   },
 
   /**

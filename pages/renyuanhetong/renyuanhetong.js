@@ -7,11 +7,24 @@ Page({
   data: {
     typename: "人员合同",
     hiddenmodalput: true,
+    date: "2016-09-01",
+    date2: "2016-09-01",
   },
   //点击按钮痰喘指定的hiddenmodalput弹出框
   modalinput: function() {
     this.setData({
       hiddenmodalput: !this.data.hiddenmodalput
+    })
+  },
+
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  bindDateChange2: function (e) {
+    this.setData({
+      date: e.detail.value
     })
   },
  

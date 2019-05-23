@@ -1,4 +1,4 @@
-<view class='container'>
+<!-- <view class='container'>
   <view class='content'>
 
     <view class='productNav'>
@@ -14,15 +14,54 @@
         <image src='../../images/search.png' class='proNavImagesearch' bindtap="modalinput"></image>
         <text decode="{{true}}">&nbsp;</text>
         <image src='../../images/add.png' class='proNavImagesearch2' bindtap='add'></image>
-      </view>
+      </view> -->
 
 
 
       <modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
-        <input type='text' placeholder="请输入内容" auto-focus/>
+       <view class="weui-cells weui-cells_after-title">
+         <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">合同编号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入合同编号"/>
+                </view>
+            </view>
+             <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">员工名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入员工名称"/>
+                </view>
+            </view>
+             <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">开始时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{date}}"  bindchange="bindDateChange">
+                        <view class="weui-input">{{date}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">结束时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{date2}}"  bindchange="bindDateChange2">
+                        <view class="weui-input">{{date2}}</view>
+                    </picker>
+                </view>
+            </view>
+            </view>
       </modal>
 
-
+ <button class="weui-btn addsize" type="primary"  plain="true" bindtap='add'>添加</button>
+ <button class="weui-btn addsize" type="primary"  plain="true" bindtap="modalinput">查询</button>
       <view class='contentView' bindtap='mingxi'>
         <view class='contentView02_1'>
           合同编号:
@@ -40,11 +79,11 @@
 
 
 
-    </view>
+    <!-- </view> -->
 
     <!-- show -->
 
 
 
-  </view>
-</view>
+  <!-- </view>
+</view> -->
