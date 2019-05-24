@@ -29,10 +29,27 @@ Page({
   },
   // 生命周期函数--监听页面加载
   onLoad: function(options) {
-    //修改标题
-    wx.setNavigationBarTitle({
-      title: '打卡记录'
-    })
+    var username = wx.getStorageSync('username');
+    if (username != null && username > 0 && username != '') {
+
+      //修改标题
+      wx.setNavigationBarTitle({
+        title: '打卡记录'
+      })
+    } else {
+      wx.showModal({
+        title: '温馨提示',
+        content: '先登录',
+        success: function(res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '/pages/login/login',
+            })
+          } else if (res.cancel) {}
+        }
+      })
+    }
+
   },
 
   //开始打卡事件
