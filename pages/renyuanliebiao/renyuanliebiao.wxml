@@ -18,27 +18,18 @@
 
  
       <view class="weui-panel__bd">
-        <navigator url="/pages/renyuanliebiao/fuzeren/fuzeren" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <navigator url='/pages/renyuanliebiao/fuzeren/fuzeren?emo={{item["<employno>k__BackingField"]}}' class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{shuju}}">
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="http://mecs.ip165.com/Style/image/mxpimage.png" />
+            <image class="weui-media-box__thumb" src='{{item["<touxiang>k__BackingField"]}}' />
           </view>
           <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">标题一</view>
-            <view class="weui-media-box__desc">17686426101</view>
-          </view>
-        </navigator>
-        <navigator url="/pages/renyuanliebiao/fuzeren/fuzeren" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="http://mecs.ip165.com/Style/image/mxpimage.png" />
-          </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">标题二</view>
-            <view class="weui-media-box__desc">17686426101</view>
+            <view class="weui-media-box__title">{{item["<fuzeren>k__BackingField"]}}</view>
+            <view class="weui-media-box__desc">{{item["<shoujihao>k__BackingField"]}}</view>
           </view>
         </navigator>
       </view>
 
-      <view class="weui-panel__ft">
+      <view class="weui-panel__ft" bindtap='fenye' data-shu='{{fenye}}' wx:if="{{fenye!=0}}">
         <view class="weui-cell weui-cell_access weui-cell_link">
           <view class="weui-cell__bd">查看更多</view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
@@ -46,55 +37,4 @@
       </view>
 
 
- <!-- <view class="weui-cells weui-cells_after-title">
-      <navigator url="/pages/renyuanliebiao/fuzeren/fuzeren" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__hd">
-          <image src="http://mecs.ip165.com/Style/image/mxpimage.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-        </view>
-        <view class="weui-cell__bd">习大大</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access">17686524121</view>
-      </navigator>
-      <navigator url="/pages/renyuanliebiao/fuzeren/fuzeren" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__hd">
-          <image src="http://mecs.ip165.com/Style/image/mxpimage.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-        </view>
-        <view class="weui-cell__bd">彭大大</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access">17686524121</view>
-      </navigator>
-    </view> -->
-
-
-      <!-- <view class='contentView' bindtap='fuzeren'>
-        <view class='contentView01'>
-          <image src='http://mecs.ip165.com/Style/image/mxpimage.png' class='contentViewimg'></image>
-        </view>
-        <view class='contentView02'>
-          <view class='contentView02_1'>
-            和很合
-          </view>
-          <view class='contentView02_2'>
-            <view class='contentView02_2_01'>
-              <image src='http://mecs.ip165.com/WeiXin/Style/Image/login/call.png' class='contentView02_2_01img'></image>
-            </view>
-            <view class='contentView02_2_02'>15856565656</view>
-          </view>
-        </view>
-      </view> -->
-
-
-      <!-- <view class='contentView'>
-        <view class='contentView01'>
-          <image src='http://mecs.ip165.com/Style/image/mxpimage.png' class='contentViewimg'></image>
-        </view>
-        <view class='contentView02'>
-          <view class='contentView02_1'>
-            和很合
-          </view>
-          <view class='contentView02_2'>
-            <view class='contentView02_2_01'>
-              <image src='http://mecs.ip165.com/WeiXin/Style/Image/login/call.png' class='contentView02_2_01img'></image>
-            </view>
-            <view class='contentView02_2_02'>15856565656</view>
-          </view>
-        </view>
-      </view> -->
+ 

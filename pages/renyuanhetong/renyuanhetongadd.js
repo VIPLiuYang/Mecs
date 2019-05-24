@@ -1,5 +1,6 @@
 // pages/renyuanhetong/renyuanhetongadd.js
-var util = require('../../utils/util.js')
+var util = require('../../utils/util.js');
+var comm = require('../../utils/PublicProtocol.js');
 Page({
 
   /**
@@ -11,6 +12,67 @@ Page({
     dates: '',
     startdate: '',
     enddate: ''
+  },
+  tianjia:function(){
+
+    wx.navigateTo({
+      url: '/pages/xuanzepage/xuanzerenyuan/xuanzerenyuan',
+    })
+  },
+  showTopTips:function(e){
+
+    var Cno = e.detail.value.cno;	//合同编号
+    var Ctype = this.data.accounts[this.data.accountIndex];	//合同类型
+    var EmployNo = '111';	//员工编号
+    var Employ='admin';	//员工姓名
+    var Ctime = this.data.dates;	//签订日期
+    var Stime=this.data.startdate;	//开始日期
+    var Etime=this.data.enddate;	//结束日期
+    var DealMan = e.detail.value.dealMan;	//经办人
+    var Content=e.detail.value.content;	//合同摘要
+
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    var tempData = {
+      uuid: uuid, //设备id
+      appid: appid,
+      dotype: 'add',
+      Cno: Cno,
+      Ctype: Ctype,
+      EmployNo: EmployNo,
+      Employ: Employ,
+      Ctime: Ctime,
+      Stime: Stime,
+      Etime: Etime,
+      DealMan: DealMan,
+      Content: Content,
+      utoken: utoken
+    }
+    var this11 = this;
+
+    comm.unitWebsitePro('PostEmpContract', tempData, function (data) {
+
+      var bool = data.RspCode;
+if(bool=="0000"){
+  wx.showToast({
+    title: '添加成功',
+    icon: 'succes',
+    duration: 1000
+  })
+  wx.navigateTo({
+    url: '/pages/renyuanhetong/renyuanhetong',
+  })
+}else{
+
+  wx.showToast({
+    title: '添加失败',
+    icon: 'none',
+    duration: 2000
+  })
+}
+     
+    })
   },
   //  点击日期组件确定事件  
   bindDateChange: function(e) {

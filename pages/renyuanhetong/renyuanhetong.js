@@ -1,4 +1,5 @@
 // pages/renyuanhetong/renyuanhetong.js
+var comm = require('../../utils/PublicProtocol.js');
 Page({
 
   /**
@@ -9,6 +10,10 @@ Page({
     hiddenmodalput: true,
     date: "2016-09-01",
     date2: "2016-09-01",
+    shuju: [],
+    rowcount: 0,
+    pagecount: 0,
+    fenye: 0
   },
   //点击按钮痰喘指定的hiddenmodalput弹出框
   modalinput: function() {
@@ -17,17 +22,17 @@ Page({
     })
   },
 
-  bindDateChange: function (e) {
+  bindDateChange: function(e) {
     this.setData({
       date: e.detail.value
     })
   },
-  bindDateChange2: function (e) {
+  bindDateChange2: function(e) {
     this.setData({
       date: e.detail.value
     })
   },
- 
+
   //重置按钮
   cancel: function() {
     this.setData({
@@ -50,7 +55,7 @@ Page({
       url: '/pages/renyuanhetong/renyuanhetongadd?action=add',
     })
   },
-  mingxi:function(){
+  mingxi: function() {
     wx.navigateTo({
       url: '/pages/renyuanhetong/renyuanhetongdetailed',
     })
@@ -60,9 +65,80 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    var tempData = {
+      uuid: uuid, //设备id
+      appid: appid, 
+      dotype:'list',
+      pagesize: 10,
+      pageindex: 1,
+      utoken: utoken
+    }
+    var this11 = this;
 
+    comm.unitWebsitePro('PostEmpContract', tempData, function (data) {
+      var hangshu = data.RspData.RowCount
+      var yeshu = data.RspData.PageCount
+
+      var liebiao = data.RspData.empcontract;
+      if (yeshu > 0) {
+        this11.setData({
+          fenye: this11.data.fenye + 1
+        })
+      }
+      this11.setData({
+        shuju: liebiao,
+        rowcount: hangshu,
+        pagecount: yeshu,
+      })
+
+    })
   },
 
+  fenye: function (e) {
+    var nowpage = e.currentTarget.dataset.shu;
+    if (nowpage == this.data.pagecount) {
+      wx.showToast({
+        title: '已是最后一页',
+        icon: 'none',
+        duration: 2000
+      })
+    } else {
+      this.setData({
+        fenye: nowpage + 1
+      })
+
+      var appid = wx.getStorageSync('appid');
+      var uuid = wx.getStorageSync('uuid');
+      var utoken = wx.getStorageSync('utoken');
+      var tempData = {
+        uuid: uuid, //设备id
+        appid: appid, //
+        dotype: 'list',
+        pagesize: 10,
+        pageindex: this.data.fenye,
+        utoken: utoken,
+      }
+      var this11 = this;
+
+      comm.unitWebsitePro('PostUserList', tempData, function (data) {
+        var hangshu = data.RspData.RowCount
+        var yeshu = data.RspData.PageCount
+
+        var liebiao = data.RspData.empcontract;
+      
+
+        var nowlie = this11.data.shuju;
+        var nowleijia = nowlie.concat(liebiao)
+        this11.setData({
+          shuju: nowleijia
+        })
+
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

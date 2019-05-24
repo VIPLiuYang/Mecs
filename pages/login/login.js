@@ -90,12 +90,6 @@ Page({
 
 
 
-
-
-
-
-
-
             //跳转页面
             wx.reLaunch({
               url: '../yingyong/yingyong',
