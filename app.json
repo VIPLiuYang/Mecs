@@ -23,9 +23,10 @@
     "pages/mingxinpian/mingxinpian"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#42BDBD",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Me平台",
     "navigationBarTextStyle": "white"
+     
   },
   "tabBar": {
     "color": "#666",

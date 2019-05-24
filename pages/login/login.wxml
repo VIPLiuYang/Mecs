@@ -1,33 +1,45 @@
-<!--pages/login/login.wxml-->
-
-<view class='content'>
-  <view class='ul'>
-    <view class='li'>
-      <image src="../../images/login/qiye.png" /> 企业id:
-      <input name="qyid" type="text" bindinput='qycidInput' />
-      <br />
-      <hr />
+<view class="container"> 
+  <view class="login-icon">  
+    <image class="login-img" src="../../images/login/biaoz.png"></image>  
+  </view>  
+  <view class="login-from">  
+  <form bindsubmit="formSubmit" class='form'>
+   <view class="cid">
+    <!-- 号 -->
+      <view class="weui-cell weui-cell_input">
+      <image class="nameImage" src="/images/login/name.png"></image> 
+          <view class="weui-cell__bd">
+              <input class="weui-input" name="cid" bindinput="cidinput" value='{{cid}}' placeholder="企业ID" />
+          </view>
+      </view>
     </view>
-    <view class='li'>
-      <image src="../../images/login/ren.png" /> 用户名:
-      <input name="yhName" type="text" bindinput='userNameInput' />
-      <br />
-      <hr />
+    <view class="myno">
+    <!-- 号 -->
+      <view class="weui-cell weui-cell_input">
+      <image class="nameImage" src="/images/login/name.png"></image> 
+          <view class="weui-cell__bd">
+              <input class="weui-input" name="no" bindinput="noinput" value='{{no}}' placeholder="账号" />
+          </view>
+      </view>
     </view>
-    <view class='li'>
-      <image src="../../images/login/suo.png" /> 密 码:
-      <input name="input" type="password" bindinput="passWdInput" />
-      <br />
-      <hr />
+    <view class="mypwd">
+      <!-- 密码 -->
+      <view class="weui-cell weui-cell_input">
+      <image class="nameImage" src="/images/login/key.png"></image>
+          <!-- <view class="weui-cell__hd">
+              <view class="weui-label">密码</view>
+          </view> -->
+          <view class="weui-cell__bd">
+              <input class="weui-input" type="password" name="pwd" bindinput="pwdinput" placeholder="密码" value='{{pwd}}'/>
+          </view>
+      </view>
     </view>
-    <view class='li'>
-      <radio name="checkcss" value="" checked="" class='check' /> 记住密码
-    </view>
-    <view class='li'>
-      <input class='btnsavecss' open-type='switchTab' type="button" value="登   录" bindtap='check' />
-    </view>
-    <view class='li'>
-      <image class='imgMe' src="../../images/login/biaoz.png" />
-    </view>
-  </view>
-</view>
+ 
+     <!--按钮-->  
+    <view class="loginBtnView">  
+      <button class="loginBtn" size="{{primarySize}}"  form-type='submit' disabled='{{disabled}}'>登录</button>  
+    </view>  
+    </form>
+  
+  </view>  
+</view> 

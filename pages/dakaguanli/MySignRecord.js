@@ -16,12 +16,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    //修改标题
-    wx.setNavigationBarTitle({
+  onLoad: function(options) { 
+    wx.setNavigationBarTitle({//修改标题
       title: '我的打卡记录'
     })
     wx.hideLoading()
+    var Flag = 0; //0刷新，1加载更多
     this.getlist(); 
   },
   clickgd:function(){//加载更多
@@ -40,7 +40,7 @@ Page({
     }
     var that = this;
     comm.unitWebsitePro('PostCardRecordList', tempData, function(data) {
-      if (data.RspCode == "0000") { //正常 
+      if (data.RspCode == "0000") { //正常  
         if (Flag==0){
           that.setData({
             cardrecordlist: data.RspData.cardrecordlist, //绑定数据列表
@@ -60,52 +60,27 @@ Page({
       }
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
+  onUnload: function() {//页面返回时恢复默认
+    pageindex = 1; //获取的页码
+    Flag = 1; //0刷新，1加载更多
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: 'Me平台',
+      path: '/pages/yingyong/yingyong',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })
