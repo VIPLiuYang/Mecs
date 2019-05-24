@@ -1,5 +1,4 @@
-
-@import 'style/weui.wxss';
+ @import 'style/weui.wxss';
 @import 'utils/icon/iconfont.wxss';
 /**app.wxss**/
 .container {
@@ -51,4 +50,3 @@ font-size: 35rpx;
   width: 60%;
   height: 40rpx;
 }
-
