@@ -102,7 +102,9 @@ Page({
             wx.setStorageSync("Depid", data.RspData.dpts[0]["<id>k__BackingField"])
             wx.setStorageSync("utoken", data.RspData.utoken)
             wx.setStorageSync("Menu", data.RspData.Menu)
-            wx.hideLoading() 
+
+            wx.hideLoading()
+
             //跳转页面
             wx.reLaunch({
               url: '../yingyong/yingyong',

@@ -20,7 +20,8 @@
     "pages/myPage/padupdate",
     "pages/myPage/gongsixinxi",
     "pages/renyuanhetong/renyuanhetongdetailed",
-    "pages/mingxinpian/mingxinpian"
+    "pages/mingxinpian/mingxinpian",
+    "pages/xuanzepage/xuanzerenyuan/xuanzerenyuan"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000",

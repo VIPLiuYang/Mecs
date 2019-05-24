@@ -1,16 +1,20 @@
 // pages/renyuanliebiao/fuzeren/fuzeren.js
+var comm = require('../../../utils/PublicProtocol.js');
+var sliderWidth = 115;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabs: ["通讯录", "部门"],
+    tabs: ["工作动态", "详细资料"],
     activeIndex: 0,
     sliderOffset: 1,
     sliderLeft: 0,
     leftbindcolor: 'bindbackcolo',
     rightbindcolor: '',
+    dongtai:[],
+    ziliao:[]
   },
   kehu: function() {
     wx.navigateTo({
@@ -47,6 +51,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    
     wx.setNavigationBarTitle({
       title: '负责人',
     })
@@ -59,6 +64,35 @@ Page({
         });
       }
     });
+
+var emo=options.emo;
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    var tempData = {
+      uuid: uuid, //设备id
+      appid: appid, //
+      employno: emo,
+      utoken: utoken
+    }
+    var this11 = this;
+
+    comm.unitWebsitePro('PostUserDetail', tempData, function (data) {
+debugger
+      var gongzuodongtai = data.RspData.genjindongtai;
+      var xiangxiziliao = data.RspData.userdetai[0];
+      // for (var i = 0; i < liebiao.length; i++) {
+      //   liebiao[i]["<touxiang>k__BackingField"] = "http://mecs.ip165.com/" + liebiao[i]["<touxiang>k__BackingField"];
+      // }
+     
+      this11.setData({
+       dongtai:gongzuodongtai,
+       ziliao:xiangxiziliao
+      })
+
+    })
+
+
   },
 
   /**
