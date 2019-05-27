@@ -128,6 +128,13 @@ Page({
     this.setData({
       disabled: false
     }); 
+   
+    var zhi = wx.getStorageSync('utoken')
+    if (zhi != null && zhi != "" && zhi != undefined) {
+      wx.reLaunch({
+        url: '../yingyong/yingyong',
+      })
+    }
   },
 
   /**

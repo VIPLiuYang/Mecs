@@ -3,7 +3,7 @@
 
 //发送对应的接口协议，根据页面传送的data
 var unitWebsitePro = function (name, data, callback) {
-  wxPost('http://58.56.9.133:4188/api/Data/'+name, JSON.stringify(data), callback);
+  wxPost('http://api.ip165.com/api/Data/'+name, JSON.stringify(data), callback);
 }
 
 
