@@ -1,4 +1,4 @@
-// pages/renyuanhetong/renyuanhetongdetailed.js
+// pages/myPage/mingxinpian.js
 var comm = require('../../utils/PublicProtocol.js');
 Page({
 
@@ -6,43 +6,49 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bianhao:'',
-    xiangqing:[]
+    modle: '',
+    name: '',
+    str:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-wx.setNavigationBarTitle({
-  title: '人员合同详情',
-})
-
-    var bianhao = options.Con;
-
-    this.setData({
-    bianhao:bianhao
+    wx.setNavigationBarTitle({
+      title: '更多明信片',
     })
-debugger
+    var emo = options.emno;
+
+    // var dainhua = wx.getStorageSync('mobile')
+    // var mingzi = wx.getStorageSync('employ')
+    // this.setData({
+    //   modle: dainhua
+    // })
+    // this.setData({
+    //   name: mingzi
+    // })
+
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
     var tempData = {
       uuid: uuid, //设备id
       appid: appid, //
-      Cno: bianhao,
+      empNo: emo,
       utoken: utoken
     }
     var this11 = this;
 
-    comm.unitWebsitePro('PostEmpContractDetail', tempData, function (data) {
-      debugger
-      var xiangxiziliao = data.RspData.empcontractdetail[0];
+    comm.unitWebsitePro('PostcardDetail', tempData, function (data) {
+      var liebiao = data.RspData.carddetail[0];
+
       this11.setData({
-        xiangqing: xiangxiziliao
+        str: liebiao
       })
 
     })
+
 
   },
 

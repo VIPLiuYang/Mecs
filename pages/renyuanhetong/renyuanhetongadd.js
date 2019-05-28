@@ -11,8 +11,12 @@ Page({
     accountIndex: 0,
     dates: '',
     startdate: '',
-    enddate: ''
+    enddate: '',
+    ygname:'',
+    ygno:''
   },
+
+
   tianjia:function(){
 
     wx.navigateTo({
@@ -20,11 +24,11 @@ Page({
     })
   },
   showTopTips:function(e){
-
+debugger
     var Cno = e.detail.value.cno;	//合同编号
     var Ctype = this.data.accounts[this.data.accountIndex];	//合同类型
-    var EmployNo = '111';	//员工编号
-    var Employ='admin';	//员工姓名
+    var EmployNo = this.data.ygno;	//员工编号
+    var Employ = this.data.ygname;	//员工姓名
     var Ctime = this.data.dates;	//签订日期
     var Stime=this.data.startdate;	//开始日期
     var Etime=this.data.enddate;	//结束日期

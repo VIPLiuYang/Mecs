@@ -55,9 +55,11 @@ Page({
       url: '/pages/renyuanhetong/renyuanhetongadd?action=add',
     })
   },
-  mingxi: function() {
+  mingxi: function(e) {
+
+    var Cno = e.currentTarget.dataset.cno;
     wx.navigateTo({
-      url: '/pages/renyuanhetong/renyuanhetongdetailed',
+      url: '/pages/renyuanhetong/renyuanhetongdetailed?Con='+Cno,
     })
   },
 

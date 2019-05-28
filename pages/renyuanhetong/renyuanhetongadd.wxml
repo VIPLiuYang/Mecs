@@ -27,7 +27,7 @@
       <view class="weui-label">员工名称</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" name="employ" disabled="disabled" placeholder="点击进行选择+" bindtap='tianjia'/>
+      <input class="weui-input" name="employ" disabled="disabled" placeholder="点击进行选择+" bindtap='tianjia' value='{{ygname}}'/>
       <!-- <icon class='iconfont icon-jiahao' style='float:right;></icon> -->
     </view>
   </view>

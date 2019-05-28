@@ -43,7 +43,7 @@
 <button class="weui-btn addsize" type="primary" plain="true" bindtap='add'>添加</button>
 <button class="weui-btn addsize" type="primary" plain="true" bindtap="modalinput">查询</button>
 
-<view class='contentView' bindtap='mingxi' wx:for="{{shuju}}">
+<view class='contentView' bindtap='mingxi' data-cno='{{item["<Cno>k__BackingField"]}}' wx:for="{{shuju}}">
   <view class='contentView02_1'>
     合同编号:{{item["<Cno>k__BackingField"]}}
   </view>

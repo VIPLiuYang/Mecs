@@ -1,6 +1,6 @@
 <view class='pag_top'>
   <image class="photoImg" src='http://mecs.ip165.com/{{ziliao["<Photo>k__BackingField"]}}'></image>
-  <view class='fontStyle'>哈哈哈</view>
+  <view class='fontStyle'>{{name}}</view>
 
   <!-- <view class='viewsuo'>
     <scroll-view scroll-x style='display: flex;white-space:nowrap;'>

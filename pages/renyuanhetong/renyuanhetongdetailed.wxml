@@ -1,27 +1,27 @@
  <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
-        <view class="weui-cell__bd">合同编号：YH20182242895</view>
+        <view class="weui-cell__bd">合同编号：{{xiangqing["<Cno>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">合同类型：哈哈</view>
+        <view class="weui-cell__bd">合同类型：{{xiangqing["<Ctype>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">员工名称：呵呵</view>
+        <view class="weui-cell__bd">员工名称：{{xiangqing["<Employ>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">签订日期：1998-10-01</view>
+        <view class="weui-cell__bd">签订日期：{{xiangqing["<Ctime>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">开始日期：1998-10-01</view>
+        <view class="weui-cell__bd">开始日期：{{xiangqing["<Stime>k__BackingField"]}}</view>
       </view>
        <view class="weui-cell">
-        <view class="weui-cell__bd">结束日期：1998-10-01</view>
+        <view class="weui-cell__bd">结束日期：{{xiangqing["<Etime>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">经办人：主席</view>
+        <view class="weui-cell__bd">经办人：{{xiangqing["<DealMan>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">合同摘要：主席</view>
+        <view class="weui-cell__bd">合同摘要：{{xiangqing["<Content>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
         <view class="weui-cell__bd">附件：暂无附件</view>

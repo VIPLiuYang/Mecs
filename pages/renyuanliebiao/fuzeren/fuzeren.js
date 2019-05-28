@@ -14,7 +14,8 @@ Page({
     leftbindcolor: 'bindbackcolo',
     rightbindcolor: '',
     dongtai:[],
-    ziliao:[]
+    ziliao:[],
+    name:''
   },
   kehu: function() {
     wx.navigateTo({
@@ -64,7 +65,7 @@ Page({
         });
       }
     });
-
+    var name = options.name;
 var emo=options.emo;
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
@@ -87,7 +88,8 @@ debugger
      
       this11.setData({
        dongtai:gongzuodongtai,
-       ziliao:xiangxiziliao
+       ziliao:xiangxiziliao,
+       name:name
       })
 
     })
