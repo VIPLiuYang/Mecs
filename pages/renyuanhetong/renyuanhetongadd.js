@@ -18,13 +18,11 @@ Page({
 
 
   tianjia:function(){
-
     wx.navigateTo({
       url: '/pages/xuanzepage/xuanzerenyuan/xuanzerenyuan',
     })
   },
   showTopTips:function(e){
-debugger
     var Cno = e.detail.value.cno;	//合同编号
     var Ctype = this.data.accounts[this.data.accountIndex];	//合同类型
     var EmployNo = this.data.ygno;	//员工编号

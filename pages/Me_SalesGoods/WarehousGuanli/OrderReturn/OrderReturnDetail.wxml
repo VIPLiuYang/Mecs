@@ -1,0 +1,40 @@
+<view class='ziview'>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">订单编号：1</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">制单人：2</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">制单时间：3</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">客户名称：4</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">联系电话：5</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">入库日期：5</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">备注：6</view>
+    </view>
+  </view>
+</view>
+
+<view class="weui-panel__hd">产品列表</view>
+
+
+<view class='contentView'>
+  <view class='contentView02_1'>
+    商品名称:1
+  </view>
+  <view class='contentView02_1'>
+    进货数量:2
+  </view>
+  <view class='contentView02_1'>
+    入库仓库:3
+  </view>
+</view>

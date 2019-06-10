@@ -1,0 +1,26 @@
+<view class='contentView'  wx:for="{{shuju}}">
+  <view class='Detailwidth' bindtap='mingxi' data-cno='{{item["<ProductId>k__BackingField"]}}'>
+    <view class='contentView02_1'>
+      商品名称:{{item["<pname>k__BackingField"]}}
+    </view>
+    <view class='contentView02_1'>
+      商品属性:{{item["<proAttName>k__BackingField"]}}
+    </view>
+    <view class='contentView02_1'>
+      商品分类:{{item["<typename>k__BackingField"]}}
+    </view>
+    <view class='contentView02_1'>
+      零售价:{{item["<lingprice>k__BackingField"]}}
+    </view>
+    <view class='remai'>
+      是否热卖：{{item["<isremai>k__BackingField"]}}
+    </view>
+  </view>
+</view>
+
+<view class="weui-panel__ft" bindtap='fenye' data-shu='{{fenye}}' wx:if="{{fenye!=0}}">
+  <view class="weui-cell weui-cell_access weui-cell_link">
+    <view class="weui-cell__bd">查看更多</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>

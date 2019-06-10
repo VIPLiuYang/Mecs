@@ -1,0 +1,43 @@
+ <view class='ziview'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">划拨编号：{{shuju["<hbCode>k__BackingField"]}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">制单人：{{shuju["<marketTime>k__BackingField"]}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">制单时间：{{shuju["<marketMan>k__BackingField"]}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">调出仓库名称：{{shuju["<dcpbaseName>k__BackingField"]}}</view>
+      </view>
+       <view class="weui-cell">
+        <view class="weui-cell__bd">调入仓库名称：{{shuju["<drpbaseName>k__BackingField"]}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">发货人：{{shuju["<faMan>k__BackingField"]}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">收货人：{{shuju["<shouMan>k__BackingField"]}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">备注：{{shuju["<remark>k__BackingField"]}}</view>
+      </view>
+    </view>
+  </view>
+
+ <view class="weui-panel__hd">产品列表</view>
+
+
+<view class='contentView' wx:for='{{liebiao}}'>
+  <view class='contentView02_1'>
+    商品名称:{{item["<proName>k__BackingField"]}}
+  </view>
+  <view class='contentView02_1'>
+    划拨数量:{{item["<shouMan>k__BackingField"]}}
+  </view>
+  <view class='contentView02_1'>
+   划拨单价:{{item["<price>k__BackingField"]}}
+  </view>
+</view>

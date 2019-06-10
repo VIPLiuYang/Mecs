@@ -1,0 +1,66 @@
+
+<form bindsubmit="showTopTips">
+<view class="weui-cells weui-cells_after-title">
+  
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">供应商</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" name="employ" disabled="disabled" placeholder="点击进行选择+" bindtap='tianjia' value='{{gxshang}}'/>
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">签订日期</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="date" value="{{dates}}" bindchange="bindDateChange">
+        <view class="weui-input">{{dates}}</view>
+      </picker>
+    </view>
+  </view>
+
+ 
+
+  
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">合同摘要</view>
+    </view>
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" name="content" placeholder="请输入合同摘要" style="height: 3.3em" />
+      <view class="weui-textarea-counter">0/200</view>
+    </view>
+  </view>
+
+</view>
+
+<view class="weui-btn-area">
+            <button class="weui-btn" formType="submit" type="primary" >提交</button>
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" bindtap='prodect' type="primary" >产品选择</button>
+        </view>
+
+        <view class='contentView'  >
+  <view class='contentView02_1'>
+    商品名称:11
+  </view>
+    <view class='riqi'>
+    <button class="weui-btn mini-btn" type="primary" size="mini">删除</button>
+  </view>
+  <view class='contentView02_1'>
+    入库仓库:22
+  </view>
+  <view class='contentView02_1'>
+    入库数量:33
+  </view>
+  <view class='contentView02_1'>
+    单价:44
+  </view>
+</view>
+
+</form>

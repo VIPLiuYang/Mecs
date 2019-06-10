@@ -1,0 +1,30 @@
+<view class='contentView'>
+  <view class='Detailwidth' bindtap='mingxi'>
+    <view class='contentView02_1'>
+      订单编号:11
+    </view>
+    <view class='contentView02_1'>
+      客户名称:11
+    </view>
+    <view class='contentView02_1'>
+      制单人:11
+    </view>
+    <view class='contentView02_1'>
+      制单时间:11
+    </view>
+    <view class='contentView02_1'>
+      商品名称:11
+    </view>
+  </view>
+
+  <view class='riqi' bindtap='shenpi'>
+    <button class="weui-btn mini-btn" type="primary" size="mini">审批</button>
+  </view>
+</view>
+
+<view class="weui-panel__ft" bindtap='fenye' data-shu='{{fenye}}' wx:if="{{fenye!=0}}">
+  <view class="weui-cell weui-cell_access weui-cell_link">
+    <view class="weui-cell__bd">查看更多</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>

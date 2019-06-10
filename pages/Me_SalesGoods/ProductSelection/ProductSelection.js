@@ -1,47 +1,38 @@
-// pages/renyuanhetong/renyuanhetongdetailed.js
-var comm = require('../../utils/PublicProtocol.js');
+// pages/Me_SalesGoods/ProductSelection/ProductSelection.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    bianhao: '',
-    xiangqing: []
+    checkboxItems: [
+      { name: 'standard is dealt for u.', value: '0', checked: true },
+      { name: 'standard is dealicient for u.', value: '1' }
+    ],
   },
+  checkboxChange: function (e) {
+    console.log('checkbox发生change事件，携带value值为：', e.detail.value);
 
+    var checkboxItems = this.data.checkboxItems, values = e.detail.value;
+    for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
+      checkboxItems[i].checked = false;
+
+      for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
+        if (checkboxItems[i].value == values[j]) {
+          checkboxItems[i].checked = true;
+          break;
+        }
+      }
+    }
+
+    this.setData({
+      checkboxItems: checkboxItems
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.setNavigationBarTitle({
-      title: '人员合同详情',
-    })
-
-    var bianhao = options.Con;
-
-    this.setData({
-      bianhao: bianhao
-    })
-    var appid = wx.getStorageSync('appid');
-    var uuid = wx.getStorageSync('uuid');
-    var utoken = wx.getStorageSync('utoken');
-    var tempData = {
-      uuid: uuid, //设备id
-      appid: appid, //
-      Cno: bianhao,
-      utoken: utoken
-    }
-    var this11 = this;
-
-    comm.unitWebsitePro('PostEmpContractDetail', tempData, function(data) {
-      debugger
-      var xiangxiziliao = data.RspData.empcontractdetail[0];
-      this11.setData({
-        xiangqing: xiangxiziliao
-      })
-
-    })
 
   },
 

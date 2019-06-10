@@ -1,0 +1,33 @@
+
+
+.contentView{
+ width: 90%;
+ height: 250rpx;
+ margin: 10rpx auto;
+ border-bottom: 1rpx solid #ccc;
+ overflow: hidden;
+}
+
+.contentView02_1{
+width: 70%;
+height: auto;
+font-size: 30rpx;
+/* line-height: 62rpx; */
+}
+
+
+.addsize{
+  width: 50%;
+  float: left;
+}
+
+.riqi{
+width: 30%;
+float: right;
+height: 35rpx;
+margin-top: -200rpx;
+}
+
+.Detailwidth{
+    width: 85%;
+}

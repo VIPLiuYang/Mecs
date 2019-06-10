@@ -1,0 +1,46 @@
+ <view class='ziview'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">订单编号：1</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">制单人：2</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">制单时间：3</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">客户名称：4</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">联系电话：5</view>
+      </view>
+       <view class="weui-cell">
+        <view class="weui-cell__bd">收货人：5</view>
+      </view>
+       <view class="weui-cell">
+        <view class="weui-cell__bd">商品编号：5</view>
+      </view>
+        <view class="weui-cell">
+        <view class="weui-cell__bd">商品名称：5</view>
+      </view>
+        <view class="weui-cell">
+        <view class="weui-cell__bd">商品属性：5</view>
+      </view>
+        <view class="weui-cell">
+        <view class="weui-cell__bd">订购数量：5</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">总发货数量：6</view>
+      </view>
+       <view class="weui-cell">
+        <view class="weui-cell__bd">物流编号：
+        <input class="weui-input" placeholder="请输入物流编号" />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-btn-area">
+    <button class="weui-btn" formType="submit" type="primary">提交</button>
+  </view>

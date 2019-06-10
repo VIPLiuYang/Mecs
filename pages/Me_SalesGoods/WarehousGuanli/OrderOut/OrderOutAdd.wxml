@@ -1,0 +1,136 @@
+<form bindsubmit="showTopTips">
+  <view class="weui-cells weui-cells_after-title">
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">客户名称</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" name="employ" disabled="disabled" placeholder="点击进行选择+" bindtap='tianjia' value='{{ygname}}'/>
+      <!-- <icon class='iconfont icon-jiahao' style='float:right;></icon> -->
+    </view>
+  </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">联系电话</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input type="number" class="weui-input" placeholder="" value='{{Del}}' bindinput='mobileInput' />
+      </view>
+    </view>
+
+ <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">出库日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{dates}}" bindchange="bindDateChange">
+          <view class="weui-input">{{dates}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">收货人</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="cno" placeholder="" />
+      </view>
+    </view>
+
+      <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">收货电话</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input type="number" class="weui-input" placeholder="" value='{{Deltwo}}' bindinput='mobileInputtwo' />
+      </view>
+    </view>
+
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">收货地址</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="address" placeholder="" />
+      </view>
+    </view>
+
+  <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">物流编号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="cno" placeholder="" />
+      </view>
+    </view>
+
+      <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">物流名称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="cno" placeholder="" />
+      </view>
+    </view>
+
+
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">备注</view>
+      </view>
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" name="content" placeholder="请输入备注" style="height: 3.3em" />
+        <view class="weui-textarea-counter">0/200</view>
+      </view>
+    </view>
+
+
+
+  </view>
+
+  <view class="weui-btn-area">
+    <button class="weui-btn" formType="submit" type="primary">提交</button>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" bindtap='prodect' type="primary">选择订单</button>
+  </view>
+
+  <view class='contentView'>
+
+
+    <!-- <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">合同类型</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
+       
+        <view class="weui-select">{{accounts[accountIndex]}}</view>
+      </picker>
+    </view>
+  </view> -->
+
+
+    <view class='contentView02_1'>
+      商品名称:11
+    </view>
+    <view class='riqi'>
+      <button class="weui-btn mini-btn" type="primary" size="mini">删除</button>
+    </view>
+    <view class='contentView02_1'>
+      订购数量:22
+    </view>
+    <view class='contentView02_1'>
+      订购单价:33
+    </view>
+    <view class='contentView02_1'>
+      生产标准:33
+    </view>
+  </view>
+
+</form>

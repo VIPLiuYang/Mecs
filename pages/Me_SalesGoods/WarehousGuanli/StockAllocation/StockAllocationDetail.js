@@ -1,13 +1,13 @@
-// pages/renyuanhetong/renyuanhetongdetailed.js
-var comm = require('../../utils/PublicProtocol.js');
+// pages/Me_SalesGoods/Purchase/PurchaseDetail.js
+var comm = require('../../../../utils/PublicProtocol.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    bianhao: '',
-    xiangqing: []
+    shuju: [],
+    liebiao: []
   },
 
   /**
@@ -15,33 +15,30 @@ Page({
    */
   onLoad: function(options) {
     wx.setNavigationBarTitle({
-      title: '人员合同详情',
+      title: '进货入库详情',
     })
 
-    var bianhao = options.Con;
-
-    this.setData({
-      bianhao: bianhao
-    })
+    var id = options.hid;
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
     var tempData = {
       uuid: uuid, //设备id
       appid: appid, //
-      Cno: bianhao,
+      hid: id,
       utoken: utoken
     }
     var this11 = this;
-
-    comm.unitWebsitePro('PostEmpContractDetail', tempData, function(data) {
+    comm.unitWebsitePro('PostAllocationDetail', tempData, function(data) {
       debugger
-      var xiangxiziliao = data.RspData.empcontractdetail[0];
+      var shuju = data.RspData.allocationdetail[0];
+      var liebiao = data.RspData.ckhuaboitemdetail;
       this11.setData({
-        xiangqing: xiangxiziliao
+        shuju: shuju,
+        liebiao:liebiao
       })
-
     })
+
 
   },
 
