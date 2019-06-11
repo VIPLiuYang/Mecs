@@ -45,10 +45,13 @@ Component({
         delta: 1
       });
     },
-    toHome(){
+    toHome(e){
       wx.reLaunch({
         url: '/pages/yingyong/yingyong',
       })
     }
   }
 })
+module.exports = {
+  
+}

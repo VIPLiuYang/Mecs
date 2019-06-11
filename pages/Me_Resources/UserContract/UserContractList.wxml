@@ -1,0 +1,67 @@
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">人员合同</view></cu-custom> 
+<modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">合同编号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入合同编号" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">员工名称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入员工名称" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">开始时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="weui-input">{{date}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">结束时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{date2}}" bindchange="bindDateChange2">
+          <view class="weui-input">{{date2}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+</modal>
+
+<button class="weui-btn addsize" type="primary" plain="true" bindtap='add'>添加</button>
+<button class="weui-btn addsize" type="primary" plain="true" bindtap="modalinput">查询</button>
+
+<view class='contentView' bindtap='mingxi' data-cno='{{item["<Cno>k__BackingField"]}}' wx:for="{{shuju}}">
+  <view class='contentView02_1'>
+    合同编号:{{item["<Cno>k__BackingField"]}}
+  </view>
+  <view class='riqi'>
+    {{item["<Ctime>k__BackingField"]}}
+  </view>
+  <view class='contentView02_1'>
+    合同类型:{{item["<Ctype>k__BackingField"]}}
+  </view>
+  <view class='contentView02_1'>
+    员工名称:{{item["<Employ>k__BackingField"]}}
+  </view>
+</view>
+
+<view class="weui-panel__ft" bindtap='fenye' data-shu='{{fenye}}' wx:if="{{fenye!=0}}">
+  <view class="weui-cell weui-cell_access weui-cell_link">
+    <view class="weui-cell__bd">查看更多</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>
