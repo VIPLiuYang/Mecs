@@ -18,9 +18,9 @@
     "pages/yingyong/AllChildMenu",
     "pages/xuanchuandan/xuanchuandan",
     "pages/renyuanhetong/renyuanhetongadd",
-    "pages/myPage/mingxinpian",
+    "pages/myPage/Postcard",
     "pages/myPage/padupdate",
-    "pages/myPage/gongsixinxi",
+    "pages/myPage/Enterprise",
     "pages/renyuanhetong/renyuanhetongdetailed",
     "pages/mingxinpian/mingxinpian",
     "pages/xuanzepage/xuanzerenyuan/xuanzerenyuan",
@@ -59,7 +59,8 @@
   "window": {
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Me平台",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "navigationStyle":"custom"
   },
   "tabBar": {
     "color": "#666",
@@ -87,6 +88,9 @@
       }
     ],
     "position": "bottom"
+  },
+  "usingComponents": {
+    "cu-custom": "utils//colorui/components/cu-custom"
   },
   "sitemapLocation": "sitemap.json"
 }

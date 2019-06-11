@@ -78,8 +78,7 @@ var emo=options.emo;
     }
     var this11 = this;
 
-    comm.unitWebsitePro('PostUserDetail', tempData, function (data) {
-debugger
+    comm.unitWebsitePro('PostUserDetail', tempData, function (data) { 
       var gongzuodongtai = data.RspData.genjindongtai;
       var xiangxiziliao = data.RspData.userdetai[0];
       // for (var i = 0; i < liebiao.length; i++) {

@@ -1,0 +1,15 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">关于公司</view>
+</cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于公司信息</view>
+  <view class='text-content'>
+    <view> 山东乐世安通通信技术有限公司</view>
+    <view class='margin-top-sm'>山东乐世安通通信技术有限公司是一家以软件开发、通信技术服务为主的高新技术企业、双软企业，是山东省电子商务平台试点单位之一。</view>
+    <view class='margin-top-sm'>公司目前拥有一支先进的技术、市场和客户服务队伍，公司以“客户的需要就是我们的发展方向”为思想指导 公司奉行以人为本的管理理念和服务理念。</view>
+    <view class='margin-top-sm'>注重对员工的创造思维、创造精神、创造品格的培养；注重塑造具 有竞争力的企业文化；重视科技投入，强化科学管理；突出经营特色，造就企业核心竞争力；坚持走适合自身特点的发展道路。无论何时只要您需要，我们都将及时给您提供满意的服务。</view>
+    <view class='margin-top-sm'>公司网址： http://www.sdantong.com</view>
+    <view class='margin-top-sm'>服务电话：400-6996-899</view>
+  </view>
+</view>
