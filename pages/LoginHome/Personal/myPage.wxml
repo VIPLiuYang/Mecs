@@ -1,0 +1,73 @@
+<!-- <view class="weui-cell">
+  <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+    <image src="/images/tx.jpg" style="width: 70px; height: 70px; display: block; border-radius: 195px;" />
+    <view class="weui-badge" style="position: absolute;top: -.2em;right: -.2em;">8</view>
+  </view>
+  <view class="weui-cell__bd">
+    <view>{{employ}}</view>
+    <view style="font-size: 13px;color: #888888;">{{mobile}}</view>
+  </view>
+  
+</view>
+<view  wx:for="{{Column}}" wx:for-item="items">
+  <navigator url='{{items.url}}' class="weui-cell weui-cell_access weui-cells weui-cells_after-title" hover-class="weui-cell_active">
+    <view class="weui-cell__bd" bindtap='diaozhuan' data-name='1'> {{items.namekey}}</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  
+</view> -->
+
+
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <image src="/images/tx.jpg" style="width: 90px; height: 90px; display: block; border-radius: 195px;" class="png" mode="widthFix"></image>
+    <view class="text-xl">{{employ}} 
+    </view>
+    <view class="margin-top-sm">
+      <text>{{mobile}}</text>
+    </view>
+    <image src="https://image.weilanwl.com/gif/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+   
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+   <view class="cu-item arrow">
+      <navigator class="content" url="/pages/LoginHome/Personal/Postcard" hover-class="none">
+         <text class="cuIcon-card text-grey"></text>
+        <text class="text-grey">我的明信片</text>
+      </navigator>
+    </view>
+     
+
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/log/log" hover-class="none">
+        <text class="cuIcon-formfill text-green"></text>
+        <text class="text-grey">我的设置</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+     <navigator class="content" url="/pages/LoginHome/Personal/padupdate" hover-class="none">
+       <text class="cuIcon-lock text-red"></text>
+        <text class="text-grey">修改密码</text>
+      </navigator>  
+    </view>
+    <view class="cu-item arrow">
+    <navigator class="content" url="/pages/LoginHome/Personal/Enterprise" hover-class="none">
+        <text class="cuIcon-home text-cyan"></text>
+        <text class="text-grey">公司信息</text>
+      </navigator> 
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/test/list" hover-class="none">
+        <text class="cuIcon-creativefill text-orange"></text>
+        <text class="text-grey">我的帮助</text>
+      </navigator>
+    </view>
+     <view class="cu-item arrow">
+       <view class="content" bindtap="OutLogin">
+      <text class="cuIcon-deletefill text-orange"></text>
+        <text class="text-grey">退出登录</text>
+      </view> 
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

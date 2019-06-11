@@ -1,0 +1,14 @@
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">我的明信片</view></cu-custom> 
+<view class='dkuang'>
+  <image src='http://mecs.ip165.com/{{str["<photo>k__BackingField"]}}' style='height:300rpx;width:400rpx;'></image>
+</view>
+
+<view class='dkuang1'>
+  <text style='min-height:80rpx'>{{str["<Employ>k__BackingField"]}}</text>
+    <text style='min-height:80rpx'>{{str["<Duty>k__BackingField"]}}</text>
+  <text style='min-height:80rpx'>手机：{{str["<Mobile>k__BackingField"]}} </text>
+   <text style='min-height:80rpx'>邮箱：{{str["<YouXiang>k__BackingField"]}} </text>
+   <text style='min-height:80rpx'>籍贯：{{str["<Origin>k__BackingField"]}} </text>
+   <text style='min-height:80rpx'>QQ：{{str["<QQ>k__BackingField"]}} </text>
+    <text style='min-height:80rpx'>微信：{{str["<WeiXin>k__BackingField"]}} </text>
+</view>

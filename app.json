@@ -1,0 +1,88 @@
+
+{
+  "pages": [
+    "pages/LoginHome/Login", 
+    "pages/LoginHome/Enterprise/Enterprise",
+    "pages/LoginHome/Personal/myPage",
+    "pages/LoginHome/Home/Home", 
+    "pages/LoginHome/Personal/padupdate",  
+    "pages/Me_Resources/DepUser/DepUserInfo",
+    "pages/Me_Resources/UserList/UserList",
+    "pages/Me_Resources/UserList/UserListDetail",  
+    "pages/Me_Resources/SignModular/SignInfo",
+    "pages/Me_Resources/SignModular/MySignRecord",
+    "pages/Me_Resources/SignModular/Recorddetails", 
+    "pages/Me_Resources/UserContract/UserContractList", 
+    "pages/Me_Resources/Postcard/PostcardList",
+    "pages/xuanzepage/xuanzerenyuan/xuanzerenyuan",
+    "pages/xuanzepage/CustomChoice/CustomChoice",
+    "pages/Me_PublicPage/UserChoice/UserChoice",
+    "pages/Me_PublicPage/CustomChoice/CustomChoice", 
+    "pages/Me_SalesGoods/Purchase/Purchase",
+    "pages/Me_SalesGoods/ReturnStock/ReturnStock",
+    "pages/Me_SalesGoods/Purchase/PurchaseAdd",
+    "pages/Me_SalesGoods/Purchase/PurchaseDetail",
+    "pages/Me_SalesGoods/SupplierList/SupplierList",
+    "pages/Me_SalesGoods/ProductSelection/ProductSelection",
+    "pages/Me_SalesGoods/ReturnStock/ReturnStockAdd",
+    "pages/Me_SalesGoods/ReturnStock/ReturnStockDetail",
+    "pages/Me_SalesGoods/WarehousGuanli/StockAllocation/StockAllocation",
+    "pages/Me_SalesGoods/WarehousGuanli/StockTaking/StockTaking",
+    "pages/Me_SalesGoods/WarehousGuanli/StockAllocation/StockAllocationDetail",
+    "pages/Me_SalesGoods/WarehousGuanli/StockAllocation/StockAllocationAdd",
+    "pages/Me_SalesGoods/WarehousGuanli/StockTaking/StockTakingDetail",
+    "pages/Me_SalesGoods/WarehousGuanli/StockTaking/StockTakingAdd",
+    "pages/Me_SalesGoods/WarehousGuanli/StockProductSelect/StockProductSelect",
+    "pages/Me_SalesGoods/WarehousGuanli/WaitingOrders/WaitingOrders",
+    "pages/Me_SalesGoods/WarehousGuanli/OrderReturn/OrderReturn",
+    "pages/Me_SalesGoods/WarehousGuanli/CustomerOrders/CustomerOrders",
+    "pages/Me_SalesGoods/WarehousGuanli/OrderOut/OrderOut",
+    "pages/Me_SalesGoods/WarehousGuanli/CustomerOrders/CustomerOrdersAdd",
+    "pages/Me_SalesGoods/WarehousGuanli/CustomerOrders/CustomerOrdersDetail",
+    "pages/Me_SalesGoods/WarehousGuanli/OrderReturn/OrderReturnAdd",
+    "pages/Me_SalesGoods/WarehousGuanli/OrderReturn/OrderReturnDetail",
+    "pages/Me_SalesGoods/WarehousGuanli/OrderOut/OrderOutAdd",
+    "pages/Me_SalesGoods/WarehousGuanli/OrderOut/OrderOutDetail", 
+    "pages/Me_SalesGoods/WarehousGuanli/OrderSelection/OrderSelection",
+    "pages/Me_SalesGoods/WarehousGuanli/WaitingOrders/WaitingOrdersDetail",
+    "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManage",
+    "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManageDetail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "Me平台",
+    "navigationBarTextStyle": "white",
+    "navigationStyle":"custom"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#54a6e0",
+    "backgroundColor": "#efefef",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/LoginHome/Home/Home",
+        "iconPath": "images/tabbar/shouye1.png",
+        "selectedIconPath": "images/tabbar/shouye2.png",
+        "text": "应用中心"
+      },
+      {
+        "pagePath": "pages/LoginHome/Enterprise/Enterprise",
+        "iconPath": "images/tabbar/qixin1.png",
+        "selectedIconPath": "images/tabbar/qixin2.png",
+        "text": "公司企信"
+      },
+      {
+        "pagePath": "pages/LoginHome/Personal/myPage",
+        "iconPath": "images/tabbar/wode1.png",
+        "selectedIconPath": "images/tabbar/wode2.png",
+        "text": "个人中心"
+      }
+    ],
+    "position": "bottom"
+  },
+  "usingComponents": {
+    "cu-custom": "utils//colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}
