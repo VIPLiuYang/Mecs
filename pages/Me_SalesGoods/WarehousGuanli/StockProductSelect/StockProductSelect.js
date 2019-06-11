@@ -31,7 +31,6 @@ Page({
   },
   checkboxChange: function(e) {
     console.log('checkbox发生change事件，携带value值为：', e.detail.value);
-    debugger;
     var checkboxItems = this.data.shuju,
       values = e.detail.value;
     for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
@@ -82,16 +81,17 @@ Page({
     var tempData = {
       uuid: uuid, //设备id
       appid: appid,
+      pbaseNo: options.pbno,
       pagesize: 999,
       pageindex: 1,
       utoken: utoken
     }
     var this11 = this;
-
-    comm.unitWebsitePro('PostProductList', tempData, function(data) {
+    debugger;
+    comm.unitWebsitePro('PostCkProductList', tempData, function(data) {
       debugger;
 
-      var liebiao = data.RspData.productlist;
+      var liebiao = data.RspData.ckproductlist;
 
       for (var i = 0; i < liebiao.length; i++) {
         liebiao[i]['<checked>k__BackingField'] = false;

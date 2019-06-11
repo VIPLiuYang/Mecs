@@ -2,7 +2,7 @@
 
 .contentView{
  width: 90%;
- height: 250rpx;
+ height: 200rpx;
  margin: 10rpx auto;
  border-bottom: 1rpx solid #ccc;
  overflow: hidden;
@@ -18,8 +18,12 @@ font-size: 30rpx;
 width: 30%;
 float: right;
 height: 35rpx;
+margin-top: -150rpx;
 }
 
+.Detailwidth{
+    width: 85%;
+}
 .addsize{
   width: 50%;
   float: left;

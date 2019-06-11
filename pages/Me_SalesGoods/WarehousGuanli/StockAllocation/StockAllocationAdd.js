@@ -12,12 +12,12 @@ Page({
     cangkuno: [],
     accountIndex: 0,
     accountIndextwo: 0,
-    retarray:[]
+    retarray: []
   },
-  del:function(e){
+  del: function(e) {
     debugger
- var rowindex=   e.currentTarget.dataset.xb;
-var arr=this.data.retarray;
+    var rowindex = e.currentTarget.dataset.xb;
+    var arr = this.data.retarray;
     var leibiao = arr.filter((ele, index) => {
       return index != rowindex
     })
@@ -38,37 +38,62 @@ var arr=this.data.retarray;
     // var Content = e.detail.value.content; //合同摘要
 
     //拼接xml格式
-    var arr = [];
-    arr.push("<xml>");
-    for (var i = 0; i < 100; i++) {
-      arr.push("<value>");
-      arr.push(i);
-      arr.push("</value>");
-    }
-    arr.push("</xml>");
-    var xmlStr = arr.join('');
-    var zhi = xmlStr.toString();
+    // var arr = [];
+    // arr.push("<xml>");
+    // for (var i = 0; i < 3; i++) {
+    //   arr.push("<ProNo>");
+    //   arr.push(i);
+    //   arr.push("</ProNo>");
 
-//调用添加接口
+    //   arr.push("<dbNum>");
+    //   arr.push(i);
+    //   arr.push("</dbNum>");
+
+    //   arr.push("<price>");
+    //   arr.push(i);
+    //   arr.push("</price>");
+
+    //   arr.push("<chno>");
+    //   arr.push(i);
+    //   arr.push("</chno>");
+    // }
+    // arr.push("</xml>");
+    // var xmlStr = arr.join('');
+    // var zhi = xmlStr.toString();
+    var arr = this.data.retarray
+    var xmls = '<?xml version="1.0" encoding="utf-8"?><root>';
+    for (var i = 0; i < arr.length; i++) {
+      xmls += '<node ProNo="' + arr[i]["<proNo>k__BackingField"] + '" dbNum="' + arr[i].count + '" price="' + arr[i].price + '" />';
+    }
+    xmls += '</root>';
+    var diaochu = this.data.cangkuno[this.data.accountIndex]
+    var diaoru = this.data.cangkuno[this.data.accountIndextwo]
+    var fahuo = e.detail.value.fahuo; //发货人
+    var shouhuo = e.detail.value.shouhuo; //收货人
+    var content = e.detail.value.content; //备注
+    var riqi = this.data.dates;
+    debugger
+    //调用添加接口
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
     var tempData = {
       uuid: uuid, //设备id
       appid: appid,
-      dotype: add,
-      utoken: utoken,
-      dcpbaserNo: 123, //调出仓库编号
-      drpbaserNo: 123, //调入仓库编号
-      pdDate: 123, //调拨日期
-      faMan: 123, //发货人
-      shouMan: 123, //收货人
-      remark: 123 //备注
+      dotype: 'add',
+      dcpbaserNo: diaochu, //调出仓库编号
+      drpbaserNo: diaoru, //调入仓库编号
+      pdDate:riqi, //调拨日期
+      faMan: fahuo, //发货人
+      shouMan: shouhuo, //收货人
+      remark: content, //备注
+      xml: xmls,
+      utoken: utoken
     }
     var this11 = this;
-
+debugger
     comm.unitWebsitePro('PostAllocation', tempData, function(data) {
-
+      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({
@@ -77,7 +102,7 @@ var arr=this.data.retarray;
           duration: 1000
         })
         wx.navigateTo({
-          url: '/pages/renyuanhetong/renyuanhetong',
+          url: '/pages/Me_SalesGoods/WarehousGuanli/StockAllocation/StockAllocation',
         })
       } else {
 
@@ -106,7 +131,7 @@ var arr=this.data.retarray;
   },
   prodect: function() {
     wx.navigateTo({
-      url: '/pages/Me_SalesGoods/WarehousGuanli/StockProductSelect/StockProductSelect',
+      url: '/pages/Me_SalesGoods/WarehousGuanli/StockProductSelect/StockProductSelect?pbno=' + this.data.cangkuno[this.data.accountIndex],
     })
 
   },

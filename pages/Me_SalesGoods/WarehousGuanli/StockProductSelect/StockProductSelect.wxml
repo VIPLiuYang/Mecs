@@ -21,7 +21,7 @@
         商品名称:{{item["<proName>k__BackingField"]}}
       </view>
       <view class='weui-cell__bd'>
-        库存量:{{item["<proGuiGe>k__BackingField"]}}
+        库存量:{{item["<ProductNum>k__BackingField"]}}
       </view>
 
       <view class='weui-cell' wx:if="{{item['<checked>k__BackingField']}}">

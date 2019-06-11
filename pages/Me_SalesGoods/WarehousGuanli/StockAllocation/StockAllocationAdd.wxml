@@ -41,7 +41,7 @@
         <view class="weui-label">发货人</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" name="cno" placeholder="" />
+        <input class="weui-input" name="fahuo" placeholder="" />
       </view>
     </view>
     <view class="weui-cell weui-cell_input">
@@ -49,7 +49,7 @@
         <view class="weui-label">收货人</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" name="cno" placeholder="" />
+        <input class="weui-input" name="shouhuo" placeholder="" />
       </view>
     </view>
 

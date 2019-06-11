@@ -1,24 +1,27 @@
-<view class='contentView'>
-  <view class='Detailwidth' bindtap='mingxi'>
+<view wx:if="{{shuju==null}}">
+ 暂无数据
+ </view>
+<view class='contentView' wx:for="{{shuju}}">
+  <view class='Detailwidth' bindtap='mingxi'  data-hid='{{item["<detailId>k__BackingField"]}}'>
     <view class='contentView02_1'>
-      订单编号:11
+      订单编号:{{item["<orderNo>k__BackingField"]}}
     </view>
     <view class='contentView02_1'>
-      客户名称:11
+      客户名称:{{item["<custom>k__BackingField"]}}
     </view>
     <view class='contentView02_1'>
-      制单人:11
+      制单人:{{item["<addPersonName>k__BackingField"]}}
     </view>
     <view class='contentView02_1'>
-      制单时间:11
+      制单时间:{{item["<pbasename>k__BackingField"]}}
     </view>
     <view class='contentView02_1'>
-      商品名称:11
+      商品名称:{{item["<addTime>k__BackingField"]}}
     </view>
   </view>
 
-  <view class='riqi' bindtap='shenpi'>
-    <button class="weui-btn mini-btn" type="primary" size="mini">审批</button>
+  <view class='riqi'>
+    <button class="weui-btn mini-btn" bindtap='mingxi'  data-hid='{{item["<detailId>k__BackingField"]}}' type="primary" size="mini">出库</button>
   </view>
 </view>
 

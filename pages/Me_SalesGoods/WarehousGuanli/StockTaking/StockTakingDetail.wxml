@@ -1,22 +1,22 @@
  <view class='ziview'>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
-        <view class="weui-cell__bd">盘点编号：1</view>
+        <view class="weui-cell__bd">盘点编号：{{shuju["<pdCode>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单人：2</view>
+        <view class="weui-cell__bd">制单人：{{shuju["<marketMan>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单时间：3</view>
+        <view class="weui-cell__bd">制单时间：{{shuju["<marketTime>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">仓库名称：4</view>
+        <view class="weui-cell__bd">仓库名称：{{shuju["<pbaseName>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">盘点时间：5</view>
+        <view class="weui-cell__bd">盘点时间：{{shuju["<pdDate>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">备注：6</view>
+        <view class="weui-cell__bd">备注：{{shuju["<remark>k__BackingField"]}}</view>
       </view>
     </view>
   </view>
@@ -24,14 +24,14 @@
  <view class="weui-panel__hd">产品列表</view>
 
 
-<view class='contentView'>
+<view class='contentView' wx:for='{{liebiao}}'>
   <view class='contentView02_1'>
-    商品名称:1
+    商品名称:{{item["<proName>k__BackingField"]}}
   </view>
   <view class='contentView02_1'>
-    账目数量:2
+    账目数量:{{item["<zmNum>k__BackingField"]}}
   </view>
   <view class='contentView02_1'>
-   实际数量:3
+   实际数量:{{item["<sjNum>k__BackingField"]}}
   </view>
 </view>

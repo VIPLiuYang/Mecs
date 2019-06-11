@@ -9,7 +9,7 @@
       </view>
     </view>
 
-  
+
 
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
@@ -38,24 +38,24 @@
 <button class="weui-btn addsize" type="primary" plain="true" bindtap='add'>添加</button>
 <button class="weui-btn addsize" type="primary" plain="true" bindtap="modalinput">查询</button>
 
-<view class='contentView' bindtap='mingxi'>
-  <view class='contentView02_1'>
-    盘点编号:11
+<view class='contentView' wx:for="{{shuju}}">
+  <view class='Detailwidth' bindtap='mingxi' data-hid='{{item["<pdid>k__BackingField"]}}'>
+    <view class='contentView02_1'>
+      盘点编号:{{item["<hno>k__BackingField"]}}
+    </view>
+
+    <view class='contentView02_1'>
+      仓库名称:{{item["<pbasename>k__BackingField"]}}
+    </view>
+    <view class='contentView02_1'>
+      制单人:{{item["<addUserName>k__BackingField"]}}
+    </view>
+    <view class='contentView02_1'>
+      制单时间:{{item["<addTime>k__BackingField"]}}
+    </view>
   </view>
   <view class='riqi'>
-    <button class="weui-btn mini-btn" type="primary" size="mini">审核</button>
-  </view>
-  <view class='contentView02_1'>
-    仓库名称:11
-  </view>
-  <view class='contentView02_1'>
-    制单人:11
-  </view>
-  <view class='contentView02_1'>
-    制单人:11
-  </view>
-  <view class='contentView02_1'>
-    制单时间:11
+    <button class="weui-btn mini-btn" wx:if='{{item["<statusName>k__BackingField"]=="未审核"}}' bindtap='shenpi'  data-hid='{{item["<pdid>k__BackingField"]}}' type="primary" size="mini">审核</button>
   </view>
 </view>
 

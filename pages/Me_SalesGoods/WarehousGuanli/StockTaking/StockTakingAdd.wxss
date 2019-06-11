@@ -1,6 +1,6 @@
 .contentView{
  width: 90%;
- height: 210rpx;
+ height: 170rpx;
  margin: 10rpx auto;
  border-bottom: 1rpx solid #ccc;
  overflow: hidden;
