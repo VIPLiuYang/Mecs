@@ -1,4 +1,5 @@
-
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"><view slot="content">操作条</view></cu-custom>
+<!-- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">人员列表</view></cu-custom> -->
 <view class="weui-search-bar">
       <view class="weui-search-bar__form">
         <view class="weui-search-bar__box">

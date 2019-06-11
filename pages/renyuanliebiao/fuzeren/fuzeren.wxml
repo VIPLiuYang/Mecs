@@ -1,3 +1,4 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">列表详细</view></cu-custom>
 <view class='pag_top'>
   <image class="photoImg" src='http://mecs.ip165.com/{{ziliao["<Photo>k__BackingField"]}}'></image>
   <view class='fontStyle'>{{name}}</view>

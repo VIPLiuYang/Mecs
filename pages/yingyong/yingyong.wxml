@@ -1,4 +1,5 @@
 <!--pages/yingyong/yingyong.wxml-->
+ 
 <view class="container">
   <view class='imgcss'>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" class='swipercss'>
@@ -13,10 +14,9 @@
     <view class='navConCss'>
 
       <!--show-->
-      <view class='navConCss_con' wx:for="{{xingzhengbangong}}" wx:for-item="items">
-
+      <view class='navConCss_con' wx:for="{{xingzhengbangong}}" wx:for-item="items"> 
         <view class='navCon_left'>
-          <view class='navCon01'>
+          <view class="navCon06">
             {{items.typeName}}
           </view>
         </view>

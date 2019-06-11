@@ -8,12 +8,12 @@
  overflow: hidden;
 }
 .swipercss{
-  height: 330rpx;
+  height: 430rpx;
   position: relative;
 }
 .slide-image{
  width: 100%;
- height: 330rpx;
+ height:486rpx;
 }
 .navCon{
   width: 99%;
