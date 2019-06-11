@@ -1,3 +1,5 @@
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"><view slot="content">客户档案</view></cu-custom>
+
 <modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
@@ -38,29 +40,29 @@
 <button class="weui-btn addsize" type="primary" plain="true" bindtap="modalinput">查询</button>
 
 
-<view class='contentView'>
-  <view class='Detailwidth' bindtap='mingxi'>
+<view class='contentView' wx:for="{{shuju}}">
+  <view class='Detailwidth' bindtap='mingxi' data-can='{{item["<hbid>k__BackingField"]}}'>
     <view class='contentView02_1'>
-      订单编号:11
+      订单编号:{{item["<hno>k__BackingField"]}}
     </view>
     <view class='contentView02_1'>
-      客户名称:11
+      客户名称:{{item["<cusName>k__BackingField"]}}
     </view>
     <view class='contentView02_1'>
-      制单人:11
+      制单人:{{item["<addUserName>k__BackingField"]}}
     </view>
     <view class='contentView02_1'>
-      制单时间:11
+      制单时间:{{item["<addTime>k__BackingField"]}}
     </view>
     <view class='contentView02_1'>
-      订单类型:11
+      订单类型:{{item["<orderType>k__BackingField"]}}
     </view>
     <view class='contentView02_1'>
-      单据状态:11
+      单据状态:{{item["<statusName>k__BackingField"]}}
     </view>
   </view>
 
-  <view class='riqi' bindtap='shenpi'>
+  <view class='riqi'  wx:if='{{item["<statusName>k__BackingField"]=="未审核"}}' bindtap='shenpi'  data-hid='{{item["<hbid>k__BackingField"]}}'>
     <button class="weui-btn mini-btn" type="primary" size="mini">审批</button>
   </view>
 </view>

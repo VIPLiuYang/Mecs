@@ -1,3 +1,5 @@
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"><view slot="content">订单退货</view></cu-custom>
+
 <modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">

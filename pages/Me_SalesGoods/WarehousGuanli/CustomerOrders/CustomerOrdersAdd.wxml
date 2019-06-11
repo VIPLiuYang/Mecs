@@ -1,3 +1,5 @@
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">子级菜单</view></cu-custom> 
+
 <form bindsubmit="showTopTips">
   <view class="weui-cells weui-cells_after-title">
 
@@ -6,7 +8,7 @@
       <view class="weui-label">客户</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" name="employ" disabled="disabled" placeholder="点击进行选择+" bindtap='tianjia' value='{{ygname}}'/>
+      <input class="weui-input" name="employ" disabled="disabled" placeholder="点击进行选择+" bindtap='tianjia' value='{{ryname}}'/>
       <!-- <icon class='iconfont icon-jiahao' style='float:right;></icon> -->
     </view>
   </view>

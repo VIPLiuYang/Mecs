@@ -13,7 +13,9 @@ Page({
     accountIndextwo: 0,
     jine: 0,
     Del: null,
-    ygname:'',
+    ryno:'',//客户选择编号
+    ryname:'',//客户选择名称
+    retarray:''
   },
   tianjia:function(){
 wx.navigateTo({
@@ -83,7 +85,7 @@ wx.navigateTo({
   },
   prodect: function() {
     wx.navigateTo({
-      url: '/pages/Me_SalesGoods/WarehousGuanli/StockProductSelect/StockProductSelect',
+      url: '/pages/Me_SalesGoods/WarehousGuanli/StockProductSelect/StockProductSelectTwo?pbno=CK1804080001',
     })
 
   },

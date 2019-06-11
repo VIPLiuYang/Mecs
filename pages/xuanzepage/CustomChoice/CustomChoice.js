@@ -8,6 +8,29 @@ Page({
   data: {
     bianhao: '',
     name: '',
+    shuju:[],
+    bianhao:'',
+    name:''
+  },
+  fontcolor: function (e) {
+    var canshu = e.currentTarget.dataset.eo;
+    var shuju = this.data.shuju;
+    for (var j = 0; j < shuju.length; j++) {
+      if (shuju[j]["<CustomNo>k__BackingField"] == canshu) {
+          this.setData({
+            bianhao: shuju[j]["<CustomNo>k__BackingField"],
+            name: shuju[j]["<Custom>k__BackingField"]
+          })
+        shuju[j].show = 'yanse';
+        } else {
+        shuju[j].show = '';
+        }
+
+    }
+    this.setData({
+      shuju: shuju
+    })
+
   },
   baocun: function () {
     // var pages = getCurrentPages();
@@ -20,7 +43,15 @@ Page({
     // })//设置数据
     // wx.navigateBack(-1);
 
-    
+    var pages = getCurrentPages();
+    var Page = pages[pages.length - 1];//当前页
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    var info = prevPage.data.ygname //取上页data里的数据也可以修改
+    prevPage.setData({
+      ryname: this.data.name,
+      ryno: this.data.bianhao
+    })//设置数据
+    wx.navigateBack(-1);
   },
  
   /**
@@ -31,6 +62,35 @@ Page({
       title: '选择员工'
     })
    
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    var tempData = {
+      uuid: uuid, //设备id
+      appid: appid,
+      pagesize: 999,
+      pageindex: 1,
+      utoken: utoken
+    }
+    var this11 = this;
+
+    comm.unitWebsitePro('PostCustomerList', tempData, function (data) {
+      debugger;
+
+      var liebiao = data.RspData.customerlist;
+
+      for (var i = 0; i < liebiao.length; i++) {
+        liebiao[i].show = '';
+      }
+
+      this11.setData({
+        shuju: liebiao,
+      })
+
+    })
+
+
+
   },
 
   /**

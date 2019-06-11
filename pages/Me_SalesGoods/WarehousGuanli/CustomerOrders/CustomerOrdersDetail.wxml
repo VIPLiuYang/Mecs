@@ -1,28 +1,30 @@
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">子级菜单</view></cu-custom> 
+
  <view class='ziview'>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
-        <view class="weui-cell__bd">订单编号：1</view>
+        <view class="weui-cell__bd">订单编号：{{shuju["<hbCode>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单人：2</view>
+        <view class="weui-cell__bd">制单人：{{shuju["<marketMan>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单时间：3</view>
+        <view class="weui-cell__bd">制单时间：{{shuju["<marketTime>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">客户名称：4</view>
+        <view class="weui-cell__bd">客户名称：{{shuju["<customerName>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">联系电话：5</view>
+        <view class="weui-cell__bd">联系电话：{{shuju["<cusPhone>k__BackingField"]}}</view>
       </view>
        <view class="weui-cell">
-        <view class="weui-cell__bd">收货日期：5</view>
+        <view class="weui-cell__bd">收货日期：{{shuju["<shDate>k__BackingField"]}}</view>
       </view>
        <view class="weui-cell">
-        <view class="weui-cell__bd">收货地址：5</view>
+        <view class="weui-cell__bd">收货地址：{{shuju["<shAddress>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">备注：6</view>
+        <view class="weui-cell__bd">备注：{{shuju["<remark>k__BackingField"]}}</view>
       </view>
     </view>
   </view>
@@ -30,14 +32,14 @@
  <view class="weui-panel__hd">产品列表</view>
 
 
-<view class='contentView'>
+<view class='contentView' wx:for='{{liebiao}}'>
   <view class='contentView02_1'>
-    商品名称:1
+    商品名称:{{item["<proName>k__BackingField"]}}
   </view>
   <view class='contentView02_1'>
-    订购数量:2
+    订购数量:{{item["<dgNum>k__BackingField"]}}
   </view>
   <view class='contentView02_1'>
-   订 购 价:3
+   订 购 价:{{item["<dgprice>k__BackingField"]}}
   </view>
 </view>
