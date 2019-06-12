@@ -141,7 +141,8 @@
   border-bottom-width: thin;
 }
 .imgs{
-  margin-top: 25px;
+  margin-top: 20px;
+  font-size: 32px;
 }
 /*隐藏滚动条*/
 
@@ -169,14 +170,14 @@ color: transparent;
   text-align: center;
 }
 .navConright02_1{
-  width: 130rpx;
-  height: 130rpx;
+  width: 140rpx;
+  height: 135rpx;
   margin: 0px auto;
   overflow: hidden;
 }
 .navConright02_1img{
-  width: 130rpx;
-  height: 130rpx;
+  width: 135rpx;
+  height: 135rpx;
   margin: 0px auto;
 }
 .navConright02_2{
@@ -185,5 +186,5 @@ color: transparent;
   margin: 0px auto;
   font-size: 28rpx;
   text-align: center;
-  line-height: 60rpx;
+ 
 }
