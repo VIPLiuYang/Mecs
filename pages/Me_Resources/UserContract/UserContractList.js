@@ -43,7 +43,7 @@ Page({
       uuid: uuid, //设备id
       appid: appid,
       dotype: 'list', //操作类型
-      Ctype: this.data.word, //查询条件
+      Cno: this.data.word, //查询条件
       pagesize: 10, //每页条数
       pageindex: pageindex, //页码
       utoken: utoken
