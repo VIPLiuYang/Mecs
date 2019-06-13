@@ -23,10 +23,15 @@
         商品名称:{{item["<proName>k__BackingField"]}}
       </view>
       <view class='weui-cell__bd'>
-        库存量:{{item["<ProductNum>k__BackingField"]}}
+        商品属性:{{item["<proAttName>k__BackingField"]}}
       </view>
-
-     
+ <view class='weui-cell__bd'>
+        销售价格:{{item["<xiaoPrice>k__BackingField"]}}
+      </view>
+      <view class='weui-cell' wx:if="{{item['<checked>k__BackingField']}}">
+        <input class='inputChoice' value='{{item.count}}' data-can="{{item['<ProductId>k__BackingField']}}"  data-can2="count" bindinput='inputchange'  catchtap="handleTap2" placeholder="数量" />
+        <input class='inputChoice' data-can="{{item['<ProductId>k__BackingField']}}" value='{{item.price}}'  data-can2="danjia" bindinput='inputchange' catchtap="handleTap2" placeholder="单价" />
+      </view>
 
     </label>
 

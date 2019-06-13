@@ -1,22 +1,23 @@
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">添加</view></cu-custom> 
  <view class='ziview'>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
-        <view class="weui-cell__bd">出库编号：1</view>
+        <view class="weui-cell__bd">出库编号：{{shuju["<rkCode>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单人：2</view>
+        <view class="weui-cell__bd">制单人：{{shuju["<addUserName>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单时间：3</view>
+        <view class="weui-cell__bd">制单时间：{{shuju["<addTime>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">供应商：4</view>
+        <view class="weui-cell__bd">供应商：{{shuju["<supplierName>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">入库时间：5</view>
+        <view class="weui-cell__bd">入库时间：{{shuju["<operateTime>k__BackingField"]}}</view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">备注：6</view>
+        <view class="weui-cell__bd">备注：{{shuju["<remark>k__BackingField"]}}</view>
       </view>
     </view>
   </view>
@@ -24,17 +25,17 @@
  <view class="weui-panel__hd">产品列表</view>
 
 
-<view class='contentView'>
+<view class='contentView' wx:for='{{liebiao}}'>
   <view class='contentView02_1'>
-    商品名称:1
+    商品名称:{{item["<proName>k__BackingField"]}}
   </view>
   <view class='contentView02_1'>
-    出库仓库:2
+    出库仓库:{{item["<rkpbaseName>k__BackingField"]}}
   </view>
   <view class='contentView02_1'>
-   出库数量:3
+   出库数量:{{item["<rkNum>k__BackingField"]}}
   </view>
    <view class='contentView02_1'>
-    价格:3
+    价格:{{item["<price>k__BackingField"]}}
   </view>
 </view>

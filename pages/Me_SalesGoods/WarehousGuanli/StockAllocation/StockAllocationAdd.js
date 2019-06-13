@@ -131,7 +131,7 @@ debugger
   },
   prodect: function() {
     wx.navigateTo({
-      url: '/pages/Me_SalesGoods/WarehousGuanli/StockProductSelect/StockProductSelect?pbno=' + this.data.cangkuno[this.data.accountIndex],
+      url: '/pages/Me_PublicPage/StockProductSelect/StockProductSelect?pbno=' + this.data.cangkuno[this.data.accountIndex],
     })
 
   },

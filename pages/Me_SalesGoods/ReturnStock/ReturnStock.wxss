@@ -19,6 +19,7 @@ font-size: 30rpx;
 width: 30%;
 float: right;
 height: 35rpx;
+margin-top: -200rpx;
 }
 
 .addsize{

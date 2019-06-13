@@ -1,5 +1,5 @@
 // pages/Me_SalesGoods/ProductSelection/ProductSelection.js
-var comm = require('../../../../utils/PublicProtocol.js');
+var comm = require('../../../utils/PublicProtocol.js');
 Page({
 
   /**

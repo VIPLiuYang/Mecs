@@ -1,4 +1,5 @@
 // pages/Me_SalesGoods/Purchase/PurchaseAdd.js
+var comm = require('../../../../utils/PublicProtocol.js');
 Page({
 
   /**
@@ -11,10 +12,80 @@ Page({
     Del: null,
     Deltwo: null,
     ygname: '',
+    ryno: '', //客户选择编号
+    ryname: '', //客户选择名称
+    retarray: '',
+    phone: '',
+    address: ''
+  },
+  showTopTips: function (e) {
+    // var Cno = e.detail.value.cno; //合同编号
+    // var Ctype = this.data.accounts[this.data.accountIndex]; //合同类型
+    // var Etime = this.data.enddate; //结束日期
+    var arr = this.data.retarray
+    if (arr.length == 0) {
+      wx.showToast({
+        title: '请选择产品',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+    var xmls = '<?xml version="1.0" encoding="utf-8"?><root>';
+    for (var i = 0; i < arr.length; i++) {
+      xmls += '<node orderItemId="' + arr[i]["<detailId>k__BackingField"] + '" ProNo="' + arr[i]["<productNo>k__BackingField"] + '" rkNum="' + arr[i].count + '" dgPrice="' + arr[i]["<buyPrice>k__BackingField"] + '"/>';
+    }
+    xmls += '</root>';
+    debugger
+    //调用添加接口
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    var tempData = {
+      uuid: uuid, //设备id
+      appid: appid,
+      dotype: 'add',
+      // customname: this.data.ryname,
+      customerNo: this.data.ryno,
+      customMobile:this.data.phone,
+      outboundDate: this.data.dates,
+      shouHuoMan: e.detail.value.shouhuoren,
+      linXiPhone: e.detail.value.dianhua,
+      shouHuoAddress: e.detail.value.address,
+      remark: e.detail.value.content,
+      wlNo: e.detail.value.wlbh,
+      wlName:e.detail.value.wlmc,
+      xml: xmls,
+      utoken: utoken
+    }
+    var this11 = this;
+    debugger
+    comm.unitWebsitePro('PostOrderOut', tempData, function (data) {
+      debugger
+      var bool = data.RspCode;
+      if (bool == "0000") {
+        wx.showToast({
+          title: '添加成功',
+          icon: 'succes',
+          duration: 1000
+        })
+        wx.navigateTo({
+          url: '/pages/Me_SalesGoods/WarehousGuanli/OrderReturn/OrderReturn',
+        })
+      } else {
+
+        wx.showToast({
+          title: '添加失败',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+
+    })
   },
   tianjia: function () {
     wx.navigateTo({
-      url: '/pages/xuanzepage/CustomChoice/CustomChoice',
+      url: '/pages/Me_PublicPage/CustomChoice/CustomChoice',
     })
   },
   mobileInput(e) {
@@ -84,9 +155,19 @@ Page({
   
  
   prodect: function () {
-    wx.navigateTo({
-      url: '/pages/Me_SalesGoods/WarehousGuanli/OrderSelection/OrderSelection',
-    })
+    debugger
+    var no = this.data.ryno;
+    if (no == '') {
+      wx.showToast({
+        title: '请先选择客户',
+        icon: 'none',
+        duration: 1000
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/Me_PublicPage/OrderSelection/OrderSelection?pbno=' + no,
+      })
+    }
 
   },
   //  点击日期组件确定事件  
@@ -96,7 +177,18 @@ Page({
       dates: e.detail.value
     })
   },
+  del: function (e) {
+    debugger
+    var rowindex = e.currentTarget.dataset.xb;
+    var arr = this.data.retarray;
+    var leibiao = arr.filter((ele, index) => {
+      return index != rowindex
+    })
 
+    this.setData({
+      retarray: leibiao
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

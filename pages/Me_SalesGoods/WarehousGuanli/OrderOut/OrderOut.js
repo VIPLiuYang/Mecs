@@ -12,6 +12,7 @@ Page({
     fenye: 0,
     date: "2016-09-01",
     date2: "2016-09-01",
+    shuju:''
   },
   bindDateChange: function (e) {
     this.setData({
@@ -47,19 +48,83 @@ Page({
       url: '../OrderOut/OrderOutAdd',
     })
   },
-  mingxi: function () {
-
+  mingxi: function (e) {
+    var id = e.currentTarget.dataset.can;
     wx.navigateTo({
-      url: '../OrderOut/OrderOutDetail',
+      url: '../OrderOut/OrderOutDetail?hid=' + id,
     })
   },
+  shenpi: function (e) {
+    debugger
+    var hid = e.currentTarget.dataset.hid;
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    var tempData = {
+      uuid: uuid, //设备id
+      appid: appid,
+      hid: hid,
+      utoken: utoken
+    }
+    var this11 = this;
 
+    comm.unitWebsitePro('PostOrderOutTrial', tempData, function (data) {
+      debugger
+      var bool = data.RspCode;
+      if (bool == "0000") {
+        wx.showToast({
+          title: '审批成功',
+          icon: 'succes',
+          duration: 1000
+        })
+        this.onLoad();
+      } else {
+        wx.showToast({
+          title: '审批失败',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '订单出库',
+    })
+
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    var tempData = {
+      uuid: uuid, //设备id
+      appid: appid,
+      dotype: 'list',
+      pagesize: 10,
+      pageindex: 1,
+      utoken: utoken
+    }
+    var this11 = this;
+
+    comm.unitWebsitePro('PostOrderOut', tempData, function (data) {
+      debugger
+      var hangshu = data.RspData.RowCount
+      var yeshu = data.RspData.PageCount
+
+      var liebiao = data.RspData.retreatorderlist;
+      if (yeshu > 0) {
+        this11.setData({
+          fenye: this11.data.fenye + 1
+        })
+      }
+      this11.setData({
+        shuju: liebiao,
+        rowcount: hangshu,
+        pagecount: yeshu,
+      })
+
     })
   },
 
@@ -74,6 +139,32 @@ Page({
     } else {
       this.setData({
         fenye: nowpage + 1
+      })
+      var appid = wx.getStorageSync('appid');
+      var uuid = wx.getStorageSync('uuid');
+      var utoken = wx.getStorageSync('utoken');
+      var tempData = {
+        uuid: uuid, //设备id
+        appid: appid, //
+        dotype: 'list',
+        pagesize: 10,
+        pageindex: this.data.fenye,
+        utoken: utoken,
+      }
+      var this11 = this;
+
+      comm.unitWebsitePro('PostOrderOut', tempData, function (data) {
+        var hangshu = data.RspData.RowCount
+        var yeshu = data.RspData.PageCount
+
+        var liebiao = data.RspData.retreatorderlist;
+
+
+        var nowlie = this11.data.shuju;
+        var nowleijia = nowlie.concat(liebiao)
+        this11.setData({
+          shuju: nowleijia
+        })
       })
 
 

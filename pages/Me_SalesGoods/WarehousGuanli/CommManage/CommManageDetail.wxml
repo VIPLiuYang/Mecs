@@ -1,3 +1,4 @@
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">子级菜单</view></cu-custom> 
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" class='swipercss'>
   <block wx:for="{{arr}}">
     <swiper-item>

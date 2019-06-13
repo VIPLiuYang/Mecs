@@ -1,4 +1,4 @@
-
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">添加</view></cu-custom> 
 <form bindsubmit="showTopTips">
 <view class="weui-cells weui-cells_after-title">
   
@@ -7,7 +7,7 @@
       <view class="weui-label">供应商</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" name="employ" disabled="disabled" placeholder="点击进行选择+" bindtap='tianjia' value='{{gxshang}}'/>
+      <input class="weui-input" name="employ" disabled="disabled" placeholder="点击进行选择+" bindtap='tianjia' value='{{ryname}}'/>
     </view>
   </view>
 
@@ -45,21 +45,19 @@
             <button class="weui-btn" bindtap='prodect' type="primary" >产品选择</button>
         </view>
 
-        <view class='contentView'  >
+        <view class='contentView' wx:for="{{retarray}}" wx:for-index="bindex">
   <view class='contentView02_1'>
-    商品名称:11
+    商品名称:{{item["<proName>k__BackingField"]}}
   </view>
     <view class='riqi'>
-    <button class="weui-btn mini-btn" type="primary" size="mini">删除</button>
+    <button class="weui-btn mini-btn"  bindtap='del' data-xb='{{bindex}}' type="primary" size="mini">删除</button>
+  </view>
+ 
+  <view class='contentView02_1'>
+    入库数量:{{item.count}}
   </view>
   <view class='contentView02_1'>
-    入库仓库:22
-  </view>
-  <view class='contentView02_1'>
-    入库数量:33
-  </view>
-  <view class='contentView02_1'>
-    单价:44
+    单价:{{item.price}}
   </view>
 </view>
 

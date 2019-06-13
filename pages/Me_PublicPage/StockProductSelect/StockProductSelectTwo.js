@@ -1,5 +1,5 @@
 // pages/Me_SalesGoods/ProductSelection/ProductSelection.js
-var comm = require('../../../../utils/PublicProtocol.js');
+var comm = require('../../../utils/PublicProtocol.js');
 Page({
 
   /**
@@ -9,23 +9,23 @@ Page({
     shuju: []
 
   },
-  baocun:function(){
+  baocun: function() {
     var checkboxItems = this.data.shuju
-    var retarray=[]
+    var retarray = []
     for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
-      if (checkboxItems[i]['<checked>k__BackingField'] == true){
+      if (checkboxItems[i]['<checked>k__BackingField'] == true) {
         retarray.push(checkboxItems[i]);
 
-     }
+      }
     }
     var pages = getCurrentPages();
-    var Page = pages[pages.length - 1];//当前页
-    var prevPage = pages[pages.length - 2];  //上一个页面
+    var Page = pages[pages.length - 1]; //当前页
+    var prevPage = pages[pages.length - 2]; //上一个页面
     var info = prevPage.data.ygname //取上页data里的数据也可以修改
     console.log(retarray);
     prevPage.setData({
       retarray: retarray
-    })//设置数据
+    }) //设置数据
     wx.navigateBack(-1);
 
   },
@@ -35,7 +35,7 @@ Page({
       values = e.detail.value;
     for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
       checkboxItems[i]['<checked>k__BackingField'] = false;
-      
+
       for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
         if (checkboxItems[i]["<ProductId>k__BackingField"] == values[j]) {
           checkboxItems[i]['<checked>k__BackingField'] = true;
@@ -49,41 +49,63 @@ Page({
     });
   },
 
-  
+  inputchange: function(e) {
+    var checkboxItems = this.data.shuju,
+      values = e.detail.value;
+
+    var pid = e.currentTarget.dataset.can;
+    var type = e.currentTarget.dataset.can2;
+    for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
+      if (checkboxItems[i]["<ProductId>k__BackingField"] == pid) {
+        if (type == "count") {
+          checkboxItems[i].count = values
+        } else {
+          checkboxItems[i].price = values
+        }
+        break;
+      }
+    }
+
+    this.setData({
+      shuju: checkboxItems
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    debugger
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
     var tempData = {
       uuid: uuid, //设备id
       appid: appid,
-      pbaseNo: options.pbno,
+      proNo: options.pbno,
+      proName: options.pbname,
       pagesize: 999,
       pageindex: 1,
       utoken: utoken
     }
     var this11 = this;
     debugger;
-    comm.unitWebsitePro('PostCkProductList', tempData, function(data) {
+    comm.unitWebsitePro('PostProductList', tempData, function(data) {
       debugger;
 
-      var liebiao = data.RspData.ckproductlist;
+      var liebiao = data.RspData.productlist;
+      if (liebiao != null) {
+        for (var i = 0; i < liebiao.length; i++) {
+          liebiao[i]['<checked>k__BackingField'] = false;
+          liebiao[i].count = 0;
+          liebiao[i].price = 0;
+        }
 
-      for (var i = 0; i < liebiao.length; i++) {
-        liebiao[i]['<checked>k__BackingField'] = false;
+        this11.setData({
+          shuju: liebiao,
+        })
       }
-
-      this11.setData({
-        shuju: liebiao,
-      })
-
     })
 
-    
   },
 
   /**

@@ -19,7 +19,7 @@ Page({
 
   tianjia:function(){
     wx.navigateTo({
-      url: '/pages/xuanzepage/xuanzerenyuan/xuanzerenyuan',
+      url: '/pages/Me_PublicPage/UserChoice/UserChoice',
     })
   },
   showTopTips:function(e){
