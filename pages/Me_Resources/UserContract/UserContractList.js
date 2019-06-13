@@ -40,6 +40,7 @@ Page({
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
     pageindex = 1; //获取的页码
+    var Flag = 0; //0刷新，1加载更多
     tempData = {
       uuid: uuid, //设备id
       appid: appid,
@@ -82,7 +83,7 @@ Page({
   GetList: function(e) {
     var prithis = this; 
     comm.unitWebsitePro('PostEmpContract', tempData, function(data) {
-      if (data.RspCode == "0000") { //正常  
+      if (data.RspCode == "0000") { //正常   
         if (Flag == 0) {
           prithis.setData({
             htlist: data.RspData.empcontract, //绑定数据列表
