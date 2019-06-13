@@ -39,6 +39,7 @@ Page({
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
+    pageindex = 1; //获取的页码
     tempData = {
       uuid: uuid, //设备id
       appid: appid,
