@@ -63,7 +63,7 @@ if(bool=="0000"){
     duration: 1000
   })
   wx.navigateTo({
-    url: '/pages/renyuanhetong/renyuanhetong',
+    url: '/pages/Me_Resources/UserContract/UserContractList',
   })
 }else{
 

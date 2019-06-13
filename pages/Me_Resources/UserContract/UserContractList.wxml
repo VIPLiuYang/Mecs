@@ -1,9 +1,12 @@
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">人员合同</view></cu-custom> 
-<modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}" goUrl='/pages/Me_Resources/UserContract/UserContractAdd'>
+  <view slot="content">人员合同</view>
+</cu-custom>
+
+<!-- <modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
-        <view class="weui-label">合同编号</view>
+        <view class="text-grey">合同编号</view>
       </view>
       <view class="weui-cell__bd">
         <input class="weui-input" placeholder="请输入合同编号" />
@@ -39,29 +42,39 @@
       </view>
     </view>
   </view>
-</modal>
-
-<button class="weui-btn addsize" type="primary" plain="true" bindtap='add'>添加</button>
-<button class="weui-btn addsize" type="primary" plain="true" bindtap="modalinput">查询</button>
-
-<view class='contentView' bindtap='mingxi' data-cno='{{item["<Cno>k__BackingField"]}}' wx:for="{{shuju}}">
-  <view class='contentView02_1'>
-    合同编号:{{item["<Cno>k__BackingField"]}}
+</modal> -->
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" 
+    name="word"  value='{{word}}' confirm-type="search"></input>
   </view>
-  <view class='riqi'>
-    {{item["<Ctime>k__BackingField"]}}
-  </view>
-  <view class='contentView02_1'>
-    合同类型:{{item["<Ctype>k__BackingField"]}}
-  </view>
-  <view class='contentView02_1'>
-    员工名称:{{item["<Employ>k__BackingField"]}}
+  <view class="action">
+    <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
   </view>
 </view>
+ 
+<view class='page'>
+  <view class='contentView' bindtap='mingxi' data-cno='{{item["<Cno>k__BackingField"]}}' wx:for="{{htlist}}">
+    <view class='contentView02_1'>
+      合同编号:
+      <text class='text-grey'>{{item["<Cno>k__BackingField"]}}</text>
+    </view>
+    <view class='riqi'>
+      <text class='text-grey'> {{item["<Ctime>k__BackingField"]}}</text>
+    </view>
+    <view class='contentView02_1'>
+       合同类型:<text class='text-grey'>{{item["<Ctype>k__BackingField"]}}</text>
+    </view>
+    <view class='contentView02_1'>
+     员工名称:  <text class='text-grey'>{{item["<Employ>k__BackingField"]}}</text>
+    </view>
+  </view>
 
-<view class="weui-panel__ft" bindtap='fenye' data-shu='{{fenye}}' wx:if="{{fenye!=0}}">
-  <view class="weui-cell weui-cell_access weui-cell_link">
-    <view class="weui-cell__bd">查看更多</view>
-    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  <view class="weui-panel__ft" wx:if="{{isxs}}" bindtap='clickgd'>
+    <view class="weui-cell weui-cell_access weui-cell_link">
+      <view class="weui-cell__bd">查看更多</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
   </view>
 </view>

@@ -1,23 +1,20 @@
-
 {
   "pages": [
-    "pages/LoginHome/Login", 
+    "pages/LoginHome/Login",
     "pages/LoginHome/Enterprise/Enterprise",
     "pages/LoginHome/Personal/myPage",
-    "pages/LoginHome/Home/Home", 
-    "pages/LoginHome/Personal/padupdate",  
+    "pages/LoginHome/Home/Home",
+    "pages/LoginHome/Personal/padupdate",
     "pages/Me_Resources/DepUser/DepUserInfo",
     "pages/Me_Resources/UserList/UserList",
-    "pages/Me_Resources/UserList/UserListDetail",  
+    "pages/Me_Resources/UserList/UserListDetail",
     "pages/Me_Resources/SignModular/SignInfo",
     "pages/Me_Resources/SignModular/MySignRecord",
-    "pages/Me_Resources/SignModular/Recorddetails", 
-    "pages/Me_Resources/UserContract/UserContractList", 
+    "pages/Me_Resources/SignModular/Recorddetails",
+    "pages/Me_Resources/UserContract/UserContractList",
     "pages/Me_Resources/Postcard/PostcardList",
-    "pages/xuanzepage/xuanzerenyuan/xuanzerenyuan",
-    "pages/xuanzepage/CustomChoice/CustomChoice",
     "pages/Me_PublicPage/UserChoice/UserChoice",
-    "pages/Me_PublicPage/CustomChoice/CustomChoice", 
+    "pages/Me_PublicPage/CustomChoice/CustomChoice",
     "pages/Me_SalesGoods/Purchase/Purchase",
     "pages/Me_SalesGoods/ReturnStock/ReturnStock",
     "pages/Me_SalesGoods/Purchase/PurchaseAdd",
@@ -42,17 +39,17 @@
     "pages/Me_SalesGoods/WarehousGuanli/OrderReturn/OrderReturnAdd",
     "pages/Me_SalesGoods/WarehousGuanli/OrderReturn/OrderReturnDetail",
     "pages/Me_SalesGoods/WarehousGuanli/OrderOut/OrderOutAdd",
-    "pages/Me_SalesGoods/WarehousGuanli/OrderOut/OrderOutDetail", 
+    "pages/Me_SalesGoods/WarehousGuanli/OrderOut/OrderOutDetail",
     "pages/Me_SalesGoods/WarehousGuanli/OrderSelection/OrderSelection",
     "pages/Me_SalesGoods/WarehousGuanli/WaitingOrders/WaitingOrdersDetail",
     "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManage",
-    "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManageDetail"
+    "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManageDetail" 
   ],
   "window": {
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Me平台",
     "navigationBarTextStyle": "white",
-    "navigationStyle":"custom"
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#666",
@@ -83,6 +80,11 @@
   },
   "usingComponents": {
     "cu-custom": "utils//colorui/components/cu-custom"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于地图展示"
+    }
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,1 +1,4 @@
 /* colorui/components/cu-custom.wxss */
+.iconfont{
+  font-size: 188px;
+}

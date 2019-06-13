@@ -1,4 +1,4 @@
-
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">打卡记录</view></cu-custom>  
 <view class="page">
  
   <!-- 位置信息 -->
@@ -8,10 +8,10 @@
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell">
       <view class="weui-cell__hd">
-        <image src="../../images/come_from_lbs.png" style="margin-right: 5px;vertical-align: middle;width:12px; height:40px;"></image>
+        <image src="../../../images/come_from_lbs.png" style="margin-right: 5px;vertical-align: middle;width:12px; height:40px;"></image>
       </view>
       <view class="weui-cell__bd" style='font-size: 25rpx;'>
-        <text bindtap="address" decode="{{true}}">&nbsp;&nbsp;&nbsp;济南市天桥区历山北路38号</text>
+        <text bindtap="address" decode="{{true}}">&nbsp;&nbsp;&nbsp;{{address}}</text>
       </view>
     </view>
   </view>
@@ -56,16 +56,16 @@
     <!-- 打卡信息 -->
     <text>\n</text> </view>
   <view style='align:center; text-align:center;'>
-    <image src="../../images/star.png" style="margin-right: 5px;vertical-align: middle;width:110px; height:110px;" bindtap='start'> </image>
+    <image src="../../../images/star.png" style="margin-right: 5px;vertical-align: middle;width:110px; height:110px;" bindtap='start'> </image>
     <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-    <image src="../../images/end.png" style="margin-right: 5px;vertical-align: middle;width:110px; height:110px;" bindtap='end'></image>
+    <image src="../../../images/end.png" style="margin-right: 5px;vertical-align: middle;width:110px; height:110px;" bindtap='end'></image>
   </view>
   <!-- 底部信息 -->
   <view class="page__hd" style="position:fixed; bottom:0;width: 750rpx;">
     <view class="weui-form-preview">
       <view class="weui-form-preview__ft">
-        <navigator url='../dakaguanli/MySignRecord' class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">我的打卡记录</navigator>
-        <navigator url='../dakaguanli/StaffSignRecord' class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">员工打卡记录</navigator>
+        <navigator url='../SignModular/MySignRecord' class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">我的打卡记录</navigator>
+        <navigator url='../SignModular/StaffSignRecord' class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">员工打卡记录</navigator>
       </view>
     </view>
   </view>

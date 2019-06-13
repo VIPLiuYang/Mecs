@@ -30,10 +30,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    // wx.showLoading({
+    //   title: '加载中',
+    // })
     wx.showLoading({
-      title: '加载中',
+      title: '登录中...',
     })
-
     var array = this.data.arr
     for (let i = 1; i < 2; i++) {
       array.push("../../../images/index/" + i + ".png")
@@ -46,7 +48,7 @@ Page({
     this.setData({
       xingzhengbangong: jsonzhi
     })
-    wx.hideLoading()
+     wx.hideLoading()
 
    
 

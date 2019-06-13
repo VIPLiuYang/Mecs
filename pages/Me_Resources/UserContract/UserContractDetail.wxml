@@ -1,30 +1,50 @@
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">人员合同详情</view></cu-custom> 
- <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell">
-        <view class="weui-cell__bd">合同编号：{{xiangqing["<Cno>k__BackingField"]}}</view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__bd">合同类型：{{xiangqing["<Ctype>k__BackingField"]}}</view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__bd">员工名称：{{xiangqing["<Employ>k__BackingField"]}}</view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__bd">签订日期：{{xiangqing["<Ctime>k__BackingField"]}}</view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__bd">开始日期：{{xiangqing["<Stime>k__BackingField"]}}</view>
-      </view>
-       <view class="weui-cell">
-        <view class="weui-cell__bd">结束日期：{{xiangqing["<Etime>k__BackingField"]}}</view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__bd">经办人：{{xiangqing["<DealMan>k__BackingField"]}}</view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__bd">合同摘要：{{xiangqing["<Content>k__BackingField"]}}</view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__bd">附件：暂无附件</view>
-      </view>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">人员合同详情</view>
+</cu-custom>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">合同编号：
+      <text class='text-grey'>{{xiangqing["<Cno>k__BackingField"]}}</text> </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">合同类型：
+      <text class='text-grey'>{{xiangqing["<Ctype>k__BackingField"]}}</text>
     </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">员工名称：
+      <text class='text-grey'>{{xiangqing["<Employ>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">签订日期：
+      <text class='text-grey'>{{xiangqing["<Ctime>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">开始日期：
+      <text class='text-grey'>{{xiangqing["<Stime>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">结束日期：
+      <text class='text-grey'>{{xiangqing["<Etime>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">经办人：
+      <text class='text-grey'>{{xiangqing["<DealMan>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">合同摘要：
+      <text class='text-grey'>{{xiangqing["<Content>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">附件：
+      <text class='text-grey'>暂无附件</text>
+    </view>
+  </view>
+</view>
