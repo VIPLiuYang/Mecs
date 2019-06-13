@@ -9,6 +9,7 @@ App({
   //   wx.showLoading({
   //     title: '加载中',
   //   })
+  
     if (wx.cloud) {
       // wx.cloud.init({
       //   traceUser: true
@@ -24,6 +25,7 @@ App({
     })
   },
   
+ 
 
   
   globalData: {

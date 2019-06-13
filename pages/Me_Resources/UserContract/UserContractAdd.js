@@ -19,7 +19,7 @@ Page({
 
   tianjia:function(){
     wx.navigateTo({
-      url: '/pages/xuanzepage/xuanzerenyuan/xuanzerenyuan',
+      url: '/pages/Me_PublicPage/UserChoice/UserChoice',
     })
   },
   showTopTips:function(e){
@@ -63,7 +63,7 @@ if(bool=="0000"){
     duration: 1000
   })
   wx.navigateTo({
-    url: '/pages/renyuanhetong/renyuanhetong',
+    url: '/pages/Me_Resources/UserContract/UserContractList',
   })
 }else{
 

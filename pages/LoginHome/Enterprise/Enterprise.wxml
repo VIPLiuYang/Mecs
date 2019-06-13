@@ -58,19 +58,24 @@
 
 
         <view class="weui-cells  weui-cells_after-title" wx:for="{{dept}}" wx:for-item="izhi" wx:for-index="idx">
-          <view class="weui-cell">
+          <view class="weui-cell ">
             <view class="weui-cell__bd" bindtap='clickLine' data-depname='{{izhi["depename:"]}}'>
-            <icon class='cuIcon-home text-cyan' style=' font-size: 22px;'></icon>
-            <text decode="{{true}}" space="{{true}}"> &nbsp; </text>{{izhi["depename:"]}}
-              <block wx:if="{{izhi.deptEmp.length>0}}">
+           
+            <view class="text-grey">
+             <icon class='cuIcon-home text-cyan' style=' font-size: 22px;'></icon>
+                     <text decode="{{true}}" space="{{true}}" class='text-abc'> &nbsp; {{izhi["depename:"]}}</text>
+                      <block wx:if="{{izhi.deptEmp.length>0}}">
                 <icon class='iconfont icon-wode text-red' style=' font-size: 22px;'></icon>
               </block>
+             </view>
+           
+             
             </view>
 
             
           </view>
           <view class="weui-cell" wx:if="{{izhi.show=='show'}}" wx:for="{{izhi.deptEmp}}" wx:for-item="izhi2">
-          <view class="weui-cell__bd" >{{izhi2.Employ}}
+          <view class="weui-cell__bd text-abc"  >{{izhi2.Employ}}
               </view>
           </view>
 

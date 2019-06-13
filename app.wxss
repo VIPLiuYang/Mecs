@@ -2,6 +2,7 @@
 @import 'utils/icon/iconfont.wxss';
 @import "utils/colorui/main.wxss";
 @import "utils/colorui/icon.wxss";
+
 /**app.wxss**/
 .container {
   display: flex;
@@ -51,4 +52,8 @@ font-size: 35rpx;
 .proNavImagesearch{
   width: 60%;
   height: 40rpx;
+}
+.page{
+ background-color: #fff;
+ font-size: 35rpx;
 }

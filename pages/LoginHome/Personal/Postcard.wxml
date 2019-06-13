@@ -1,11 +1,15 @@
-<view class='dkuang'>
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">明信片</view></cu-custom>  
+  <view class="UCenter-bg">
+    <image src="/images/tx.jpg" style="width: 90px; height: 90px; display: block; border-radius: 195px;" class="png" mode="widthFix"></image>
+    <view class="text-xl">{{name}} 
+    </view>
+    <view class="margin-top-sm">
+      <text>{{modle}}</text>
+    </view>
+    <image src="https://image.weilanwl.com/gif/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+ 
 
- <image src='/images/login/ren.png' style='height:300rpx;width:400rpx;'></image>
-
-  
-
-
-</view>
 
 <view class='dkuang1'>
 <text style=''>{{name}}</text>

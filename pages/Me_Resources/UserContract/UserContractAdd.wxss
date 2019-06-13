@@ -1,4 +1,6 @@
-
+.page{
+  font-size: 30rpx;
+}
 .section{
    background:#CABBC7;
    margin:20rpx;
@@ -91,4 +93,8 @@ margin-top: 100rpx;
     height: 60rpx;
     line-height: 60rpx;
     border-bottom: 1px solid #ccc;
+}
+
+.weui-cells{
+  font-size: 35rpx;
 }

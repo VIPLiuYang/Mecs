@@ -103,7 +103,7 @@ Page({
             wx.setStorageSync("utoken", data.RspData.utoken)
             wx.setStorageSync("Menu", data.RspData.Menu)
 
-            wx.hideLoading()
+            //wx.hideLoading()
 
             //跳转页面
             wx.reLaunch({
@@ -127,9 +127,8 @@ Page({
     wx.hideLoading()
     this.setData({
       disabled: false
-    }); 
-   
-    var zhi = wx.getStorageSync('utoken')
+    });  
+    var zhi = wx.getStorageSync('utoken') 
     if (zhi != null && zhi != "" && zhi != undefined) {
       wx.reLaunch({
         url: '../LoginHome/Home/Home',

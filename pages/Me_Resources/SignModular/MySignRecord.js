@@ -1,6 +1,6 @@
 var comm = require('../../../utils/PublicProtocol.js'); //引用post公共函数
 var appid = wx.getStorageSync('appid'); //获取缓存中APPID
-var uuid = wx.getStorageSync('uuid'); //获取缓存中设备ID
+var uuid = wx.getStorageSync('uuid'); //获取缓存中设备ID 
 var utoken = wx.getStorageSync('utoken'); //获取缓存中用户utoken
 var pageindex = 1; //获取的页码
 var Flag = 0; //0刷新，1加载更多
@@ -48,7 +48,7 @@ Page({
           });
         }else{
           that.setData({//加载更多数组拼接
-            cardrecordlist: that.data.cardrecordlist.concat(data.RspData.cardrecordlist),  
+            cardrecordlist: that.data.cardrecordlist.concat(data.RspData.cardrecordlist), 
             isxs: true  
           });
         }

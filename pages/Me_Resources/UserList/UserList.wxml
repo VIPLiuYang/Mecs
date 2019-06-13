@@ -1,5 +1,10 @@
-<!-- <cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"><view slot="content">操作条</view></cu-custom> -->
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">人员列表</view></cu-custom>  
+<!-- <cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"
+goUrl=''><view slot="content">操作条</view></cu-custom> -->
+ <cu-custom
+  bgColor="bg-gradual-blue"
+  isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">人员列表</view></cu-custom>  
 
  
 <view class="weui-search-bar cu-bar bg-white solid-bottom">

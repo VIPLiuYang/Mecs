@@ -42,7 +42,7 @@ var wxPost = function (url, data, callback) {
         wx.clearStorage()
         wx.clearStorageSync()
         wx.navigateTo({
-          url: '/pages/login/login',
+          url: '/pages/LoginHome/Login',
         })
 
       }

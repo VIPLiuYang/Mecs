@@ -1,192 +1,122 @@
-// pages/renyuanhetong/renyuanhetong.js
-var comm = require('../../../utils/PublicProtocol.js');
+var comm = require('../../../utils/PublicProtocol.js'); //引用post公共函数
+const app = getApp();
+var pageindex = 1; //获取的页码
+var Flag = 0; //0刷新，1加载更多
+var tempData = ""; //POST参数定义
+
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  //页面的初始数据 
   data: {
-    typename: "人员合同",
-    hiddenmodalput: true,
-    date: "2016-09-01",
-    date2: "2016-09-01",
-    shuju: [],
-    rowcount: 0,
-    pagecount: 0,
-    fenye: 0
-  },
-  //点击按钮痰喘指定的hiddenmodalput弹出框
-  modalinput: function() {
-    this.setData({
-      hiddenmodalput: !this.data.hiddenmodalput
-    })
+    StatusBar: app.globalData.StatusBar, //手机信息
+    CustomBar: app.globalData.CustomBar, //手机信息
+    word: '', //搜索框内容 
+    htlist: [],
+    isxs: false, //是否显示加载更多
+    isyw: true, //是否显示暂无数据
   },
 
-  bindDateChange: function(e) {
-    this.setData({
-      date: e.detail.value
-    })
-  },
-  bindDateChange2: function(e) {
-    this.setData({
-      date: e.detail.value
-    })
+  onUnload: function () {//页面返回时恢复默认
+    pageindex = 1; //获取的页码
+    Flag = 1; //0刷新，1加载更多
   },
 
-  //重置按钮
-  cancel: function() {
+
+  // 获取搜索框内容
+  cxsearch: function(e) {
     this.setData({
-      hiddenmodalput: true
+      word: e.detail.value
+    });
+    this.setData({
+      cxsearch: true
     });
   },
-  //确认
-  confirm: function() {
-    this.setData({
-      hiddenmodalput: true
-    })
-  },
-  back: function() {
 
-    wx.navigateBack()
 
-  },
-  add: function() {
-    wx.navigateTo({
-      url: '/pages/Me_Resources/UserContract/UserContractAdd?action=add',
-    })
-  },
-  mingxi: function(e) {
-
-    var Cno = e.currentTarget.dataset.cno;
-    wx.navigateTo({
-      url: '/pages/Me_Resources/UserContract/UserContractDetail?Con='+Cno,
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
+  //查询按钮
+  clicksearch: function(e) {
+    //获取缓存中的数据
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
-    var tempData = {
+    tempData = {
       uuid: uuid, //设备id
-      appid: appid, 
-      dotype:'list',
-      pagesize: 10,
-      pageindex: 1,
+      appid: appid,
+      dotype: 'list', //操作类型
+      Ctype: this.data.word, //查询条件
+      pagesize: 10, //每页条数
+      pageindex: pageindex, //页码
       utoken: utoken
-    }
-    var this11 = this;
+    } 
+    this.GetList(); //获取人员合同列表
+  },
 
-    comm.unitWebsitePro('PostEmpContract', tempData, function (data) {
-      var hangshu = data.RspData.RowCount
-      var yeshu = data.RspData.PageCount
-
-      var liebiao = data.RspData.empcontract;
-      if (yeshu > 0) {
-        this11.setData({
-          fenye: this11.data.fenye + 1
-        })
-      }
-      this11.setData({
-        shuju: liebiao,
-        rowcount: hangshu,
-        pagecount: yeshu,
-      })
-
+  //列表详情
+  mingxi: function(e) {
+    var Cno = e.currentTarget.dataset.cno; //获取合同编号
+    wx.navigateTo({ //页面跳转
+      url: '/pages/Me_Resources/UserContract/UserContractDetail?Con=' + Cno,
     })
   },
 
-  fenye: function (e) {
-    var nowpage = e.currentTarget.dataset.shu;
-    if (nowpage == this.data.pagecount) {
-      wx.showToast({
-        title: '已是最后一页',
-        icon: 'none',
-        duration: 2000
-      })
-    } else {
-      this.setData({
-        fenye: nowpage + 1
-      })
-
-      var appid = wx.getStorageSync('appid');
-      var uuid = wx.getStorageSync('uuid');
-      var utoken = wx.getStorageSync('utoken');
-      var tempData = {
-        uuid: uuid, //设备id
-        appid: appid, //
-        dotype: 'list',
-        pagesize: 10,
-        pageindex: this.data.fenye,
-        utoken: utoken,
-      }
-      var this11 = this;
-
-      comm.unitWebsitePro('PostUserList', tempData, function (data) {
-        var hangshu = data.RspData.RowCount
-        var yeshu = data.RspData.PageCount
-
-        var liebiao = data.RspData.empcontract;
-      
-
-        var nowlie = this11.data.shuju;
-        var nowleijia = nowlie.concat(liebiao)
-        this11.setData({
-          shuju: nowleijia
-        })
-
-      })
+  //初始化函数
+  onLoad: function(options) {
+    var Flag = 0; //0刷新，1加载更多
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    tempData = {
+      uuid: uuid, //设备id
+      appid: appid,
+      dotype: 'list', //操作类型
+      pagesize: 10, //每页条数
+      pageindex: pageindex, //页码
+      utoken: utoken
     }
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
+    this.GetList(); //获取人员合同列表
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
 
+  //获取人员合同列表
+  GetList: function(e) {
+    var prithis = this; 
+    comm.unitWebsitePro('PostEmpContract', tempData, function(data) {
+      if (data.RspCode == "0000") { //正常  
+        if (Flag == 0) {
+          prithis.setData({
+            htlist: data.RspData.empcontract, //绑定数据列表
+            isxs: true //显示加载更多
+          });
+        } else {
+          prithis.setData({ //加载更多数组拼接
+            htlist: prithis.data.htlist.concat(data.RspData.empcontract),
+            isxs: true
+          });
+        }
+        pageindex++;
+      } else { //暂无数据
+        prithis.setData({
+          isyw: false //显示暂无数据标签
+        }); 
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+  //分页
+  clickgd: function() {
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    tempData = {
+      uuid: uuid, //设备id
+      appid: appid,
+      dotype: 'list', //操作类型
+      pagesize: 10, //每页条数
+      pageindex: pageindex, //页码
+      utoken: utoken
+    }
+    Flag = 1; //0刷新，1加载更多
+    this.GetList(); //获取人员合同列表
   }
 })

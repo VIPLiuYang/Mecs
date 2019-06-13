@@ -27,6 +27,10 @@ Component({
       type: String,
       default: ''
     },
+    goUrl: {            // icon点击跳转路径，默认回退
+      type: String,
+      value: ''
+    }
   },
   /**
    * 组件的初始数据
@@ -49,7 +53,19 @@ Component({
       wx.reLaunch({
         url: '/pages/yingyong/yingyong',
       })
-    }
+    },
+    //隐藏弹框
+    _iconLeftTap() {
+      console.log('左边icon点击了');
+      console.log(this.data.goUrl);
+      if (this.data.goUrl != '' && this.data.goUrl != undefined) {
+        wx.navigateTo({
+          url: this.data.goUrl
+        })
+      } else {
+        wx.navigateBack();
+      }
+    },
   }
 })
 module.exports = {

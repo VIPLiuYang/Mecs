@@ -1,4 +1,4 @@
-// pages/renyuanhetong/renyuanhetongdetailed.js
+
 var comm = require('../../../utils/PublicProtocol.js');
 Page({
 

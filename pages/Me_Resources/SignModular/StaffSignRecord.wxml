@@ -1,6 +1,5 @@
-<view class="weui-panel weui-panel_access">
-
-
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">员工打卡记录</view></cu-custom>  
+<view class="weui-panel weui-panel_access"> 
   <view class="weui-panel__bd" wx:for="{{cardrecordlist}}" wx:for-item="items"> 
     <navigator url='../dakaguanli/Recorddetails'>
       <view class="weui-media-box weui-media-box_text">
