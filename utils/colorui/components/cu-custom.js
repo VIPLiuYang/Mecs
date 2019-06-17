@@ -55,9 +55,7 @@ Component({
       })
     },
     //隐藏弹框
-    _iconLeftTap() {
-      console.log('左边icon点击了');
-      console.log(this.data.goUrl);
+    _iconLeftTap() { 
       if (this.data.goUrl != '' && this.data.goUrl != undefined) {
         wx.navigateTo({
           url: this.data.goUrl

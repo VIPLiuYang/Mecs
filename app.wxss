@@ -56,4 +56,5 @@ font-size: 35rpx;
 .page{
  background-color: #fff;
  font-size: 35rpx;
+ color: DimGray;
 }
