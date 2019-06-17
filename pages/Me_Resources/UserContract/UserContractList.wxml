@@ -2,6 +2,13 @@
   <view slot="content">人员合同</view>
 </cu-custom>
 
+<!--
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">添加</view>
+</cu-custom> 
+-->
+
 <!-- <modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
@@ -46,14 +53,13 @@
 <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
-    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" 
-    name="word"  value='{{word}}' confirm-type="search"></input>
+    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" name="word" value='{{word}}' confirm-type="search"></input>
   </view>
   <view class="action">
     <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
   </view>
 </view>
- 
+
 <view class='page'>
   <view class='contentView' bindtap='mingxi' data-cno='{{item["<Cno>k__BackingField"]}}' wx:for="{{htlist}}">
     <view class='contentView02_1'>
@@ -64,10 +70,12 @@
       <text class='text-grey'> {{item["<Ctime>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-       合同类型:<text class='text-grey'>{{item["<Ctype>k__BackingField"]}}</text>
+      合同类型:
+      <text class='text-grey'>{{item["<Ctype>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-     员工名称:  <text class='text-grey'>{{item["<Employ>k__BackingField"]}}</text>
+      员工名称:
+      <text class='text-grey'>{{item["<Employ>k__BackingField"]}}</text>
     </view>
   </view>
 

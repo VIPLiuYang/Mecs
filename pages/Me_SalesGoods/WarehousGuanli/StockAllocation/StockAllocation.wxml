@@ -1,6 +1,19 @@
-<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"><view slot="content">操作条</view></cu-custom>
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"
+goUrl='/pages/Me_SalesGoods/WarehousGuanli/StockAllocation/StockAllocationAdd'>
+<view slot="content">库存调拨</view>
+</cu-custom>
 
-<modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" name="word" value='{{word}}' confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
+  </view>
+</view>
+
+<!-- <modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
@@ -42,31 +55,31 @@
       </view>
     </view>
   </view>
-</modal>
+</modal> -->
 
-<button class="weui-btn addsize" type="primary" plain="true" bindtap='add'>添加</button>
-<button class="weui-btn addsize" type="primary" plain="true" bindtap="modalinput">查询</button>
+<!-- <button class="weui-btn addsize" type="primary" plain="true" bindtap='add'>添加</button>
+<button class="weui-btn addsize" type="primary" plain="true" bindtap="modalinput">查询</button> -->
 
-<view class='contentView' wx:for="{{shuju}}">
+<view class='contentView page' wx:for="{{shuju}}">
  <view class='Detailwidth' bindtap='mingxi' data-hid='{{item["<hbid>k__BackingField"]}}'>
   <view class='contentView02_1'>
-    划拨编号:{{item["<hno>k__BackingField"]}}
+    划拨编号:<text class='text-grey'>{{item["<hno>k__BackingField"]}}</text>
   </view>
   
   <view class='contentView02_1'>
-    调出仓库:{{item["<dcpbasename>k__BackingField"]}}
+    调出仓库:<text class='text-grey'>{{item["<dcpbasename>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-    调入仓库:{{item["<drpbasename>k__BackingField"]}}
+    调入仓库:<text class='text-grey'>{{item["<drpbasename>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-    制单人:{{item["<addUserName>k__BackingField"]}}
+    制单人:<text class='text-grey'>{{item["<addUserName>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-    制单时间:{{item["<addTime>k__BackingField"]}}
+    制单时间:<text class='text-grey'>{{item["<addTime>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-    单据状态:{{item["<statusName>k__BackingField"]}}
+    单据状态:<text class='text-grey'>{{item["<statusName>k__BackingField"]}}</text>
   </view>
 </view>
 
