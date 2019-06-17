@@ -8,6 +8,9 @@ Page({
   /**
    * 页面的初始数据
    */
+
+
+  
   data: {
     isxs: false, //是否显示加载更多
     isyw: true, //是否显示暂无数据
