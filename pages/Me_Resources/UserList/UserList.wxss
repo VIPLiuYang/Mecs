@@ -3,6 +3,7 @@
   width: 100%;
   height: auto;
   margin: 0px auto;
+  font-size: 35rpx;
 }
 .productNav{
  width: 100%;
@@ -14,6 +15,12 @@
  position: fixed;
  z-index: 100;
 }
+page {
+  padding-top: 100rpx;
+  font-size: 35rpx;
+  background-color: #fff;
+}
+ 
 
 .contentcss{
 width: 100%;
@@ -72,4 +79,8 @@ height: auto;
 font-size: 32rpx;
 line-height: 60rpx;
 margin: 0px auto;
+}
+.img{
+border-radius: 195px;
+
 }

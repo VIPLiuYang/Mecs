@@ -12,11 +12,7 @@ var random = function () {
    var i = Math.random() * (999999 - 100000) + 100000;
   var j = parseInt(i, 10).toString(); 
   return j;
-}
-
-
-   
-
+} 
 /** 
  * wx.request调用接口
  * @param {Object} url 路径

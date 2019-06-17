@@ -43,7 +43,8 @@
     "pages/Me_SalesGoods/WarehousGuanli/OrderSelection/OrderSelection",
     "pages/Me_SalesGoods/WarehousGuanli/WaitingOrders/WaitingOrdersDetail",
     "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManage",
-    "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManageDetail" 
+    "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManageDetail",
+    "utils/noData/noDate"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000",

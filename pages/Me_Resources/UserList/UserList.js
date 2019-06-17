@@ -1,175 +1,127 @@
-// pages/renyuanliebiao/renyuanliebiao.js
 var comm = require('../../../utils/PublicProtocol.js');
- 
-Page({
+const app = getApp();
+var pageindex = 1; //获取的页码
+var Flag = 0; //0刷新，1加载更多
+var tempData = ""; //POST参数定义
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
-    inputShowed: false,
-    inputVal: "",
-    shuju: [],
-    rowcount: 0,
-    pagecount: 0,
-    fenye: 0
+    StatusBar: app.globalData.StatusBar, //手机信息
+    CustomBar: app.globalData.CustomBar, //手机信息
+    word: '', //搜索框内容  
+    Userlist: [],
+    isxs: false, //是否显示加载更多
+    isyw: false, //是否显示暂无数据
   },
-  showInput: function() {
+  // 获取搜索框内容
+  cxsearch: function(e) {
     this.setData({
-      inputShowed: true
+      word: e.detail.value
+    });
+    this.setData({
+      cxsearch: true
     });
   },
-  hideInput: function() {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
-    });
-  },
-  clearInput: function() {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function(e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
+  onUnload: function () {//页面返回时恢复默认
+    pageindex = 1; //获取的页码
+    Flag = 1; //0刷新，1加载更多
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.setNavigationBarTitle({
-      title: '人员列表',
-    })
-
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
-    var tempData = {
+    tempData = {
       uuid: uuid, //设备id
       appid: appid, //
       pagesize: 10,
-      pageindex: 1,
+      pageindex: pageindex,
       utoken: utoken,
     }
-    var this11 = this;
-
-    comm.unitWebsitePro('PostUserList', tempData, function(data) {
-      var hangshu = data.RspData.RowCount
-      var yeshu = data.RspData.PageCount
-
-      var liebiao = data.RspData.userlist;
-      for (var i = 0; i < liebiao.length; i++) {
-        liebiao[i]["<touxiang>k__BackingField"] = "http://mecs.ip165.com/" + liebiao[i]["<touxiang>k__BackingField"];
-      }
-      if (yeshu > 0) {
-        this11.setData({
-          fenye: this11.data.fenye + 1
-        })
-      }
-      this11.setData({
-        shuju: liebiao,
-        rowcount: hangshu,
-        pagecount: yeshu,
-      })
-
-    })
-
-
+    this.GetList(); //获取人员列表 
   },
-
-
-  fenye: function(e) {
-    var nowpage = e.currentTarget.dataset.shu;
-    if (nowpage == this.data.pagecount) {
-      wx.showToast({
-        title: '已是最后一页',
-        icon: 'none',
-        duration: 2000
-      })
-    } else {
-      this.setData({
-        fenye: nowpage + 1
-      })
-
-      var appid = wx.getStorageSync('appid');
-      var uuid = wx.getStorageSync('uuid');
-      var utoken = wx.getStorageSync('utoken');
-      var tempData = {
+  //查询按钮
+  clicksearch: function (e) {
+    wx.showLoading({
+      title: '请稍等',
+    })
+    //获取缓存中的数据
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    pageindex = 1; //获取的页码
+    Flag = 0; //0刷新，1加载更多 
+    if (this.data.word==""){
+      tempData = {
         uuid: uuid, //设备id
         appid: appid, //
         pagesize: 10,
-        pageindex: this.data.fenye,
+        pageindex: pageindex,
         utoken: utoken,
-      }
-      var this11 = this;
+      };
+    }else{
+      tempData = {
+        uuid: uuid, //设备id
+        appid: appid, //
+        employno: this.data.word,
+        pagesize: 10,
+        pageindex: pageindex,
+        utoken: utoken,
+      };
+    } 
+    this.GetList(); //获取人员合同列表
+    wx.hideLoading()
+  },
 
-      comm.unitWebsitePro('PostUserList', tempData, function(data) {
-        var hangshu = data.RspData.RowCount
-        var yeshu = data.RspData.PageCount
-
-        var liebiao = data.RspData.userlist;
-        for (var i = 0; i < liebiao.length; i++) {
-          liebiao[i]["<touxiang>k__BackingField"] = "http://mecs.ip165.com/" + liebiao[i]["<touxiang>k__BackingField"];
+  //获取人员列表
+  GetList: function(e) {  
+    var prithis = this;
+    comm.unitWebsitePro('PostUserList', tempData, function(data) {
+      if (data.RspCode == "0000") { //正常 
+        for (var i = 0; i < data.RspData.userlist.length; i++) {
+          if (data.RspData.userlist[i]["<touxiang>k__BackingField"]!=null)//头像为空不执行拼接
+          { 
+            data.RspData.userlist[i]["<touxiang>k__BackingField"] = "http://mecs.ip165.com/" + data.RspData.userlist[i]["<touxiang>k__BackingField"];
+          } 
+        } 
+        if (Flag == 0) {
+          prithis.setData({
+            Userlist: data.RspData.userlist, //绑定数据列表
+            isxs: true //显示加载更多
+          });
+        } else {
+          prithis.setData({ //加载更多数组拼接
+            Userlist: prithis.data.Userlist.concat(data.RspData.userlist),
+            isxs: true
+          });
         }
-
-        var nowlie = this11.data.shuju;
-        var nowleijia = nowlie.concat(liebiao)
-        this11.setData({
-          shuju: nowleijia
-        })
-
-      })
+        pageindex++;
+      } else { //暂无数据
+        prithis.setData({
+          isyw: true, //显示暂无数据标签
+          Userlist:"",
+          isxs: false,
+        });
+      }
+    })
+  },
+  //分页
+  clickgd: function () {
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    tempData = {
+      uuid: uuid, //设备id
+      appid: appid, //
+      pagesize: 10,
+      pageindex: pageindex,
+      utoken: utoken,
     }
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  }
+    Flag = 1; //0刷新，1加载更多
+    this.GetList(); //获取人员列表
+  } 
+    
 })
