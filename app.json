@@ -44,6 +44,14 @@
     "pages/Me_SalesGoods/WarehousGuanli/WaitingOrders/WaitingOrdersDetail",
     "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManage",
     "pages/Me_SalesGoods/WarehousGuanli/CommManage/CommManageDetail",
+    "pages/Me_Office/NoticeManage/NoticeManage",
+    "pages/Me_Office/NoticeManage/NoticeManageAdd",
+    "pages/Me_Office/NoticeManage/NoticeManageDetail",
+    "pages/Me_Office/PlanManage/MemberPlan/MemberPlan",
+    "pages/Me_Office/PlanManage/MemberPlan/MemberPlanDetail",
+    "pages/Me_Office/PlanManage/PersonalPlan/PersonalPlan",
+    "pages/Me_Office/PlanManage/PersonalPlan/PersonalPlanAdd",
+    "pages/Me_Office/PlanManage/PersonalPlan/PersonalPlanDetail",
     "utils/noData/noDate"
   ],
   "window": {
