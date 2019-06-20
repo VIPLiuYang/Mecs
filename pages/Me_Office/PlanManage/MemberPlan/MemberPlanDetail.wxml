@@ -1,0 +1,85 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+        <view slot="backText">返回</view>
+        <view slot="content">员工计划详情</view>
+</cu-custom>
+<modal hidden="{{hiddenmodalput}}" title="计划批复" confirm-text="批复" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <view class="weui-cells_pf">
+    <view class="weui-cell2">
+      <view class="weui-cell__bd2">
+        <textarea placeholder='请输入批复内容' class='weui-cell__bd2text'></textarea>
+      </view>
+    </view>
+  </view>
+</modal>
+<view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+                <view class="weui-cell__bd">
+                        <text class='text-grey'>111111</text> </view>
+        </view>
+        <view class="weui-cell">
+                <view class="weui-cell__bd">内容：
+                        <text class='text-grey'>2222222</text>
+                </view>
+        </view>
+        <view class="weui-cell">
+                <view class="weui-cell__bd">工期：
+                        <text class='text-grey'>2019-06-18至2019-06-18</text>
+                </view>
+        </view>
+        <view class="weui-cell">
+                <view class="weui-cell__bd">上报时间：
+                        <text class='text-grey'>2019-06-18</text>
+                </view>
+        </view>
+        <view class="weui-cell">
+                <view class="weui-cell__bd">上报人：
+                        <text class='text-grey'>44545445454</text>
+                </view>
+        </view>
+</view>
+<view class='pifucss'>
+        <view class='pifucss01'>
+                <view class='pifucss01_1'>
+                        批复详情
+                </view>
+                <view class='pifucss01_2'>
+                  <image class='pifucss01_2iimg' bindtap='modalinput' src='http://mecs.ip165.com/WeiXin/Style/Image/tubiao/editor.png'></image>
+                </view>
+        </view>
+        
+        <view class='pifucss02'>
+                <view class="weui-cell1">
+                        <view class="weui-cell__bd">批复人：
+                                <text class='text-grey'>2222222</text>
+                        </view>
+                </view>
+                <view class="weui-cell1">
+                        <view class="weui-cell__bd">批复信息：
+                                <text class='text-grey'>1122121212121</text>
+                        </view>
+                </view>
+                <view class="weui-cell1">
+                        <view class="weui-cell__bd">批复时间：
+                                <text class='text-grey'>2019-06-18</text>
+                        </view>
+                </view>
+        </view>
+
+        <view class='pifucss02'>
+                <view class="weui-cell1">
+                        <view class="weui-cell__bd">批复人：
+                                <text class='text-grey'>2222222</text>
+                        </view>
+                </view>
+                <view class="weui-cell1">
+                        <view class="weui-cell__bd">批复信息：
+                                <text class='text-grey'>1122121212121</text>
+                        </view>
+                </view>
+                <view class="weui-cell1">
+                        <view class="weui-cell__bd">批复时间：
+                                <text class='text-grey'>2019-06-18</text>
+                        </view>
+                </view>
+        </view>
+</view>
