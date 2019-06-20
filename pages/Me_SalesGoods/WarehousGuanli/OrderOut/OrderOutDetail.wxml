@@ -2,37 +2,37 @@
 <view class='ziview'>
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell">
-      <view class="weui-cell__bd">订单编号：{{shuju["<hbCode>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">订单编号：<text class='text-grey'>{{shuju["<hbCode>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">制单人：{{shuju["<marketMan>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">制单人：<text class='text-grey'>{{shuju["<marketMan>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">制单时间：{{shuju["<marketTime>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">制单时间：<text class='text-grey'>{{shuju["<marketTime>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">客户名称：{{shuju["<customerName>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">客户名称：<text class='text-grey'>{{shuju["<customerName>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">联系电话：{{shuju["<cusPhone>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">联系电话：<text class='text-grey'>{{shuju["<cusPhone>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">收货人：{{shuju["<shouHuoMan>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">收货人：<text class='text-grey'>{{shuju["<shouHuoMan>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">收货日期：{{shuju["<shDate>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">收货日期：<text class='text-grey'>{{shuju["<shDate>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">收货地址：{{shuju["<shAddress>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">收货地址：<text class='text-grey'>{{shuju["<shAddress>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">物流编号：{{shuju["<wlNo>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">物流编号：<text class='text-grey'>{{shuju["<wlNo>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">物流名称：{{shuju["<wlName>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">物流名称：<text class='text-grey'>{{shuju["<wlName>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">备注：{{shuju["<remark>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">备注：<text class='text-grey'>{{shuju["<remark>k__BackingField"]}}</text></view>
     </view>
   </view>
 </view>
@@ -42,24 +42,24 @@
 
 <view class='contentView' wx:for='{{liebiao}}'>
   <view class='contentView02_1'>
-    商品名称:{{item["<proName>k__BackingField"]}}
+    商品名称:<text class='text-grey'>{{item["<proName>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-    订购数量:{{item["<dgNum>k__BackingField"]}}
+    订购数量:<text class='text-grey'>{{item["<dgNum>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-    订购单价:{{item["<dgprice>k__BackingField"]}}
+    订购单价:<text class='text-grey'>{{item["<dgprice>k__BackingField"]}}</text>
   </view>
    <view class='contentView02_1'>
-    总发货数量:{{item["<dgNum>k__BackingField"]}}
+    总发货数量:<text class='text-grey'>{{item["<dgNum>k__BackingField"]}}</text>
   </view>
    <view class='contentView02_1'>
-    本次发货数量:{{item["<bSendNum>k__BackingField"]}}
+    本次发货数量:<text class='text-grey'>{{item["<bSendNum>k__BackingField"]}}</text>
   </view>
    <view class='contentView02_1'>
-    出库仓库名称:{{item["<pbasename>k__BackingField"]}}
+    出库仓库名称:<text class='text-grey'>{{item["<pbasename>k__BackingField"]}}</text>
   </view>
    <view class='contentView02_1'>
-    备      注 :{{item["<remark>k__BackingField"]}}
+    备      注 :<text class='text-grey'>{{item["<remark>k__BackingField"]}}</text>
   </view>
 </view>

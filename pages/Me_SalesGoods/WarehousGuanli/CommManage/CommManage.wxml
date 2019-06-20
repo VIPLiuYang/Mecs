@@ -1,24 +1,39 @@
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">子级菜单</view></cu-custom> 
-<view class='contentView'  wx:for="{{shuju}}">
-  <view class='Detailwidth' bindtap='mingxi' data-cno='{{item["<ProductId>k__BackingField"]}}'>
-    <view class='contentView02_1'>
-      商品名称:{{item["<pname>k__BackingField"]}}
-    </view>
-    <view class='contentView02_1'>
-      商品属性:{{item["<proAttName>k__BackingField"]}}
-    </view>
-    <view class='contentView02_1'>
-      商品分类:{{item["<typename>k__BackingField"]}}
-    </view>
-    <view class='contentView02_1'>
-      零售价:{{item["<lingprice>k__BackingField"]}}
-    </view>
-    <view class='remai'>
-      是否热卖：{{item["<isremai>k__BackingField"]}}
-    </view>
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">商品管理</view></cu-custom> 
+
+ <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" name="word" value='{{word}}' confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
   </view>
 </view>
 
+<view class='contentView page'  wx:for="{{shuju}}">
+  <view class='Detailwidth' bindtap='mingxi' data-cno='{{item["<ProductId>k__BackingField"]}}'>
+    <view class='contentView02_1'>
+      商品名称:<text class='text-grey'>{{item["<pname>k__BackingField"]}}</text>
+    </view>
+    <view class='contentView02_1'>
+      商品属性:<text class='text-grey'>{{item["<proAttName>k__BackingField"]}}</text>
+    </view>
+    <view class='contentView02_1'>
+      商品分类:<text class='text-grey'>{{item["<typename>k__BackingField"]}}</text>
+    </view>
+    <view class='contentView02_1'>
+      零售价:<text class='text-grey'>{{item["<lingprice>k__BackingField"]}}</text>
+    </view>
+    <view class='remai'>
+      是否热卖：<text class='text-grey'>{{item["<isremai>k__BackingField"]}}</text>
+    </view>
+  </view>
+</view>
+<view wx:if="{{shuju==null}}">
+  <noData>
+    <view bindtap='a'>暂无数据</view>
+  </noData>
+ </view>
 <view class="weui-panel__ft" bindtap='fenye' data-shu='{{fenye}}' wx:if="{{fenye!=0}}">
   <view class="weui-cell weui-cell_access weui-cell_link">
     <view class="weui-cell__bd">查看更多</view>

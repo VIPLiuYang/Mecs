@@ -29,7 +29,6 @@ Page({
     });
   },
   clicksearch: function (e) {
-    debugger
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
@@ -48,14 +47,14 @@ Page({
       }
       var this11 = this;
 
-      comm.unitWebsitePro('PostInventoryList', tempData, function (data) {
+      comm.unitWebsitePro('PostAllocation', tempData, function (data) {
         debugger
         var hangshu = data.RspData.RowCount
         var yeshu = data.RspData.PageCount
         this11.setData({
           fenye: 0
         })
-        var liebiao = data.RspData.inventorylist;
+        var liebiao = data.RspData.allocationlist;
         if (yeshu > 0) {
           this11.setData({
             fenye: this11.data.fenye + 1
@@ -187,6 +186,7 @@ Page({
   },
 
   fenye: function(e) {
+    debugger
     var nowpage = e.currentTarget.dataset.shu;
     if (nowpage == this.data.pagecount) {
       wx.showToast({
@@ -227,7 +227,7 @@ Page({
       
       var this11 = this;
 
-      comm.unitWebsitePro('PostAllocation', tempData, function(data) {
+      comm.unitWebsitePro('PostAllocation', tempDatatwo, function(data) {
         var hangshu = data.RspData.RowCount
         var yeshu = data.RspData.PageCount
 

@@ -1,29 +1,29 @@
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">子级菜单</view></cu-custom> 
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">库存调拨明细</view></cu-custom> 
  <view class='ziview'>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
-        <view class="weui-cell__bd">划拨编号：{{shuju["<hbCode>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">划拨编号：<text class='text-grey'>{{shuju["<hbCode>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单人：{{shuju["<marketTime>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">制单人：<text class='text-grey'>{{shuju["<marketTime>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单时间：{{shuju["<marketMan>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">制单时间：<text class='text-grey'>{{shuju["<marketMan>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">调出仓库名称：{{shuju["<dcpbaseName>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">调出仓库名称：<text class='text-grey'>{{shuju["<dcpbaseName>k__BackingField"]}}</text></view>
       </view>
        <view class="weui-cell">
-        <view class="weui-cell__bd">调入仓库名称：{{shuju["<drpbaseName>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">调入仓库名称：<text class='text-grey'>{{shuju["<drpbaseName>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">发货人：{{shuju["<faMan>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">发货人：<text class='text-grey'>{{shuju["<faMan>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">收货人：{{shuju["<shouMan>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">收货人：<text class='text-grey'>{{shuju["<shouMan>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">备注：{{shuju["<remark>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">备注：<text class='text-grey'>{{shuju["<remark>k__BackingField"]}}</text></view>
       </view>
     </view>
   </view>
@@ -33,12 +33,12 @@
 
 <view class='contentView' wx:for='{{liebiao}}'>
   <view class='contentView02_1'>
-    商品名称:{{item["<proName>k__BackingField"]}}
+    商品名称:<text class='text-grey'>{{item["<proName>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-    划拨数量:{{item["<shouMan>k__BackingField"]}}
+    划拨数量:<text class='text-grey'>{{item["<shouMan>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-   划拨单价:{{item["<price>k__BackingField"]}}
+   划拨单价:<text class='text-grey'>{{item["<price>k__BackingField"]}}</text>
   </view>
 </view>

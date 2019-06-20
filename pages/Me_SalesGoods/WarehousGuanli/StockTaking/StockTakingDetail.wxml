@@ -1,23 +1,23 @@
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">子级菜单</view></cu-custom> 
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">库存盘带</view></cu-custom> 
  <view class='ziview'>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
-        <view class="weui-cell__bd">盘点编号：{{shuju["<pdCode>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">盘点编号：<text class='text-grey'>{{shuju["<pdCode>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单人：{{shuju["<marketMan>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">制单人：<text class='text-grey'>{{shuju["<marketMan>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单时间：{{shuju["<marketTime>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">制单时间：<text class='text-grey'>{{shuju["<marketTime>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">仓库名称：{{shuju["<pbaseName>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">仓库名称：<text class='text-grey'>{{shuju["<pbaseName>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">盘点时间：{{shuju["<pdDate>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">盘点时间：<text class='text-grey'>{{shuju["<pdDate>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">备注：{{shuju["<remark>k__BackingField"]}}</view>
+        <view class="weui-cell__bd">备注：<text class='text-grey'>{{shuju["<remark>k__BackingField"]}}</text></view>
       </view>
     </view>
   </view>
@@ -27,12 +27,12 @@
 
 <view class='contentView' wx:for='{{liebiao}}'>
   <view class='contentView02_1'>
-    商品名称:{{item["<proName>k__BackingField"]}}
+    商品名称:<text class='text-grey'>{{item["<proName>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-    账目数量:{{item["<zmNum>k__BackingField"]}}
+    账目数量:<text class='text-grey'>{{item["<zmNum>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-   实际数量:{{item["<sjNum>k__BackingField"]}}
+   实际数量:<text class='text-grey'>{{item["<sjNum>k__BackingField"]}}</text>
   </view>
 </view>

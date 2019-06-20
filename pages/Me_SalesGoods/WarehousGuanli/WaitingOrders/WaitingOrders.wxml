@@ -1,24 +1,37 @@
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">人员列表</view></cu-custom>
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">待出订单</view></cu-custom>
+
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" name="word" value='{{word}}' confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
+  </view>
+</view>
 
 <view wx:if="{{shuju==null}}">
- 暂无数据
+  <noData>
+    <view bindtap='a'>暂无数据</view>
+  </noData>
  </view>
-<view class='contentView' wx:for="{{shuju}}">
+
+<view class='contentView page' wx:for="{{shuju}}">
   <view class='Detailwidth' bindtap='mingxi'  data-hid='{{item["<detailId>k__BackingField"]}}'>
     <view class='contentView02_1'>
-      订单编号:{{item["<orderNo>k__BackingField"]}}
+      订单编号:<text class='text-grey'>{{item["<orderNo>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-      客户名称:{{item["<custom>k__BackingField"]}}
+      客户名称:<text class='text-grey'>{{item["<custom>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-      制单人:{{item["<addPersonName>k__BackingField"]}}
+      制单人:<text class='text-grey'>{{item["<addPersonName>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-      制单时间:{{item["<pbasename>k__BackingField"]}}
+      制单时间:<text class='text-grey'>{{item["<pbasename>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-      商品名称:{{item["<addTime>k__BackingField"]}}
+      商品名称:<text class='text-grey'>{{item["<addTime>k__BackingField"]}}</text>
     </view>
   </view>
 

@@ -1,5 +1,8 @@
 // pages/Me_SalesGoods/WarehousGuanli/WaitingOrders/WaitingOrders.js
 var comm = require('../../../../utils/PublicProtocol.js');
+const app = getApp();
+var tempDatatwo = ""
+var tempData = ""; //POST参数定义
 Page({
 
   /**
@@ -9,10 +12,60 @@ Page({
     rowcount: 0,
     pagecount: 0,
     fenye: 0,
-    shuju:[]
+    shuju:[],
+    CustomBar: app.globalData.CustomBar, //手机信息
+    word: ''
   },
 
- 
+  // 获取搜索框内容
+  cxsearch: function (e) {
+    this.setData({
+      word: e.detail.value
+    });
+    this.setData({
+      cxsearch: true
+    });
+  },
+  clicksearch: function (e) {
+    var appid = wx.getStorageSync('appid');
+    var uuid = wx.getStorageSync('uuid');
+    var utoken = wx.getStorageSync('utoken');
+    if (this.data.word == '' || this.data.word == null || this.data.word == undefined) {
+
+      this.onLoad()
+    } else {
+      var tempData = {
+        uuid: uuid, //设备id
+        appid: appid,
+        dotype: 'list',
+        customerName: this.data.word,
+        pagesize: 10,
+        pageindex: 1,
+        utoken: utoken
+      }
+      var this11 = this;
+
+      comm.unitWebsitePro('PostOutOrder', tempData, function (data) {
+        debugger
+        var hangshu = data.RspData.RowCount
+        var yeshu = data.RspData.PageCount
+        this11.setData({
+          fenye: 0
+        })
+        var liebiao = data.RspData.outorderlist;
+        if (yeshu > 0) {
+          this11.setData({
+            fenye: this11.data.fenye + 1
+          })
+        }
+        this11.setData({
+          shuju: liebiao,
+          rowcount: hangshu,
+          pagecount: yeshu,
+        })
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -75,14 +128,29 @@ debugger
       var appid = wx.getStorageSync('appid');
       var uuid = wx.getStorageSync('uuid');
       var utoken = wx.getStorageSync('utoken');
-      var tempData = {
-        uuid: uuid, //设备id
-        appid: appid, //
-        dotype: 'list',
-        pagesize: 10,
-        pageindex: this.data.fenye,
-        utoken: utoken,
+      if (this.data.word == '' || this.data.word == null || this.data.word == undefined) {
+         tempDatatwo = {
+          uuid: uuid, //设备id
+          appid: appid, //
+          dotype: 'list',
+          pagesize: 10,
+          pageindex: this.data.fenye,
+          utoken: utoken,
+        }
+      
+      }else{
+
+        tempDatatwo = {
+          uuid: uuid, //设备id
+          appid: appid, //
+          dotype: 'list',
+          customerName: this.data.word,
+          pagesize: 10,
+          pageindex: this.data.fenye,
+          utoken: utoken,
+        }
       }
+     
       var this11 = this;
 
       comm.unitWebsitePro('PostOutOrder', tempData, function(data) {

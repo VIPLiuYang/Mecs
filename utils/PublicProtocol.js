@@ -5,7 +5,8 @@
 var unitWebsitePro = function (name, data, callback) {
   wxPost('http://api.ip165.com/api/Data/'+name, JSON.stringify(data), callback);
 }
-
+//http://api.ip165.com/
+//http://192.168.1.6/
 
  //生成随机数
 var random = function () {

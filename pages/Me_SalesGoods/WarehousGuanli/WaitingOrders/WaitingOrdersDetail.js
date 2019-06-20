@@ -57,7 +57,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '待出订单详细',
     })
-
+debugger
     var id = options.hid;
     this.setData({
       hid:id
@@ -74,10 +74,10 @@ Page({
     var this11 = this;
     comm.unitWebsitePro('PostOutOrderDetail', tempData, function(data) {
       debugger
-      var shuju = data.RspData.outorderlist[0];
+      var shuju1 = data.RspData.outorderdetail[0];
 
       this11.setData({
-        shuju: shuju,
+        shuju: shuju1,
       })
     })
   },

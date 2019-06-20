@@ -3,25 +3,25 @@
 <view class='ziview'>
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell">
-      <view class="weui-cell__bd">订单编号：{{shuju["<orderNo>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">订单编号：<text class='text-grey'>{{shuju["<orderNo>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">制单人：{{shuju["<marketMan>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">制单人：<text class='text-grey'>{{shuju["<marketMan>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">制单时间：{{shuju["<marketTime>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">制单时间：<text class='text-grey'>{{shuju["<marketTime>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">客户名称：{{shuju["<customerName>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">客户名称：<text class='text-grey'>{{shuju["<customerName>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">联系电话：{{shuju["<cusPhone>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">联系电话：<text class='text-grey'>{{shuju["<cusPhone>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">入库日期：{{shuju["<thDate>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">入库日期：<text class='text-grey'>{{shuju["<thDate>k__BackingField"]}}</text></view>
     </view>
     <view class="weui-cell">
-      <view class="weui-cell__bd">备注：{{shuju["<remark>k__BackingField"]}}</view>
+      <view class="weui-cell__bd">备注：<text class='text-grey'>{{shuju["<remark>k__BackingField"]}}</text></view>
     </view>
   </view>
 </view>
@@ -31,10 +31,10 @@
 
 <view class='contentView'  wx:for='{{liebiao}}'>
   <view class='contentView02_1'>
-    商品名称:{{item["<proName>k__BackingField"]}}
+    商品名称:<text class='text-grey'>{{item["<proName>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
-    进货数量:{{item["<dgNum>k__BackingField"]}}
+    进货数量:<text class='text-grey'>{{item["<dgNum>k__BackingField"]}}</text>
   </view>
   <view class='contentView02_1'>
     入库仓库:

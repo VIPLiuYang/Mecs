@@ -1,6 +1,9 @@
-<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"><view slot="content">客户档案</view></cu-custom>
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"
+goUrl='/pages/Me_SalesGoods/WarehousGuanli/CustomerOrders/CustomerOrdersAdd'>
+<view slot="content">客户订单</view>
+</cu-custom>
 
-<modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+<!-- <modal hidden="{{hiddenmodalput}}" title="查询条件" confirm-text="查询" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
@@ -34,31 +37,45 @@
       </view>
     </view>
   </view>
-</modal>
+</modal> -->
 
-<button class="weui-btn addsize" type="primary" plain="true" bindtap='add'>添加</button>
-<button class="weui-btn addsize" type="primary" plain="true" bindtap="modalinput">查询</button>
+<!-- <button class="weui-btn addsize" type="primary" plain="true" bindtap='add'>添加</button>
+<button class="weui-btn addsize" type="primary" plain="true" bindtap="modalinput">查询</button> -->
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" name="word" value='{{word}}' confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
+  </view>
+</view>
 
+<view wx:if="{{shuju==null}}">
+  <noData>
+    <view bindtap='a'>暂无数据</view>
+  </noData>
+ </view>
 
 <view class='contentView' wx:for="{{shuju}}">
   <view class='Detailwidth' bindtap='mingxi' data-can='{{item["<hbid>k__BackingField"]}}'>
     <view class='contentView02_1'>
-      订单编号:{{item["<hno>k__BackingField"]}}
+      订单编号:<text class='text-grey'>{{item["<hno>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-      客户名称:{{item["<cusName>k__BackingField"]}}
+      客户名称:<text class='text-grey'>{{item["<cusName>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-      制单人:{{item["<addUserName>k__BackingField"]}}
+      制单人:<text class='text-grey'>{{item["<addUserName>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-      制单时间:{{item["<addTime>k__BackingField"]}}
+      制单时间:<text class='text-grey'>{{item["<addTime>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-      订单类型:{{item["<orderType>k__BackingField"]}}
+      订单类型:<text class='text-grey'>{{item["<orderType>k__BackingField"]}}</text>
     </view>
     <view class='contentView02_1'>
-      单据状态:{{item["<statusName>k__BackingField"]}}
+      单据状态:<text class='text-grey'>{{item["<statusName>k__BackingField"]}}</text>
     </view>
   </view>
 
