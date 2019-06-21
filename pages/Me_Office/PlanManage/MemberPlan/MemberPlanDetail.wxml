@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<!--pages/Me_Office/PlanManage/MemberPlan/MemberPlanDetail.wxml-->
-<text>pages/Me_Office/PlanManage/MemberPlan/MemberPlanDetail.wxml</text>
-=======
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
         <view slot="backText">返回</view>
         <view slot="content">员工计划详情</view>
@@ -87,4 +83,3 @@
                 </view>
         </view>
 </view>
->>>>>>> 56dbd83b40f6d7932035d9718c6bb2dd55ac9e6e
