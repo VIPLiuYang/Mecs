@@ -1,1 +1,160 @@
+<<<<<<< HEAD
 /* pages/Me_Office/PlanManage/MemberPlan/MemberPlanDetail.wxss */
+=======
+@import "/utils/icon/iconfont.wxss";
+.content{
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
+
+.productNav{
+ width: 100%;
+ height: 80rpx;
+ line-height: 80rpx;
+ background-color: #16B4EE;
+ left: 0;
+ top: 0;
+ position: fixed;
+ z-index: 100;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.productNav{
+ width: 100%;
+ height: 80rpx;
+ line-height: 80rpx;
+ background-color: #16B4EE;
+}
+.proNavLeft{
+  width: 20%;
+  height: 75rpx;
+  float: left;
+  margin-top: 5rpx
+}
+.proNavImage01{
+  width: 50%;
+  height: 40rpx;
+  margin: 0px auto;
+}
+.proNavCon{
+width: 60%;
+height: 80rpx;
+line-height: 80rpx;
+text-align: center;
+float: left;
+color: #fff;
+letter-spacing: 0.2em;
+font-size: 35rpx;
+}
+.proNavRight{
+ width: 10%;
+ height:72rpx;
+ float:right;
+ padding-top: 8rpx;
+ padding-right: 18rpx;
+}
+.proNavImage{
+  width: 80%;
+  height: 60rpx;
+}
+.proNavImagesearch{
+  width: 42%;
+  height: 40rpx;
+}
+
+.weui-cells{
+  font-size: 35rpx;
+}
+
+.pifucss{
+ width: 95%;
+ height: auto;
+ margin: 0px auto;
+ border: 1px solid #ccc;
+box-shadow:#ccc;
+border-radius: 10rpx;
+margin-top: 30rpx;
+background: #fff;
+}
+.pifucss01{
+ width: 100%;
+ height: 70rpx;
+ line-height: 70rpx;
+ margin: 0px auto;
+ font-size: 36rpx;
+ background: #cecece;
+ padding-left: 3%;
+}
+.pifucss01_1{
+width: 50%;
+height: 70rpx;
+float: left;
+font-weight: bold;
+}
+.pifucss01_2{
+width: 10%;
+height:70rpx;
+float: right;
+overflow: hidden;
+}
+.pifucss01_2iimg{
+width: 60rpx;
+height: 60rpx;
+margin-top: 2rpx;
+}
+.weui-cell1 {
+padding:6px 10px;
+position: relative;
+display: -webkit-box;
+display: -webkit-flex;
+display: flex;
+-webkit-box-align: center;
+-webkit-align-items: center;
+align-items: center;
+}
+.pifucss02{
+width: 100%;
+height: auto;
+margin: 0px auto;
+font-size: 34rpx;
+border-bottom: 1rpx dashed #ccc;
+}
+.weui-cells_pf{
+width: 100%;
+height: 300rpx;
+margin: 0px auto;
+}
+.weui-cell__hd1{
+width: 100%;
+height: auto;
+margin: 0px auto;
+text-align: center;
+overflow: hidden;
+color: #333;
+}
+.weui-cell__bd2{
+width: 100%;
+height: auto;
+margin: 0px auto;
+overflow: hidden;
+}
+.weui-cell__bd2text{
+ width: 100%;
+ height: 260rpx;
+ border: 1px solid #ccc;
+ border-radius: 10rpx;
+ padding: 10rpx;
+}
+.weui-cell2 {
+padding:6px 10px;
+width: 100%;
+height: auto;
+margin: 0px auto;
+}
+>>>>>>> 56dbd83b40f6d7932035d9718c6bb2dd55ac9e6e
