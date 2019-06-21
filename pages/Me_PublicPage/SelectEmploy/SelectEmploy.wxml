@@ -1,0 +1,28 @@
+<button class="weui-btn" type="default" bindtap='baocun' plain="true">确定</button>
+
+
+  <!-- 人员 -->
+
+  <checkbox-group bindchange="checkboxChange">
+  <view wx:for="{{dept}}" wx:for-item="izhi" wx:for-index="idx">
+
+  <!-- 企业 -->
+  <view class="weui-cells__title" wx:if="{{izhi.deptEmp.length!=0}}">{{izhi["depename:"]}}</view>
+
+    <view class="weui-cells weui-cells_after-title" wx:for="{{izhi.deptEmp}}" wx:for-item="izhi2">
+      <label class="checkbox">
+        <view class="tui-menu-list">
+          <checkbox value="{{izhi2.employno}}" checked="{{izhi2.checked}}" />
+          <view class="weui-cell__bd">{{izhi2.Employ}}</view>
+        </view>
+      </label>
+    </view>
+    </view>
+  </checkbox-group>
+
+
+  <!-- <view class="weui-cell {{izhi2.show}}" bindtap='fontcolor' data-eo='{{izhi2.employno}}'>
+    <view class="weui-cell__bd">{{izhi2.Employ}}</view>
+  </view> -->
+
+

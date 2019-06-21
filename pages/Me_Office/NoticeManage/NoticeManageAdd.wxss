@@ -103,3 +103,25 @@ width: 120rpx;
 height: 80rpx;
 margin: 15rpx 0rpx;
 }
+
+.riqi{
+width: 30%;
+float: right;
+height: 35rpx;
+}
+
+.contentView{
+ width: 90%;
+ height: 100rpx;
+ margin: 10rpx auto;
+ border-bottom: 1rpx solid #ccc;
+ overflow: hidden;
+}
+
+.contentView02_1{
+width: 70%;
+height: auto;
+font-size: 30rpx;
+margin-right: 100rpx;
+/* line-height: 62rpx; */
+}

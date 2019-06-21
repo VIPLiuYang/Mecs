@@ -10,7 +10,7 @@
           <view class="weui-label">标题</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" name="cno" placeholder="请输入标题" />
+          <input class="weui-input" name="title" placeholder="请输入标题" />
         </view>
       </view>
 
@@ -36,24 +36,51 @@
       </view>
 
 
-<view class="weui-cell weui-cell_input">
+      <!-- <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
           <view class="weui-label">限定部门</view>
         </view>
         <view class="weui-cell__bd">
-        <radio-group bindchange="radiochange">
-         <radio value='yes' class='radiocss' checked>是</radio>
-         <radio value='no' class='radiocss'>否</radio>
-</radio-group>
+          <radio-group bindchange="radiochange">
+            <radio value='yes' class='radiocss' checked>是</radio>
+            <radio value='no' class='radiocss'>否</radio>
+          </radio-group>
+        </view>
+      </view> -->
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">限定部门</view>
+          <view class="weui-cell__ft" bindtap='checked' data-ch='{{check}}'>
+            <view wx:if="{{check==1}}">
+              <switch checked />
+            </view>
+            <view wx:if="{{check==0}}">
+              <switch />
+            </view>
+          </view>
         </view>
       </view>
-
     </view>
+
 
     <view class="weui-btn-area">
-    
       <button class="weui-btn" formType="submit" type="primary">提交</button>
     </view>
+
+    <view class="weui-btn-area" wx:if="{{check==1}}">
+      <button class="weui-btn" bindtap='prodect' type="primary">选中员工</button>
+    </view>
+    <view class='contentView' wx:if="{{check==1}}" wx:for="{{retarray}}"  wx:for-index="bindex">
+      <view class='riqi'>
+        <button class="weui-btn mini-btn" type="primary" bindtap='del' data-xb='{{bindex}}' size="mini">删除</button>
+      </view>
+      <view class='contentView02_1'>
+        {{item.Employ}}
+      </view>
+    </view>
+
+
+
 
   </form>
 </view>

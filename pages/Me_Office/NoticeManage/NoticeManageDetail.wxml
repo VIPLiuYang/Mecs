@@ -2,34 +2,45 @@
   <view slot="backText">返回</view>
   <view slot="content">通知公告详情</view>
 </cu-custom>
+
 <view class="weui-cells weui-cells_after-title">
+
   <view class="weui-cell">
     <view class="weui-cell__bd">
-      <text class='text-grey'>111111</text> </view>
+      <text class='text-grey'>{{shuju['title']}}</text> 
+      </view>
   </view>
+
   <view class="weui-cell">
     <view class="weui-cell__bd">发布人：
-      <text class='text-grey'>2222222</text>
+      <text class='text-grey'>{{shuju["username"]}}</text>
     </view>
   </view>
+
   <view class="weui-cell">
     <view class="weui-cell__bd">发布时间：
-      <text class='text-grey'>2019-06-18</text>
+      <text class='text-grey'>{{shuju["createtime"]}}</text>
     </view>
   </view>
+
   <view class="weui-cell">
     <view class="weui-cell__bd">已查看人员：
-      <text class='text-grey'>2222222</text>
+      <view wx:for="{{liebiao}}">
+        <text class='text-grey'>{{item['employ']}}</text>
+      </view>
     </view>
   </view>
+
   <view class="weui-cell">
     <view class="weui-cell__bd">公告内容：
-      <text class='text-grey'>44545445454</text>
+      <text class='text-grey'>{{shuju["content"]}}</text>
     </view>
   </view>
+
   <view class="weui-cell">
     <view class="weui-cell__bd">附件：
-      <text class='text-grey'>暂无附件</text>
+      <text class='text-grey'>{{shuju["fjpath"]}}</text>
     </view>
   </view>
+
 </view>

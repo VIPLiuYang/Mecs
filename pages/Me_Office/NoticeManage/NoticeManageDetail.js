@@ -5,12 +5,35 @@ Page({
          * 页面的初始数据
          */
         data: {
+          shuju: [],
+          liebiao: []
         },
 
         /**
          * 生命周期函数--监听页面加载
          */
         onLoad: function (options) {
+          var id = options.id;
+          var appid = wx.getStorageSync('appid');
+          var uuid = wx.getStorageSync('uuid');
+          var utoken = wx.getStorageSync('utoken');
+          var tempData = {
+            uuid: uuid, //设备id
+            appid: appid, //
+            id: id,
+            utoken: utoken
+          }
+          var this11 = this;
+          comm.unitWebsitePro('PostNoticeDetail', tempData, function (data) {
+            debugger
+            var shuju = data.RspData.noticedetail[0];
+            var liebiao = data.RspData.employsee;
+            this11.setData({
+              shuju: shuju,
+              liebiao: liebiao
+            })
+          })
+
 
         },
 
