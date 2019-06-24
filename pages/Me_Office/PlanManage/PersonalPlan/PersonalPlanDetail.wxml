@@ -5,71 +5,55 @@
 <view class="weui-cells weui-cells_after-title">
   <view class="weui-cell">
     <view class="weui-cell__bd">
-      <text class='text-grey'>111111</text> </view>
+      <text class='text-grey'>{{shuju['Title']}}</text> </view>
   </view>
   <view class="weui-cell">
     <view class="weui-cell__bd">内容：
-      <text class='text-grey'>2222222</text>
+      <text class='text-grey'>{{shuju['content']}}</text>
     </view>
   </view>
   <view class="weui-cell">
     <view class="weui-cell__bd">工期：
-      <text class='text-grey'>2019-06-18至2019-06-20</text>
+      <text class='text-grey'>{{shuju['Stime']}}至{{shuju['Etime']}}</text>
     </view>
   </view>
   <view class="weui-cell">
     <view class="weui-cell__bd">上报时间：
-      <text class='text-grey'>2019-06-19</text>
+      <text class='text-grey'>{{shuju['createtime']}}</text>
     </view>
   </view>
   <view class="weui-cell">
     <view class="weui-cell__bd">上报人：
-      <text class='text-grey'>44545445454</text>
+      <text class='text-grey'>{{shuju['UserName']}}</text>
     </view>
   </view>
 </view>
 <view class='pifucss'>
-        <view class='pifucss01'>
-                <view class='pifucss01_1'>
-                        批复详情
-                </view>
-                <view class='pifucss01_2'>
-                </view>
-        </view>
-        
-        <view class='pifucss02'>
-                <view class="weui-cell1">
-                        <view class="weui-cell__bd">批复人：
-                                <text class='text-grey'>2222222</text>
-                        </view>
-                </view>
-                <view class="weui-cell1">
-                        <view class="weui-cell__bd">批复信息：
-                                <text class='text-grey'>1122121212121</text>
-                        </view>
-                </view>
-                <view class="weui-cell1">
-                        <view class="weui-cell__bd">批复时间：
-                                <text class='text-grey'>2019-06-18</text>
-                        </view>
-                </view>
-        </view>
+  <view class='pifucss01'>
+    <view class='pifucss01_1'>
+      批复详情
+    </view>
+    <view class='pifucss01_2'>
+    </view>
+  </view>
 
-        <view class='pifucss02'>
-                <view class="weui-cell1">
-                        <view class="weui-cell__bd">批复人：
-                                <text class='text-grey'>2222222</text>
-                        </view>
-                </view>
-                <view class="weui-cell1">
-                        <view class="weui-cell__bd">批复信息：
-                                <text class='text-grey'>1122121212121</text>
-                        </view>
-                </view>
-                <view class="weui-cell1">
-                        <view class="weui-cell__bd">批复时间：
-                                <text class='text-grey'>2019-06-18</text>
-                        </view>
-                </view>
-        </view>
+  <view class='pifucss02' wx:for="{{liebiao}}">
+    <view class="weui-cell1">
+      <view class="weui-cell__bd">批复人：
+        <text class='text-grey'>{{item['employ']}}</text>
+      </view>
+    </view>
+    <view class="weui-cell1">
+      <view class="weui-cell__bd">批复信息：
+        <text class='text-grey'>{{item['replyContent']}}</text>
+      </view>
+    </view>
+    <view class="weui-cell1">
+      <view class="weui-cell__bd">批复时间：
+        <text class='text-grey'>{{item['replyTime']}}</text>
+      </view>
+    </view>
+  </view>
+
+
 </view>

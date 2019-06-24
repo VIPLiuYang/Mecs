@@ -1,6 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}" goUrl='/pages/Me_Office/NoticeManage/NoticeManageAdd'>
-  <view slot="content">员工计划</view>
-</cu-custom>
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">员工计划</view></cu-custom> 
 
 <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
   <view class="search-form round">
@@ -13,17 +11,17 @@
 </view>
 
 <view class='page'>
-  <view class='contentView' bindtap='mingxi'>
+  <view class='contentView' bindtap='mingxi' wx:for="{{shuju}}" data-id='{{item["id"]}}'>
     <view class='contentView02_1'>
-      <text class='text-grey'>1111</text>
+      <text class='text-grey'>{{item["Title"]}}</text>
     </view>
     <view class='contentView02_1'>
       内容:
-      <text class='text-grey'>2222</text>
+      <text class='text-grey'>{{item["content"]}}</text>
     </view>
     <view class='contentView02_1'>
       管理员:
-      <text class='text-grey'>54554445</text>
+      <text class='text-grey'>{{item["UserName"]}}</text>
     </view>
   </view>
 
@@ -33,4 +31,11 @@
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </view>
   </view>
+</view>
+
+<view wx:if="{{!isxs}}">
+ <noData>
+  <view bindtap='a'>暂无数据</view>
+</noData>
+
 </view>

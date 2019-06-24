@@ -13,17 +13,17 @@
 </view>
 
 <view class='page'>
-  <view class='contentView' bindtap='mingxi'>
+  <view class='contentView' bindtap='mingxi' wx:for="{{shuju}}" data-id='{{item["id"]}}'>
     <view class='contentView02_1'>
-      <text class='text-grey'>1111</text>
+      <text class='text-grey'>{{item["Title"]}}</text>
     </view>
     <view class='contentView02_1'>
       内容:
-      <text class='text-grey'>2222</text>
+      <text class='text-grey'>{{item["content"]}}</text>
     </view>
     <view class='contentView02_1'>
       上报时间:
-      <text class='text-grey'>2019-06-17</text>
+      <text class='text-grey'>{{item["createtime"]}}</text>
     </view>
   </view>
 
@@ -33,4 +33,11 @@
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </view>
   </view>
+</view>
+
+<view wx:if="{{!isxs}}">
+ <noData>
+  <view bindtap='a'>暂无数据</view>
+</noData>
+
 </view>
