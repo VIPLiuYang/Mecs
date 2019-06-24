@@ -52,6 +52,11 @@
     "pages/Me_Office/PlanManage/PersonalPlan/PersonalPlan",
     "pages/Me_Office/PlanManage/PersonalPlan/PersonalPlanAdd",
     "pages/Me_Office/PlanManage/PersonalPlan/PersonalPlanDetail",
+    "pages/Me_Office/WorkManage/EmployeeWork/EmployeeWork",
+    "pages/Me_Office/WorkManage/EmployeeWork/EmployeeWorkDetail",
+    "pages/Me_Office/WorkManage/WorkArrangement/WorkArrangement",
+    "pages/Me_Office/WorkManage/WorkArrangement/WorkArrangementAdd",
+    "pages/Me_Office/WorkManage/WorkArrangement/WorkArrangementDetail",
     "utils/noData/noDate"
   ],
   "window": {

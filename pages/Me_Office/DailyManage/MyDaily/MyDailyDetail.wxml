@@ -1,0 +1,38 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+        <view slot="backText">返回</view>
+        <view slot="content">我的日报详情</view>
+</cu-custom>
+<view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+                <view class="weui-cell__bd">日报内容：
+                        <text class='text-grey'>都是困得速度快斯柯达就开始得谨慎点快捷快递就开始代缴代缴福达合金翻江倒海放大镜返回键方法的惊魂甫定</text>
+                </view>
+        </view>
+        <view class="weui-cell">
+                <view class="weui-cell__bd">计划内容：
+                        <text class='text-grey'>jsjsd倒库是看打瞌睡看电视看电视看看电视看电视看电视看</text>
+                </view>
+        </view>
+        <view class="weui-cell">
+                <view class="weui-cell__bd">总结内容：
+                        <text class='text-grey'>辅导费地方地方的订饭订饭</text>
+                </view>
+        </view>
+        <view class="grid flex-sub padding-lr col-3 grid-square">
+                                        <view class="bg-img" style="background-image:url(../../../../images/tx.jpg);">
+                                        </view>
+                                        <view class="bg-img" style="background-image:url(../../../../images/tx.jpg);">
+                                        </view>
+                                        <view class="bg-img" style="background-image:url(../../../../images/tx.jpg);">
+                                        </view>
+        </view>
+        <view class="wz_css">
+                                   <view class="wz_css01">
+                                     <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/come_from_lbs.png" class="wz_css01_img"></image>
+                                   </view>
+                                   <view class="wz_css02">
+                                     山东省济南市历下区
+                                   </view>
+        </view>
+        
+</view>
