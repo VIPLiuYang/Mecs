@@ -1,8 +1,8 @@
 <cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}" goUrl='/pages/Me_Office/MyDaily/MyDailyAdd'>
-        <view slot="content">我的日报</view>
+  <view slot="content">我的日报</view>
 </cu-custom>
 
-<modal hidden="{{hiddenmodalput}}"  confirm-text="回复" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+<modal hidden="{{hiddenmodalput}}" confirm-text="回复" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
   <view class="weui-cells_pf">
     <view class="weui-cell2">
       <view class="weui-cell__bd2">
@@ -14,113 +14,117 @@
 
 
 <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
-        <view class="search-form round">
-                <text class="cuIcon-search"></text>
-                <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" name="word" value='{{word}}' confirm-type="search"></input>
-        </view>
-        <view class="action">
-                <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
-        </view>
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" name="word" value='{{word}}' confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
+  </view>
 </view>
 
 <view class='page'>
-        <view class='contentView'>
-                <view class="cu-card dynamic {{isCard?'no-card':''}}">
-                        <view class="cu-item shadow">
-                                <view class="cu-list menu-avatar"  bindtap='mingxi'>
-                                        <view class="cu-item">
-                                                <view class="cu-avatar round lg" style="background-image:url(../../../../images/tx.jpg);"></view>
-                                                <view class="content flex-sub">
-                                                        <view>哈哈</view>
-                                                        <view class="text-gray text-sm flex justify-between">
-                                                           2019年6月21日
-                                                        </view>
-                                                </view>
-                                        </view>
-                                </view>
-                                <view class="text-content">
-                                  日报内容：me平台小程序日报管理页面
-                                </view>
-                                <view class="grid flex-sub padding-lr col-3 grid-square">
-                                        <view class="bg-img" style="background-image:url(../../../../images/tx.jpg);">
-                                        </view>
-                                        <view class="bg-img" style="background-image:url(../../../../images/tx.jpg);">
-                                        </view>
-                                        <view class="bg-img" style="background-image:url(../../../../images/tx.jpg);">
-                                        </view>
-                                </view>
-                                <view class="wz_css">
-                                   <view class="wz_css01">
-                                     <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/come_from_lbs.png" class="wz_css01_img"></image>
-                                   </view>
-                                   <view class="wz_css02">
-                                     山东省济南市历下区
-                                   </view>
-                                   <view class="text-gray text-sm text-right padding dz_css">
-                                        <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
-                                        <text class="cuIcon-messagefill margin-lr-xs" bindtap='modalinput'></text> 30
-                                   </view>
-                                </view>
-                                <view class="dz_list">
-                                  <view class="dz_list01">
-                                    <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/praise_h.png" class="dz_list01_img"></image>
-                                  </view>
-                                  <view class="dz_list02">
-                                    管理员
-                                  </view>
-                                </view>
-                                <view class="cu-list menu-avatar comment solids-top">
-                                        <view class="cu-item">
-                                                <view class="cu-avatar round" style="background-image:url(../../../../images/tx.jpg);"></view>
-                                                <view class="content">
-                                                        <view class="text-grey">呵呵</view>
-                                                        <view class="text-gray text-content text-df">
-                                                                你这个什么时候完成
-                                                        </view>
-                                                        <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
-                                                                <view class="flex">
-                                                                        <view>嘿嘿回复呵呵：</view>
-                                                                        <view class="flex-sub">我们预计本周末</view>
-                                                                </view>
-                                                        </view>
-                                                        <view class="margin-top-sm flex justify-between">
-                                                                <view class="text-gray text-df">2019年6月21日</view>
-                                                                <view>
-                                                                        <text class="cuIcon-messagefill text-gray margin-left-sm" bindtap='modalinput'></text>
-                                                                </view>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                        <view class="cu-item">
-                                                <view class="cu-avatar round" style="background-image:url(../../../../images/tx.jpg);"></view>
-                                                <view class="content">
-                                                        <view class="text-grey">哇哇</view>
-                                                        <view class="text-gray text-content text-df">
-                                                         下一步计划是什么？
-                                                        </view>
-                                                        <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
-                                                                <view class="flex">
-                                                                        <view>嘿嘿回复哇哇：</view>
-                                                                        <view class="flex-sub">Oa小程序开发</view>
-                                                                </view>
-                                                        </view>
-                                                        <view class="margin-top-sm flex justify-between">
-                                                                <view class="text-gray text-df">2016年6月21日</view>
-                                                                <view>
-                                                                        <text class="cuIcon-messagefill text-gray margin-left-sm" bindtap='modalinput'></text>
-                                                                </view>
-                                                        </view>
-                                                </view>
-                                        </view>
-                                </view>
-                        </view>
-                </view>
+  <view class='contentView' wx:for="{{shuju}}" wx:for-item="item">
+    <view class="cu-card dynamic {{isCard?'no-card':''}}">
+      <view class="cu-item shadow">
+        <view class="cu-list menu-avatar" bindtap='mingxi'>
+          <view class="cu-item">
+            <!-- http://mecs.ip165.com/ -->
+            <view class="cu-avatar round lg" style="background-image:url(http://mecs.ip165.com/{{item.touxiang}});"></view>
+            <view class="content flex-sub">
+              <view>{{item.employ}}</view>
+              <view class="text-gray text-sm flex justify-between">
+                {{item.createtime}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="text-content">
+          日报内容：{{item.Content}}
+        </view>
+        <view class="grid flex-sub padding-lr col-3 grid-square">
+          <view class="bg-img" style="background-image:url(http://mecs.ip165.com/{{item.photo1}});">
+          </view>
+          <view class="bg-img" style="background-image:url(http://mecs.ip165.com/{{item.photo2}});">
+          </view>
+          <view class="bg-img" style="background-image:url(http://mecs.ip165.com/{{item.photo3}});">
+          </view>
+        </view>
+        <view class="wz_css">
+          <view class="wz_css01">
+            <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/come_from_lbs.png" class="wz_css01_img"></image>
+          </view>
+          <view class="wz_css02">
+            {{item.rbAddress}}
+          </view>
+          <view class="text-gray text-sm text-right padding dz_css">
+            <view bindtap='dianzan' data-id="{{item.id}}">
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.fabulouslist.length==null ? '0' : item.fabulouslist.length}}</view>
+            <view>
+              <text class="cuIcon-messagefill margin-lr-xs" bindtap='modalinput'></text> {{item.replylist.length==null ? '0' : item.replylist.length}}</view>
+          </view>
+        </view>
+        <view class="dz_list">
+          <view class="dz_list01">
+            <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/praise_h.png" class="dz_list01_img"></image>
+          </view>
+          <view class="dz_list02">
+            <text wx:for="{{item.fabulouslist}}" wx:for-item="dz"> {{dz.Employ}} </text>
+          </view>
         </view>
 
-        <view class="weui-panel__ft" wx:if="{{isxs}}" bindtap='clickgd'>
-                <view class="weui-cell weui-cell_access weui-cell_link">
-                        <view class="weui-cell__bd">查看更多</view>
-                        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        <view class="cu-list menu-avatar comment solids-top">
+
+          <view wx:for="{{item.replylist}}" wx:for-item="hf">
+            <!-- <view class="cu-avatar round" style="background-image:url(http://mecs.ip165.com/{{item.photo}});"></view> -->
+
+
+            <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+              <view class="flex" wx:if="{{hf.beihuifuren ==null}}">
+                <view>{{hf.employ}}：</view>
+                <view class="flex-sub">{{hf.replyContent}}</view>
+              </view>
+              <view class="flex" wx:else>
+                <view>{{hf.employ}} 回复 {{hf.beihuifuren}}：</view>
+                <view class="flex-sub">{{hf.replyContent}}</view>
+              </view>
+            </view>
+
+            <!-- <view class="bg-grey padding-sm radius margin-top-sm  text-sm" wx:else>
+              <view class="flex">
+                <view>{{hf.employ}}回复{{hf.beihuifuren}}：</view>
+                <view class="flex-sub">{{hf.replyContent}}</view>
+              </view>
+            </view> -->
+            <!-- <view class="content">
+              <view class="text-grey">{{hf.employ}}</view>
+              <view class="text-gray text-content text-df">
+                {{hf.replyContent}}
+              </view>
+              <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+                <view class="flex">
+                  <view>嘿嘿回复呵呵：</view>
+                  <view class="flex-sub">我们预计本周末</view>
                 </view>
+              </view>
+              <view class="margin-top-sm flex justify-between">
+                <view class="text-gray text-df">{{hf.replyTime}}</view>
+                <view>
+                  <text class="cuIcon-messagefill text-gray margin-left-sm" bindtap='modalinput'></text>
+                </view>
+              </view>
+            </view> -->
+
+          </view>
         </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-panel__ft" wx:if="{{isxs}}" bindtap='clickgd'>
+    <view class="weui-cell weui-cell_access weui-cell_link">
+      <view class="weui-cell__bd">查看更多</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
 </view>

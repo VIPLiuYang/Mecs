@@ -1,0 +1,138 @@
+.page{
+  font-size: 30rpx;
+}
+.section{
+   background:#CABBC7;
+   margin:20rpx;
+   padding:20rpx
+
+}
+
+.contentcss01_2input{
+width: 92%;
+height: 60rpx;
+margin: 25rpx 20rpx;
+border: 1rpx solid #ccc;
+border-radius:10rpx;
+}
+
+.biank {
+  border-style: solid;
+  border-width: 1rpx 1rpx 1rpx 1rpx;
+  border-color:black;
+  width: 500rpx;
+  float: left;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+}
+.xila {
+  width: 300rpx;
+  float: left;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+}
+.font{
+
+  float:left;
+  margin-top: 25rpx;
+}
+
+.xaiyi{
+width: 100%;
+height: 80%;
+margin-top: 100rpx;
+
+}
+
+
+.list-msg {
+    padding: 0 20rpx;
+    background-color: #fff;
+    position: relative;
+}
+ 
+.list-msg1 {
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+.list-msg .list-msg2 {
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 0 10rpx;
+}
+ 
+.select_box {
+    background-color:black;
+    color: #fff;
+    padding: 0 10rpx;
+    width: 93%;
+    position: absolute;
+     top: 300rpx;
+    z-index: 1;
+    overflow: hidden;
+    animation: myfirst 0.5s;
+}
+ 
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 210rpx;
+    }
+}
+ 
+.select_one {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+}
+
+.weui-cells{
+  font-size: 35rpx;
+}
+.radiocss{
+width: 120rpx;
+height: 80rpx;
+margin: 15rpx 0rpx;
+}
+
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+  font-size: 35rpx;
+}
+.daily_block{
+width: 96%;
+height: auto;
+margin: 10rpx auto;
+overflow: hidden;
+}
+.title_daily{
+width: 100%;
+height: auto;
+padding: 1rpx 30rpx;
+font-size: 35rpx;
+line-height: 60rpx;
+overflow: hidden;
+}
+.content_daily{
+width: 100%;
+height: auto;
+font-size: 35rpx;
+line-height: 60rpx;
+overflow: hidden; 
+border: 1px solid #ccc;
+border-radius: 20rpx;
+}
+.border{
+width: 96%;
+border-bottom: 1rpx solid #eee;
+margin: 0px auto;
+}
