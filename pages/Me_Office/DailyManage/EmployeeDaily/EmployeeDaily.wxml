@@ -135,3 +135,8 @@
     </view>
   </view>
 </view>
+<view wx:if="{{!isxs}}">
+ <noData>
+  <view bindtap='a'>暂无数据</view>
+</noData>
+</view>
