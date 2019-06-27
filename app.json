@@ -57,6 +57,13 @@
     "pages/Me_Office/WorkManage/WorkArrangement/WorkArrangement",
     "pages/Me_Office/WorkManage/WorkArrangement/WorkArrangementAdd",
     "pages/Me_Office/WorkManage/WorkArrangement/WorkArrangementDetail",
+    "pages/Me_Office/DailyManage/EmployeeDaily/EmployeeDaily",
+    "pages/Me_Office/DailyManage/EmployeeDaily/EmployeeDailyDetail",
+    "pages/Me_Office/DailyManage/MyDaily/MyDaily",
+    "pages/Me_Office/DailyManage/MyDaily/MyDailyAdd",
+    "pages/Me_Office/DailyManage/MyDaily/MyWeeklyAdd",
+    "pages/Me_Office/DailyManage/MyDaily/MyMonthlyAdd",
+    "pages/Me_Office/DailyManage/MyDaily/MyDailyDetail",
     "utils/noData/noDate"
   ],
   "window": {

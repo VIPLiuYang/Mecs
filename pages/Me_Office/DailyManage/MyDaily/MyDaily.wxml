@@ -27,10 +27,12 @@
   <view class='contentView' wx:for="{{shuju}}" wx:for-item="item">
     <view class="cu-card dynamic {{isCard?'no-card':''}}">
       <view class="cu-item shadow">
+
         <view class="cu-list menu-avatar" bindtap='mingxi' data-can='{{item.stafdailydetail}}'>
           <view class="cu-item">
             <!-- http://mecs.ip165.com/ -->
             <view class="cu-avatar round lg" style="background-image:url({{item.touxiang}});"></view>
+
             <view class="content flex-sub">
               <view>{{item.employ}}</view>
               <view class="text-gray text-sm flex justify-between">
@@ -43,11 +45,13 @@
           日报内容：{{item.Content}}
         </view>
         <view class="grid flex-sub padding-lr col-3 grid-square">
+
           <view class="bg-img" style="background-image:url({{item.photo1}});">
           </view>
           <view class="bg-img" style="background-image:url({{item.photo2}});">
           </view>
           <view class="bg-img" style="background-image:url({{item.photo3}});">
+
           </view>
         </view>
         <view class="wz_css">
@@ -60,8 +64,10 @@
           <view class="text-gray text-sm text-right padding dz_css">
             <view bindtap='dianzan' data-id="{{item.id}}">
               <text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.fabulouslist.length==null ? '0' : item.fabulouslist.length}}</view>
+
             <view  bindtap='tkReply' data-id="{{item.id}}" data-type="0" data-ribaoid='{{item.id}}'>
               <text class="cuIcon-messagefill margin-lr-xs" ></text> {{item.replylist.length==null ? '0' : item.replylist.length}}</view>
+
           </view>
         </view>
         <view class="dz_list">
@@ -88,6 +94,7 @@
                 <view style='word-break:break-all;'>
                   <a  bindtap='tkReply' data-type='1' data-id='{{hf.replyContentID}}' data-ribaoid='{{item.id}}'>{{hf.employ}}</a> 回复
                   <a bindtap='tkReply' data-type='1' data-id='{{hf.replyContentID}}' data-ribaoid='{{item.id}}'>{{hf.beihuifuren}}</a>：</view>
+
                 <view class="flex-sub">{{hf.replyContent}}</view>
               </view>
             </view>
