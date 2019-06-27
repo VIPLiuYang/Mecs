@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}" goUrl='/pages/Me_Office/MyDaily/MyDailyAdd'>
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}" goUrl='/pages/Me_Office/DailyManage/MyDaily/MyDailyAdd'>
   <view slot="content">我的日报</view>
 </cu-custom>
 

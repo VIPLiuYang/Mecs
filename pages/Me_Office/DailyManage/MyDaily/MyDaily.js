@@ -170,7 +170,7 @@ Page({
           uuid: uuid, //设备id
           appid: appid,
           dotype: 'list',
-          isboss: 0,
+          isboss: 1,
           pagesize: 10,
           pageindex: 1,
           utoken: utoken
@@ -194,7 +194,7 @@ Page({
             uuid: uuid, //设备id
             appid: appid, //
             dotype: 'list',
-            isboss: 0,
+            isboss: 1,
             pagesize: 10,
             pageindex: pageindex,
             utoken: utoken,
@@ -204,7 +204,7 @@ Page({
             uuid: uuid, //设备id
             appid: appid, //
             dotype: 'list',
-            isboss: 0,
+            isboss: 1,
             name: this.data.word,
             pagesize: 10,
             pageindex: pageindex,
@@ -281,7 +281,7 @@ Page({
                 uuid: uuid, //设备id
                 appid: appid, //
                 dotype: 'list',
-                isboss: 0,
+                isboss: 1,
                 pagesize: 10,
                 pageindex: pageindex,
                 utoken: utoken,
@@ -291,7 +291,7 @@ Page({
                 uuid: uuid, //设备id
                 appid: appid, //
                 dotype: 'list',
-                isboss: 0,
+                isboss: 1,
                 name: this.data.word,
                 pagesize: 10,
                 pageindex: pageindex,
