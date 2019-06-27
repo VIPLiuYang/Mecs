@@ -10,7 +10,7 @@
           <view class="weui-label">标题：</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" name="cno" placeholder="请输入标题" />
+          <input class="weui-input" name="title" placeholder="请输入标题" />
         </view>
       </view>
 
@@ -19,8 +19,8 @@
           <view class="weui-label">开始时间：</view>
         </view>
         <view class="weui-cell__bd">
-          <picker mode="date" value="{{dates}}" bindchange="bindDateChange" data-can='1'>
-            <view class="weui-input">{{dates}}</view>
+          <picker mode="date" value="{{stime}}" bindchange="bindDateChange" data-can='1'>
+            <view class="weui-input">{{stime}}</view>
           </picker>
         </view>
       </view>
@@ -30,8 +30,8 @@
           <view class="weui-label">结束时间：</view>
         </view>
         <view class="weui-cell__bd">
-         <picker mode="date" value="{{dates}}" bindchange="bindDateChange" data-can='1'>
-            <view class="weui-input">{{dates}}</view>
+         <picker mode="date" value="{{etime}}" bindchange="bindDateChange" data-can='2'>
+            <view class="weui-input">{{etime}}</view>
           </picker>
         </view>
       </view>
