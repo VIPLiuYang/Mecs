@@ -180,7 +180,7 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {//页面返回时触发的事件
+  onUnload: function() { //页面返回时触发的事件
     pageindex = 1; //获取的页码
     Flag = 0; //0刷新，1加载更多
   },

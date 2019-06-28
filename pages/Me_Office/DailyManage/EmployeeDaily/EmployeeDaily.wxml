@@ -29,7 +29,7 @@
         <view class="cu-list menu-avatar" bindtap='mingxi' data-can='{{item.stafdailydetail}}'>
           <view class="cu-item">
             <!-- http://mecs.ip165.com/ -->
-            <view class="cu-avatar round lg" style="background-image:url({{item.touxiang}});"></view>
+            <view class="cu-avatar round lg" wx:if='{{item.touxiang}}' style="background-image:url({{item.touxiang}});"></view>
 
             <view class="content flex-sub">
               <view>{{item.employ}}</view>
@@ -84,14 +84,23 @@
 
 
             <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
-              <view class="flex" wx:if="{{hf.beihuifuren ==null}}">
-                <view bindtap='tkReply' data-type='1' data-id='{{hf.replyContentID}}' data-ribaoid='{{item.id}}'>{{hf.employ}}：</view>
+              <view class="flex" wx:if="{{hf.beihuifuren ==null}}" bindtap='tkReply' data-type='1' data-id='{{hf.replyid}}' data-ribaoid='{{item.id}}'>
+                <view >{{hf.employ}}：</view>
                 <view class="flex-sub">{{hf.replyContent}}</view>
               </view>
-              <view class="flex" wx:else>
-                <view style='word-break:break-all;'>
-                  <a  bindtap='tkReply' data-type='1' data-id='{{hf.replyContentID}}' data-ribaoid='{{item.id}}'>{{hf.employ}}</a> 回复
-                  <a bindtap='tkReply' data-type='1' data-id='{{hf.replyContentID}}' data-ribaoid='{{item.id}}'>{{hf.beihuifuren}}</a>：</view>
+              <view class="flex" wx:else bindtap='tkReply' data-type='1' data-id='{{hf.replyid}}' data-ribaoid='{{item.id}}'>
+                <!-- <view style='word-break:break-all;'>
+                  <a bindtap='tkReply' data-type='1' data-id='{{hf.replyContentID}}' data-ribaoid='{{item.id}}'>{{hf.employ}}</a> 回复
+                  <a bindtap='tkReply' data-type='1' data-id='{{hf.replyContentID}}' data-ribaoid='{{item.id}}'>{{hf.beihuifuren}}</a>：
+
+                </view>
+
+                <view class="flex-sub">{{hf.replyContent}}</view>
+              </view> -->
+              <view style='word-break:break-all;' >
+                  {{hf.employ}} 回复
+                 {{hf.beihuifuren}}：
+                </view>
 
                 <view class="flex-sub">{{hf.replyContent}}</view>
               </view>

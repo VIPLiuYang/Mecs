@@ -116,7 +116,7 @@ Page({
           replyContent: this.data.content,
           utoken: utoken
         }
-
+debugger
         var this1 = this;
         comm.unitWebsitePro('PostFabulousReply', candata, function(data) {
           var bool = data.RspCode;
