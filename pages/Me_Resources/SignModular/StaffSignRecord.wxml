@@ -1,6 +1,6 @@
  <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">员工打卡记录</view></cu-custom>  
 <view class="weui-panel weui-panel_access"> 
-  <view class="weui-panel__bd" bindtap='mingxi'  wx:for="{{cardrecordlist}}" wx:for-item="items"> 
+  <view class="weui-panel__bd" bindtap='mingxi' data-id='{{items["<cardId>k__BackingField"]}}'  wx:for="{{cardrecordlist}}" wx:for-item="items"> 
       <view class="weui-media-box weui-media-box_text">
         <view class="weui-media-box__title weui-media-box__title_in-text" style='font-size:12px'>
          {{items["<Employ>k__BackingField"]}}

@@ -8,7 +8,7 @@ Page({
    */
 
 
-  
+
   data: {
     isxs: false, //是否显示加载更多
     isyw: true, //是否显示暂无数据
@@ -17,23 +17,23 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) { 
-    wx.setNavigationBarTitle({//修改标题
+  onLoad: function(options) {
+    wx.setNavigationBarTitle({ //修改标题
       title: '我的打卡记录'
     })
     wx.hideLoading()
     var Flag = 0; //0刷新，1加载更多
-    this.getlist(); 
+    this.getlist();
   },
-  clickgd:function(){//加载更多
+  clickgd: function() { //加载更多
     Flag = 1; //0刷新，1加载更多
     this.getlist();
   },
   //获取数据列表
   getlist: function() {
-          var appid = wx.getStorageSync('appid'); //获取缓存中APPID
-          var uuid = wx.getStorageSync('uuid'); //获取缓存中设备ID 
-          var utoken = wx.getStorageSync('utoken'); //获取缓存中用户utoken
+    var appid = wx.getStorageSync('appid'); //获取缓存中APPID
+    var uuid = wx.getStorageSync('uuid'); //获取缓存中设备ID 
+    var utoken = wx.getStorageSync('utoken'); //获取缓存中用户utoken
     var tempData = {
       uuid: uuid, //设备id
       appid: appid, //
@@ -44,16 +44,17 @@ Page({
     }
     var that = this;
     comm.unitWebsitePro('PostCardRecordList', tempData, function(data) {
+      debugger
       if (data.RspCode == "0000") { //正常  
-        if (Flag==0){
+        if (Flag == 0) {
           that.setData({
             cardrecordlist: data.RspData.cardrecordlist, //绑定数据列表
             isxs: true //显示加载更多
           });
-        }else{
-          that.setData({//加载更多数组拼接
-            cardrecordlist: that.data.cardrecordlist.concat(data.RspData.cardrecordlist), 
-            isxs: true  
+        } else {
+          that.setData({ //加载更多数组拼接
+            cardrecordlist: that.data.cardrecordlist.concat(data.RspData.cardrecordlist),
+            isxs: true
           });
         }
         pageindex++;
@@ -65,15 +66,16 @@ Page({
     })
   },
 
-        //列表详情
-mingxi: function (e) {
-        var cardId = e.currentTarget.dataset.cardId; //获取打卡ID
-                wx.navigateTo({ //页面跳转
-                        url: '/pages/Me_Resources/SignModular/Recorddetails?cardId=' + cardId,
-                })
-},
+  //列表详情
+  mingxi: function(e) {
+    debugger
+    var cardId = e.currentTarget.dataset.id; //获取打卡ID
+    wx.navigateTo({ //页面跳转
+      url: '/pages/Me_Resources/SignModular/Recorddetails?cardId=' + cardId,
+    })
+  },
 
-  onUnload: function() {//页面返回时恢复默认
+  onUnload: function() { //页面返回时恢复默认
     pageindex = 1; //获取的页码
     Flag = 1; //0刷新，1加载更多
   },
@@ -88,10 +90,10 @@ mingxi: function (e) {
     return {
       title: 'Me平台',
       path: '/pages/yingyong/yingyong',
-      success: function (res) {
+      success: function(res) {
         // 转发成功
       },
-      fail: function (res) {
+      fail: function(res) {
         // 转发失败
       }
     }
