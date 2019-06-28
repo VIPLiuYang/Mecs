@@ -63,6 +63,7 @@ Page({
       //点击按钮弹出指定的hiddenmodalput弹出框
       tkReply: function(e) {
         var type = e.currentTarget.dataset.type;
+        //列表回复 弹框回复 传过来的id不同
         var id = e.currentTarget.dataset.id;
         var ribaoid = e.currentTarget.dataset.ribaoid;
         this.setData({
@@ -219,7 +220,7 @@ Page({
         var this1 = this;
         comm.unitWebsitePro('PostDailyList', tempData, function(data) {
               if (data.RspCode == "0000") { //正常 
-                
+                debugger
                 for (var i = 0; i < data.RspData.stafdailylist.length; i++) {
                   if (data.RspData.stafdailylist[i]["photo1"] != null && data.RspData.stafdailylist[i]["photo1"] != "") //头像为空不执行拼接
                   {
