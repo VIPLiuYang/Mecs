@@ -19,7 +19,6 @@ Page({
     })
 
     var bianhao = options.Con;
-
     this.setData({
       bianhao: bianhao
     })

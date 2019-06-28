@@ -1,2 +1,49 @@
-<!--pages/dakaguanli/Recorddetails.wxml-->
-<text>pages/dakaguanli/Recorddetails.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">打卡记录详情</view>
+</cu-custom>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">开始打卡时间：
+      <text class='text-grey'>{{xiangqing["<startTime>k__BackingField"]}}</text> </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">结束打卡时间：
+      <text class='text-grey'>{{xiangqing["<endTime>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">开始打卡位置：
+      <text class='text-grey'>{{xiangqing["<sAddress>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">结束打卡位置：
+      <text class='text-grey'>{{xiangqing["<eAddress>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">开始打卡描述：
+      <text class='text-grey'>{{xiangqing["<sDesc>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">结束打卡描述：
+      <text class='text-grey'>{{xiangqing["<eDesc>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">开始打卡拍摄：
+      <text class='text-grey'>{{xiangqing["<startphoto1>k__BackingField"]}}</text>
+      <text class='text-grey'>{{xiangqing["<startphoto2>k__BackingField"]}}</text>
+      <text class='text-grey'>{{xiangqing["<startphoto3>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">结束打卡拍摄：
+      <text class='text-grey'>{{xiangqing["<endphoto1>k__BackingField"]}}</text>
+      <text class='text-grey'>{{xiangqing["<endphoto2>k__BackingField"]}}</text>
+      <text class='text-grey'>{{xiangqing["<endphoto3>k__BackingField"]}}</text>
+    </view>
+  </view>
+</view>
