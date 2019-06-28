@@ -1,7 +1,5 @@
 var comm = require('../../../utils/PublicProtocol.js'); //引用post公共函数
-var appid = wx.getStorageSync('appid'); //获取缓存中APPID
-var uuid = wx.getStorageSync('uuid'); //获取缓存中设备ID 
-var utoken = wx.getStorageSync('utoken'); //获取缓存中用户utoken
+
 var pageindex = 1; //获取的页码
 var Flag = 0; //0刷新，1加载更多
 Page({
@@ -33,6 +31,9 @@ Page({
   },
   //获取数据列表
   getlist: function() {
+          var appid = wx.getStorageSync('appid'); //获取缓存中APPID
+          var uuid = wx.getStorageSync('uuid'); //获取缓存中设备ID 
+          var utoken = wx.getStorageSync('utoken'); //获取缓存中用户utoken
     var tempData = {
       uuid: uuid, //设备id
       appid: appid, //
@@ -63,6 +64,15 @@ Page({
       }
     })
   },
+
+        //列表详情
+mingxi: function (e) {
+        var cardId = e.currentTarget.dataset.cardId; //获取打卡ID
+                wx.navigateTo({ //页面跳转
+                        url: '/pages/Me_Resources/SignModular/Recorddetails?cardId=' + cardId,
+                })
+},
+
   onUnload: function() {//页面返回时恢复默认
     pageindex = 1; //获取的页码
     Flag = 1; //0刷新，1加载更多
