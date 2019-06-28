@@ -110,7 +110,7 @@ Page({
                         uuid: uuid, //设备id
                         appid: appid, //
                         dotype: 'add', //操作类型
-                        type: '0',//添加类型
+                        type: '1',//添加类型
                         point: '', //点
                         address: '', //位置
                         Photo1: '',
