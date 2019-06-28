@@ -63,6 +63,15 @@ Page({
       }
     })
   },
+
+        //列表详情
+mingxi: function (e) {
+        var cardId = e.currentTarget.dataset.cardId; //获取打卡编号
+                wx.navigateTo({ //页面跳转
+                        url: '/pages/Me_Resources/SignModular/Recorddetails?cardId=' + cardId,
+                })
+},
+
   onUnload: function() {//页面返回时恢复默认
     pageindex = 1; //获取的页码
     Flag = 1; //0刷新，1加载更多
