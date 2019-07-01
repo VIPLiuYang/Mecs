@@ -13,7 +13,8 @@ Page({
     word: '', //搜索框内容 
     htlist: [],
     isxs: false, //是否显示加载更多 相反则是暂无数据
-    shuju: []
+    shuju: [],
+    show: false //控制 暂无数据 是否显示
   },
 
 
@@ -93,17 +94,18 @@ Page({
   GetList: function(e) {
     var this1 = this;
     comm.unitWebsitePro('PostNoticeList', tempData, function(data) {
-      debugger
       if (data.RspCode == "0000") { //正常 
         if (Flag == 0) {
           this1.setData({
             shuju: data.RspData.noticelist, //绑定数据列表
-            isxs: true //显示加载更多
+            isxs: true, //显示加载更多
+            show: false
           });
         } else {
           this1.setData({ //加载更多数组拼接
             shuju: this1.data.shuju.concat(data.RspData.noticelist),
-            isxs: true
+            isxs: true,
+            show:false
           });
         }
         pageindex++;
@@ -117,10 +119,12 @@ Page({
           this1.setData({
             isxs: false,
           });
+
         } else {
           this1.setData({
             shuju: [],
             isxs: false,
+            show: true
           });
         }
       }

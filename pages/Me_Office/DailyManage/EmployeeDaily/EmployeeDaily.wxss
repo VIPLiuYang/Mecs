@@ -1,7 +1,8 @@
 page {
   padding-top: 100rpx;
+  font-size: 35rpx;
+  background-color: #fff;
 }
- 
 
 .indexes {
   position: relative;
@@ -71,119 +72,130 @@ movable-view.indexBar-item::before {
   font-size: 48rpx;
 }
 
-
-.contentView{
- width: 90%;
- height:auto;
- margin: 10rpx auto;
- border-bottom: 1rpx solid #ccc;
- overflow: hidden;
+.contentView {
+  width: 90%;
+  height: auto;
+  margin: 10rpx auto;
+  border-bottom: 1rpx solid #ccc;
+  overflow: hidden;
 }
 
-.contentView02_1{
-width: 70%;
-height: auto;
-font-size: 35rpx;
-line-height: 62rpx;
+.contentView02_1 {
+  width: 70%;
+  height: auto;
+  font-size: 35rpx;
+  line-height: 62rpx;
 }
 
-.riqi{
-width: 30%;
-float: right;
-height: 35rpx;
-font-size: 30rpx;
-margin-top: -70rpx;
+.riqi {
+  width: 30%;
+  float: right;
+  height: 35rpx;
+  font-size: 30rpx;
+  margin-top: -70rpx;
 }
 
-.addsize{
+.addsize {
   width: 50%;
   float: left;
 }
 
-.wz_css{
-width: 100%;
-height:auto;
-margin: 0rpx auto;
-overflow: hidden;
-}
-.wz_css01{
-width: 6%;
-height:100rpx;
-margin: 0px auto;
-float: left;
-}
-.wz_css01_img{
-width: 100%;
-height: 100rpx;
-margin: 0px auto;
-}
-.wz_css02{
-width: 50%;
-height:auto;
-line-height:100rpx;
-float:left;
-font-size: 30rpx;
-margin-left: 2%;
-}
-.dz_css{
-width: 40%;
-height: auto;
-margin: 0px auto;
-float: right;
-}
-.dz_list{
-width: 100%;
-height: auto;
-margin: 0px auto;
-overflow: hidden;
-}
-.dz_list01{
-width: 8%;
-height: auto;
-float: left;
-}
-.dz_list01_img{
-width: 100%;
-height: 50rpx;
-}
-.dz_list02{
-width: 100%;
-height: auto;
-margin: 0px auto;
-font-size: 30rpx;
-line-height: 50rpx;
-margin-left: 2%;
+.wz_css {
+  width: 100%;
+  height: auto;
+  margin: 0rpx auto;
+  overflow: hidden;
 }
 
-.weui-cells_pf{
-width: 100%;
-height: 300rpx;
-margin: 0px auto;
+.wz_css01 {
+  width: 6%;
+  height: 100rpx;
+  margin: 0px auto;
+  float: left;
 }
-.weui-cell__hd1{
-width: 100%;
-height: auto;
-margin: 0px auto;
-text-align: center;
-overflow: hidden;
-color: #333;
+
+.wz_css01_img {
+  width: 100%;
+  height: 100rpx;
+  margin: 0px auto;
 }
-.weui-cell__bd2{
-width: 100%;
-height: auto;
-margin: 0px auto;
-overflow: hidden;
+
+.wz_css02 {
+  width: 50%;
+  height: auto;
+  line-height: 100rpx;
+  float: left;
+  font-size: 30rpx;
+  margin-left: 2%;
 }
-.weui-cell__bd2text{
- width: 100%;
- height: 260rpx;
- border: 1px solid #ccc;
- border-radius: 10rpx;
- padding: 10rpx;
+
+.dz_css {
+  width: 40%;
+  height: auto;
+  margin: 0px auto;
+  float: right;
 }
+
+.dz_list {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.dz_list01 {
+  width: 8%;
+  height: auto;
+  float: left;
+}
+
+.dz_list01_img {
+  width: 100%;
+  height: 50rpx;
+}
+
+.dz_list02 {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-left: 2%;
+}
+
+.weui-cells_pf {
+  width: 100%;
+  height: 300rpx;
+  margin: 0px auto;
+}
+
+.weui-cell__hd1 {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  text-align: center;
+  overflow: hidden;
+  color: #333;
+}
+
+.weui-cell__bd2 {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.weui-cell__bd2text {
+  width: 100%;
+  height: 260rpx;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+
 .weui-cell2 {
-padding:6px 10px;
-width: 100%;
-height: auto;
-margin: 0px auto;
+  padding: 6px 10px;
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
 }

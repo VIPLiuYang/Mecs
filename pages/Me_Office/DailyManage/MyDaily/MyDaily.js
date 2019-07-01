@@ -17,7 +17,8 @@ Page({
         type: '',
         id: '',
         content: '',
-        ribaoid: ''
+        ribaoid: '',
+        show: false //控制 暂无数据 是否显示
       },
       dianzan: function(e) {
         var id = e.currentTarget.dataset.id;
@@ -116,7 +117,6 @@ Page({
           replyContent: this.data.content,
           utoken: utoken
         }
-debugger
         var this1 = this;
         comm.unitWebsitePro('PostFabulousReply', candata, function(data) {
           var bool = data.RspCode;
@@ -220,7 +220,6 @@ debugger
         var this1 = this;
         comm.unitWebsitePro('PostDailyList', tempData, function(data) {
               if (data.RspCode == "0000") { //正常 
-                debugger
                 for (var i = 0; i < data.RspData.stafdailylist.length; i++) {
                   if (data.RspData.stafdailylist[i]["photo1"] != null && data.RspData.stafdailylist[i]["photo1"] != "") //头像为空不执行拼接
                   {
@@ -243,12 +242,14 @@ debugger
                   if (Flag == 0) {
                     this1.setData({
                       shuju: data.RspData.stafdailylist, //绑定数据列表
-                      isxs: true //显示加载更多
+                      isxs: true, //显示加载更多
+                      show: false
                     });
                   } else {
                     this1.setData({ //加载更多数组拼接
                       shuju: this1.data.shuju.concat(data.RspData.stafdailylist),
-                      isxs: true
+                      isxs: true,
+                      show: false
                     });
                   }
                   pageindex++;
@@ -266,6 +267,7 @@ debugger
                     this1.setData({
                       shuju: [],
                       isxs: false,
+                      show: true
                     });
                   }
                 }

@@ -12,7 +12,8 @@ Page({
     CustomBar: app.globalData.CustomBar, //手机信息
     word: '', //搜索框内容 
     isxs: false, //是否显示加载更多
-    shuju: []
+    shuju: [],
+    show: false
   },
 
 
@@ -132,17 +133,18 @@ Page({
   GetList: function(e) {
     var this1 = this;
     comm.unitWebsitePro('PostWork', tempData, function(data) {
-      debugger
       if (data.RspCode == "0000") { //正常 
         if (Flag == 0) {
           this1.setData({
             shuju: data.RspData.worklist, //绑定数据列表
-            isxs: true //显示加载更多
+            isxs: true, //显示加载更多
+            show: false
           });
         } else {
           this1.setData({ //加载更多数组拼接
             shuju: this1.data.shuju.concat(data.RspData.worklist),
-            isxs: true
+            isxs: true,
+            show: false
           });
         }
         pageindex++;
@@ -160,6 +162,7 @@ Page({
           this1.setData({
             shuju: [],
             isxs: false,
+            show: true
           });
         }
       }

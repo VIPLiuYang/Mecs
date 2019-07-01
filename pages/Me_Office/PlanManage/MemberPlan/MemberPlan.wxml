@@ -33,7 +33,7 @@
   </view>
 </view>
 
-<view wx:if="{{!isxs}}">
+<view wx:if="{{show}}">
  <noData>
   <view bindtap='a'>暂无数据</view>
 </noData>

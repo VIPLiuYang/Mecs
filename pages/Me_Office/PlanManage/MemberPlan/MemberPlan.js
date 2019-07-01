@@ -12,7 +12,8 @@ Page({
     CustomBar: app.globalData.CustomBar, //手机信息
     word: '', //搜索框内容 
     isxs: false, //是否显示加载更多 相反则是暂无数据
-    shuju: []
+    shuju: [],
+    show: false //控制 暂无数据 是否显示
   },
   // 获取搜索框内容
   cxsearch: function(e) {
@@ -89,18 +90,19 @@ Page({
   //获取人员列表
   GetList: function (e) {
     var this1 = this;
-    comm.unitWebsitePro('PostStafPlanningList', tempData, function (data) {
-      debugger
+    comm.unitWebsitePro('PostStafPlanningList', tempData, function (data) {     
       if (data.RspCode == "0000") { //正常 
         if (Flag == 0) {
           this1.setData({
             shuju: data.RspData.stafplanninglist, //绑定数据列表
-            isxs: true //显示加载更多
+            isxs: true, //显示加载更多
+            show: false
           });
         } else {
           this1.setData({ //加载更多数组拼接
             shuju: this1.data.shuju.concat(data.RspData.stafplanninglist),
-            isxs: true
+            isxs: true,
+            show: false
           });
         }
         pageindex++;
@@ -118,6 +120,7 @@ Page({
           this1.setData({
             shuju: [],
             isxs: false,
+            show: true
           });
         }
       }

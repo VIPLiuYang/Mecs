@@ -1,10 +1,13 @@
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">员工日报</view></cu-custom> 
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">员工日报</view>
+</cu-custom>
 
 <modal hidden="{{hiddenmodalput}}" confirm-text="回复" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
   <view class="weui-cells_pf">
     <view class="weui-cell2">
       <view class="weui-cell__bd2">
-        <textarea placeholder='请输入回复内容' bindinput='neitong'  value='{{content}}' class='weui-cell__bd2text'></textarea>
+        <textarea placeholder='请输入回复内容' bindinput='neitong' value='{{content}}' class='weui-cell__bd2text'></textarea>
       </view>
     </view>
   </view>
@@ -60,11 +63,11 @@
             {{item.rbAddress}}
           </view>
           <view class="text-gray text-sm text-right padding dz_css">
-            <view bindtap='dianzan' data-id="{{item.id}}">
-              <text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.fabulouslist.length==null ? '0' : item.fabulouslist.length}}</view>
+            <a bindtap='dianzan' data-id="{{item.id}}">
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.fabulouslist.length==null ? '0' : item.fabulouslist.length}}</a>
 
-            <view  bindtap='tkReply' data-id="{{item.id}}" data-type="0" data-ribaoid='{{item.id}}'>
-              <text class="cuIcon-messagefill margin-lr-xs" ></text> {{item.replylist.length==null ? '0' : item.replylist.length}}</view>
+            <a bindtap='tkReply' data-id="{{item.id}}" data-type="0" data-ribaoid='{{item.id}}'>
+              <text class="cuIcon-messagefill margin-lr-xs"></text> {{item.replylist.length==null ? '0' : item.replylist.length}}</a>
 
           </view>
         </view>
@@ -78,58 +81,22 @@
         </view>
 
         <view class="cu-list menu-avatar comment solids-top">
-
           <view wx:for="{{item.replylist}}" wx:for-item="hf">
-            <!-- <view class="cu-avatar round" style="background-image:url(http://mecs.ip165.com/{{item.photo}});"></view> -->
-
 
             <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
               <view class="flex" wx:if="{{hf.beihuifuren ==null}}" bindtap='tkReply' data-type='1' data-id='{{hf.replyid}}' data-ribaoid='{{item.id}}'>
-                <view >{{hf.employ}}：</view>
+                <view>{{hf.employ}}：</view>
                 <view class="flex-sub">{{hf.replyContent}}</view>
               </view>
+              
               <view class="flex" wx:else bindtap='tkReply' data-type='1' data-id='{{hf.replyid}}' data-ribaoid='{{item.id}}'>
-                <!-- <view style='word-break:break-all;'>
-                  <a bindtap='tkReply' data-type='1' data-id='{{hf.replyContentID}}' data-ribaoid='{{item.id}}'>{{hf.employ}}</a> 回复
-                  <a bindtap='tkReply' data-type='1' data-id='{{hf.replyContentID}}' data-ribaoid='{{item.id}}'>{{hf.beihuifuren}}</a>：
-
-                </view>
-
-                <view class="flex-sub">{{hf.replyContent}}</view>
-              </view> -->
-              <view style='word-break:break-all;' >
-                  {{hf.employ}} 回复
-                 {{hf.beihuifuren}}：
+                <view style='word-break:break-all;'>
+                  {{hf.employ}} 回复 {{hf.beihuifuren}}：
                 </view>
 
                 <view class="flex-sub">{{hf.replyContent}}</view>
               </view>
             </view>
-
-            <!-- <view class="bg-grey padding-sm radius margin-top-sm  text-sm" wx:else>
-              <view class="flex">
-                <view>{{hf.employ}}回复{{hf.beihuifuren}}：</view>
-                <view class="flex-sub">{{hf.replyContent}}</view>
-              </view>
-            </view> -->
-            <!-- <view class="content">
-              <view class="text-grey">{{hf.employ}}</view>
-              <view class="text-gray text-content text-df">
-                {{hf.replyContent}}
-              </view>
-              <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
-                <view class="flex">
-                  <view>嘿嘿回复呵呵：</view>
-                  <view class="flex-sub">我们预计本周末</view>
-                </view>
-              </view>
-              <view class="margin-top-sm flex justify-between">
-                <view class="text-gray text-df">{{hf.replyTime}}</view>
-                <view>
-                  <text class="cuIcon-messagefill text-gray margin-left-sm" bindtap='modalinput'></text>
-                </view>
-              </view>
-            </view> -->
 
           </view>
         </view>
@@ -144,8 +111,8 @@
     </view>
   </view>
 </view>
-<view wx:if="{{!isxs}}">
- <noData>
-  <view bindtap='a'>暂无数据</view>
-</noData>
+<view wx:if="{{show}}">
+  <noData>
+    <view bindtap='a'>暂无数据</view>
+  </noData>
 </view>

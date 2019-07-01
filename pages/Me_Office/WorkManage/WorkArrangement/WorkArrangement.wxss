@@ -1,7 +1,8 @@
 page {
   padding-top: 100rpx;
+  font-size: 35rpx;
+  background-color: #fff;
 }
- 
 
 .indexes {
   position: relative;
@@ -71,31 +72,30 @@ movable-view.indexBar-item::before {
   font-size: 48rpx;
 }
 
-
-.contentView{
- width: 90%;
- height: 270rpx;
- margin: 10rpx auto;
- border-bottom: 1rpx solid #ccc;
- overflow: hidden;
+.contentView {
+  width: 90%;
+  height: 270rpx;
+  margin: 10rpx auto;
+  border-bottom: 1rpx solid #ccc;
+  overflow: hidden;
 }
 
-.contentView02_1{
-width: 70%;
-height: auto;
-font-size: 35rpx;
-line-height: 62rpx;
+.contentView02_1 {
+  width: 70%;
+  height: auto;
+  font-size: 35rpx;
+  line-height: 62rpx;
 }
 
-.riqi{
-width: 30%;
-float: right;
-height: 35rpx;
-font-size: 30rpx;
-margin-top: -70rpx;
+.riqi {
+  width: 30%;
+  float: right;
+  height: 35rpx;
+  font-size: 30rpx;
+  margin-top: -70rpx;
 }
 
-.addsize{
+.addsize {
   width: 50%;
   float: left;
 }
