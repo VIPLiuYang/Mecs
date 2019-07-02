@@ -30,6 +30,8 @@ margin-top: -200rpx;
 
 page {
   padding-top: 100rpx;
+    font-size: 35rpx;
+  background-color: #fff;
 }
  
 

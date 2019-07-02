@@ -29,10 +29,18 @@ Page({
     });
   },
   clicksearch: function (e) {
-    debugger
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
+    var a = /^(\d{4})-(\d{2})-(\d{2})$/
+    if (!a.test(this.data.word)) {
+      wx.showToast({
+        title: '日期格式不正确',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    } 
     if (this.data.word == '' || this.data.word == null || this.data.word == undefined) {
 
       this.onLoad()
@@ -50,8 +58,8 @@ Page({
 
       comm.unitWebsitePro('PostInventory', tempData, function (data) {
         debugger
-        var hangshu = data.RspData.RowCount
-        var yeshu = data.RspData.PageCount
+        var hangshu = data.RspData.RowCount == null ? 0 : data.RspData.RowCount
+        var yeshu = data.RspData.PageCount == null ? 0 : data.RspData.PageCount
         this11.setData({
           fenye: 0
         })
