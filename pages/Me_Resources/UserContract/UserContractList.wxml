@@ -30,7 +30,7 @@
       <text class='text-grey'>{{item["<Employ>k__BackingField"]}}</text>
     </view>
   </view>
-<view wx:if="{{shuju==null}}">
+<view wx:if="{{isyw}}">
   <noData>
     <view bindtap='a'>暂无数据</view>
   </noData>

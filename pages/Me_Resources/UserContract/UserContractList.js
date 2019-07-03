@@ -13,12 +13,12 @@ Page({
     word: '', //搜索框内容 
     htlist: [],
     isxs: false, //是否显示加载更多
-    isyw: true, //是否显示暂无数据
+    isyw: false, //是否显示暂无数据
   },
 
   onUnload: function () {//页面返回时恢复默认
     pageindex = 1; //获取的页码
-    Flag = 1; //0刷新，1加载更多
+    Flag = 0; //0刷新，1加载更多
   },
 
 
@@ -40,15 +40,27 @@ Page({
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
     pageindex = 1; //获取的页码
-    var Flag = 0; //0刷新，1加载更多
-    tempData = {
-      uuid: uuid, //设备id
-      appid: appid,
-      dotype: 'list', //操作类型
-      Cno: this.data.word, //查询条件
-      pagesize: 10, //每页条数
-      pageindex: pageindex, //页码
-      utoken: utoken
+     Flag = 0; //0刷新，1加载更多
+
+    if (this.data.word == "") {
+      tempData = {
+        uuid: uuid, //设备id
+        appid: appid,
+        dotype: 'list', //操作类型
+        pagesize: 10, //每页条数
+        pageindex: pageindex, //页码
+        utoken: utoken
+      } 
+    } else {
+      tempData = {
+        uuid: uuid, //设备id
+        appid: appid,
+        dotype: 'list', //操作类型
+        Cno: this.data.word, //查询条件
+        pagesize: 10, //每页条数
+        pageindex: pageindex, //页码
+        utoken: utoken
+      } 
     } 
     this.GetList(); //获取人员合同列表
   },
@@ -63,7 +75,7 @@ Page({
 
   //初始化函数
   onLoad: function(options) {
-    var Flag = 0; //0刷新，1加载更多
+     Flag = 0; //0刷新，1加载更多
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
@@ -83,23 +95,47 @@ Page({
   GetList: function(e) {
     var prithis = this; 
     comm.unitWebsitePro('PostEmpContract', tempData, function(data) {
+      debugger
       if (data.RspCode == "0000") { //正常   
         if (Flag == 0) {
           prithis.setData({
             htlist: data.RspData.empcontract, //绑定数据列表
-            isxs: true //显示加载更多
+            isxs: true, //显示加载更多
+            isyw:false
           });
         } else {
           prithis.setData({ //加载更多数组拼接
             htlist: prithis.data.htlist.concat(data.RspData.empcontract),
-            isxs: true
+            isxs: true,
+            isyw: false
           });
         }
         pageindex++;
       } else { //暂无数据
-        prithis.setData({
-          isyw: false //显示暂无数据标签
-        }); 
+        // prithis.setData({
+        //   isyw: true, //显示暂无数据标签
+        //   htlist:[],
+        //   isxs: false,
+        // }); 
+
+        if (Flag == 1) {
+          wx.showToast({
+            title: '已是最后一页',
+            icon: 'none',
+            duration: 2000
+          })
+          prithis.setData({
+            isxs: false,
+          });
+
+        } else {
+          prithis.setData({
+            htlist: [],
+            isxs: false,
+            isyw: true
+          });
+        }
+
       }
     })
   },
@@ -110,13 +146,25 @@ Page({
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
-    tempData = {
-      uuid: uuid, //设备id
-      appid: appid,
-      dotype: 'list', //操作类型
-      pagesize: 10, //每页条数
-      pageindex: pageindex, //页码
-      utoken: utoken
+    if (this.data.word == "") {
+      tempData = {
+        uuid: uuid, //设备id
+        appid: appid,
+        dotype: 'list', //操作类型
+        pagesize: 10, //每页条数
+        pageindex: pageindex, //页码
+        utoken: utoken
+      }
+    } else {
+      tempData = {
+        uuid: uuid, //设备id
+        appid: appid,
+        dotype: 'list', //操作类型
+        Cno: this.data.word, //查询条件
+        pagesize: 10, //每页条数
+        pageindex: pageindex, //页码
+        utoken: utoken
+      }
     }
     Flag = 1; //0刷新，1加载更多
     this.GetList(); //获取人员合同列表

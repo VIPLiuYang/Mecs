@@ -1,5 +1,8 @@
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">部门人员</view></cu-custom> 
-<view class="page">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">部门通讯录</view>
+</cu-custom>
+<view class="page  ">
   <view class="page__bd">
     <view class="weui-tab">
       <view class="weui-navbar">
@@ -12,37 +15,34 @@
       </view>
       <view class="weui-tab__panel">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <view class='bailie'>
-            <scroll-view scroll-y style="height: 900rpx;">
-              <view wx:for="{{['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']}}" wx:for-item="biao" bindtap='scrollToViewFn' id='NAV{{biao}}' data-idd='NAV{{biao}}' style=''>{{biao}}</view>
-            </scroll-view>
-          </view>
-
-          <scroll-view scroll-into-view="{{toView}}" scroll-y style=" height: 850rpx; width:695rpx" scroll-with-animation='true'>
-
-            <view wx:for="{{tongxunlu}}" wx:for-item="item" wx:for-index="idx">
-              <block wx:if='{{item[item.keys].length>0}}'>
-                <view class='weui-cell' id='NAV{{item.keys}}'>
-                  {{item.keys}}
-                </view>
-              </block>
-              <view class='contentView' wx:for="{{item[item.keys]}}" wx:for-item="item2" wx:for-index="idx3">
-
-
-                <view class="weui-cell">
-                  <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                  </view>
-                  <view class="weui-cell__bd" bindtap='calling' data-mobile='{{item2.Mobile}}'>
-                    <view> {{item2.Employ}} </view>
-                    <view style="font-size: 13px;color: #888888;"> {{item2.Mobile}}</view>
+          <scroll-view scroll-y class="indexes" scroll-into-view="indexes-{{listCurID}}" style="height:calc(100vh - {{CustomBar}}px - 50px)" scroll-with-animation="true" enable-back-to-top="true">
+            <block wx:for="{{tongxunlu}}" wx:for-item="item" wx:for-index="idx">
+              <view class="padding indexItem-{{item.keys}}" id="indexes-{{item.keys}}" data-index="{{item.keys}}"> {{item.keys}}</view>
+              <view class="cu-list menu-avatar no-padding">
+                <view class="cu-item" wx:for="{{item[item.keys]}}" wx:for-item="item2" wx:for-index="idx3">
+                  <view class="cu-avatar round lg">{{item.keys}}</view>
+                  <view class="content" bindtap='calling' data-mobile='{{item2.Mobile}}'>
+                    <view class="text-grey">
+                      <text class="text-abc">{{item2.Employ}}</text>
+                    </view>
+                    <view class="text-gray text-sm">
+                      {{item2.Mobile}}
+                    </view>
                   </view>
                 </view>
               </view>
-
-            </view>
-
-
+            </block>
           </scroll-view>
+          <view class="indexBar" style="height:calc(100vh - {{CustomBar}}px - 50px)">
+            <view class="indexBar-box" bindtouchstart="tStart" bindtouchend="tEnd" catchtouchmove="tMove">
+              <view class="indexBar-item" wx:for="{{list}}" wx:key id="{{index}}" bindtouchstart="getCur" bindtouchend="setCur">{{list[index]}}</view>
+            </view>
+          </view>
+          <!--选择显示-->
+          <view hidden="{{hidden}}" class="indexToast">
+            {{listCur}}
+          </view>
+
 
         </view>
 
@@ -54,33 +54,31 @@
 
       <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
 
-        <view wx:for="{{dept}}" wx:for-item="izhi" wx:for-index="idx">
-          <view class='biaozhi' bindtap='clickLine' data-depname='{{izhi["depename:"]}}'>
-            {{izhi["depename:"]}}
-            <block wx:if="{{izhi.deptEmp.length>0}}">
-              <icon class='iconfont icon-quanxianshenpi'></icon>
-            </block>
-          </view>
-          <view wx:for="{{izhi.deptEmp}}" wx:for-item="izhi2" class='lineSencond{{izhi.show}}'>
-            {{izhi2.Employ}}
-          </view>
-        </view>
 
 
 
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell" wx:for="{{dept}}" wx:for-item="izhi" wx:for-index="idx">
+        <view class="weui-cells  weui-cells_after-title" wx:for="{{dept}}" wx:for-item="izhi" wx:for-index="idx">
+          <view class="weui-cell ">
+            <view class="weui-cell__bd" bindtap='clickLine' data-depname='{{izhi["depename:"]}}'>
            
-            <view class="weui-cell__bd" bindtap='clickLine' data-depname='{{izhi["depename:"]}}'>{{izhi["depename:"]}}
-              <block wx:if="{{izhi.deptEmp.length>0}}">
-                <icon class='iconfont icon-quanxianshenpi'></icon>
+            <view class="text-grey">
+             <icon class='cuIcon-home text-cyan' style=' font-size: 22px;'></icon>
+                     <text decode="{{true}}" space="{{true}}" class='text-abc'> &nbsp; {{izhi["depename:"]}}</text>
+                      <block wx:if="{{izhi.deptEmp.length>0}}">
+                <icon class='iconfont icon-wode text-red' style=' font-size: 22px;'></icon>
               </block>
-            </view>
+             </view>
+           
              
-            <view class="weui-cell__bd" wx:for="{{izhi.deptEmp}}" wx:for-item="izhi2" > {{izhi2.Employ}}</view>
+            </view>
+
+            
+          </view>
+          <view class="weui-cell" wx:if="{{izhi.show=='show'}}" wx:for="{{izhi.deptEmp}}" wx:for-item="izhi2">
+          <view class="weui-cell__bd text-abc"  >{{izhi2.Employ}}
+              </view>
           </view>
 
- 
         </view>
 
       </view>
