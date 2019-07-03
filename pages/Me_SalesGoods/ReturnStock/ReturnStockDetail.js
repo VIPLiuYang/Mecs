@@ -29,7 +29,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostRetreatListDetail', tempData, function (data) {
-      debugger
       var shuju = data.RspData.retreatlistdetail[0];
       var liebiao = data.RspData.retreatlistdetailcp;
       this11.setData({

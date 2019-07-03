@@ -63,7 +63,6 @@ Page({
   },
         //列表详情
         mingxi: function (e) {
-          debugger
                 var cardId = e.currentTarget.dataset.id; //获取打卡ID
                 wx.navigateTo({ //页面跳转
                         url: '/pages/Me_Resources/SignModular/Recorddetails?cardId=' + cardId,

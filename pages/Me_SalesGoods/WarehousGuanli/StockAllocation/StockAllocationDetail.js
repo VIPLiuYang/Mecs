@@ -30,7 +30,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostAllocationDetail', tempData, function(data) {
-      debugger
       var shuju = data.RspData.allocationdetail[0];
       var liebiao = data.RspData.ckhuaboitemdetail;
       this11.setData({

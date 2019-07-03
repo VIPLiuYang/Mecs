@@ -11,7 +11,6 @@ Page({
     check: 0
   },
   showTopTips: function(e) {
-    debugger
     var zhi = "";
     if (this.data.check == 1) {
       var arr = this.data.retarray
@@ -49,9 +48,7 @@ Page({
       utoken: utoken
     }
     var this11 = this;
-    debugger
     comm.unitWebsitePro('PostNoticeList', tempData, function(data) {
-      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({

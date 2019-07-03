@@ -32,7 +32,6 @@ Page({
   },
   checkboxChange: function(e) {
     console.log('checkbox发生change事件，携带value值为：', e.detail.value);
-    debugger
     var checkboxItems = this.data.shuju,
       values = e.detail.value;
     for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
@@ -109,9 +108,7 @@ Page({
       utoken: utoken
     }
     var this11 = this;
-    debugger;
     comm.unitWebsitePro('PostRetreatOrderList', tempData, function(data) {
-      debugger;
 
       var liebiao = data.RspData.retreatorderlist;
       if (liebiao != null) {
@@ -143,7 +140,6 @@ Page({
     var ck = [];
     var bianhao = [];
     comm.unitWebsitePro('PostWarehouseList', tempData, function(data) {
-      debugger
       var liebiao = data.RspData.warehouselist;
       for (var i = 0; i < liebiao.length; i++) {
         ck.push(liebiao[i]["<pbaserName>k__BackingField"]);

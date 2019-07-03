@@ -30,7 +30,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostCustomOrderDetail', tempData, function(data) {
-      debugger
       var shuju = data.RspData.customorderdetail[0];
       var liebiao = data.RspData.productdetail;
       this11.setData({

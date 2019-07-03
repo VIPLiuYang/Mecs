@@ -34,7 +34,6 @@ Page({
       xmls += '<node orderItemId="' + arr[i]["<detailId>k__BackingField"] + '" ProNo="' + arr[i]["<productNo>k__BackingField"] + '" rkpbaseNo="' + arr[i].cangkuname + '" rkNum="' + arr[i].count + '" cbPrice="' + arr[i]["<cbPrice>k__BackingField"] + '" dgPrice="' + arr[i]["<buyPrice>k__BackingField"] + '"/>'; 
     }
     xmls += '</root>';
-    debugger
     //调用添加接口
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
@@ -52,9 +51,7 @@ Page({
       utoken: utoken
     }
     var this11 = this;
-    debugger
     comm.unitWebsitePro('PostRetreatOrder', tempData, function (data) {
-      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({
@@ -77,7 +74,6 @@ Page({
     })
   },
   del: function (e) {
-    debugger
     var rowindex = e.currentTarget.dataset.xb;
     var arr = this.data.retarray;
     var leibiao = arr.filter((ele, index) => {
@@ -128,7 +124,6 @@ Page({
 
 
   prodect: function() {
-    debugger
     var no = this.data.ryno;
     if (no == '') {
       wx.showToast({

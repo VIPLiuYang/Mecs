@@ -26,7 +26,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostWorkDetail', tempData, function(data) {
-      debugger
       //详情数据
       var shuju = data.RspData.workdetail[0];
       //批复详细

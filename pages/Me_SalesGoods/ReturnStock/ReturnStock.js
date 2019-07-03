@@ -30,7 +30,6 @@ Page({
   },
 
   clicksearch: function(e) {
-    debugger
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
@@ -50,7 +49,6 @@ Page({
       var this11 = this;
 
       comm.unitWebsitePro('PostInventoryList', tempData, function(data) {
-        debugger
         var hangshu = data.RspData.RowCount
         var yeshu = data.RspData.PageCount
         this11.setData({
@@ -75,7 +73,6 @@ Page({
   },
 
   shenpi: function(e) {
-    debugger
     var hid = e.currentTarget.dataset.hid;
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
@@ -89,7 +86,6 @@ Page({
     var this11 = this;
 
     comm.unitWebsitePro('PostProductList', tempData, function(data) {
-      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({
@@ -172,7 +168,6 @@ Page({
     var this11 = this;
 
     comm.unitWebsitePro('PostRetreatList', tempData, function(data) {
-      debugger
       var hangshu = data.RspData.RowCount
       var yeshu = data.RspData.PageCount
 

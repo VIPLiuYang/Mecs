@@ -30,7 +30,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostInventoryListDetail', tempData, function (data) {
-      debugger
       var shuju = data.RspData.inventorylistdetail[0];
       var liebiao = data.RspData.inventorylistdetailcp;
       this11.setData({

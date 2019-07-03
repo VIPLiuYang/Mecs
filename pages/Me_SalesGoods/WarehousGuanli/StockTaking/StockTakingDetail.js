@@ -17,7 +17,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '进货入库详情',
     })
-debugger
     var id = options.hid;
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
@@ -30,7 +29,6 @@ debugger
     }
     var this11 = this;
     comm.unitWebsitePro('PostStartInventoryDetail', tempData, function (data) {
-      debugger
       var shuju = data.RspData.startInventorydetail[0];
       var liebiao = data.RspData.prioductlist;
       this11.setData({

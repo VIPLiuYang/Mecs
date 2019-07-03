@@ -88,7 +88,6 @@ Page({
     var this11 = this;
 
     comm.unitWebsitePro('PostSupplierList', tempData, function (data) {
-      debugger;
 
       var liebiao = data.RspData.supplierlist;
 

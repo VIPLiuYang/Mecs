@@ -29,7 +29,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostRetreatOrderDetail', tempData, function (data) {
-      debugger
       var shuju = data.RspData.retreatorderdetail[0];
       var liebiao = data.RspData.retreatorderdetailproduct;
       this11.setData({

@@ -46,7 +46,6 @@ Page({
       var this11 = this;
 
       comm.unitWebsitePro('PostOutOrder', tempData, function (data) {
-        debugger
         var hangshu = data.RspData.RowCount
         var yeshu = data.RspData.PageCount
         this11.setData({
@@ -73,7 +72,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '待出订单',
     })
-debugger
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
     var utoken = wx.getStorageSync('utoken');
@@ -87,7 +85,6 @@ debugger
     var this11 = this;
 
     comm.unitWebsitePro('PostOutOrder', tempData, function(data) {
-      debugger
       var hangshu = data.RspData.RowCount
       var yeshu = data.RspData.PageCount
 

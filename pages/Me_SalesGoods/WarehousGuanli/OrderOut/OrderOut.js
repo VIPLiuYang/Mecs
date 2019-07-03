@@ -60,7 +60,6 @@ Page({
     })
   },
   shenpi: function (e) {
-    debugger
     var hid = e.currentTarget.dataset.hid;
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
@@ -74,7 +73,6 @@ Page({
     var this11 = this;
 
     comm.unitWebsitePro('PostOrderOutTrial', tempData, function (data) {
-      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({
@@ -122,7 +120,6 @@ Page({
       var this11 = this;
 
       comm.unitWebsitePro('PostOrderOut', tempData, function (data) {
-        debugger
         var hangshu = data.RspData.RowCount
         var yeshu = data.RspData.PageCount
         this11.setData({
@@ -166,7 +163,6 @@ Page({
     var this11 = this;
 
     comm.unitWebsitePro('PostOrderOut', tempData, function (data) {
-      debugger
       var hangshu = data.RspData.RowCount
       var yeshu = data.RspData.PageCount
 
