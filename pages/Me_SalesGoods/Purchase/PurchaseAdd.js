@@ -43,7 +43,6 @@ Page({
     // var shouhuo = e.detail.value.shouhuo; //收货人
     // var content = e.detail.value.content; //备注
     // var riqi = this.data.dates;
-    debugger
     //调用添加接口
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
@@ -59,9 +58,7 @@ Page({
       utoken: utoken
     }
     var this11 = this;
-    debugger
     comm.unitWebsitePro('PostInventoryList', tempData, function (data) {
-      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({
@@ -90,7 +87,6 @@ Page({
     })
   },
   prodect:function(){
-    debugger
     var no = this.data.ryno;
     var name = this.data.ryname;
     if (no == '') {
@@ -119,7 +115,6 @@ Page({
       })
   },
   del: function (e) {
-    debugger
     var rowindex = e.currentTarget.dataset.xb;
     var arr = this.data.retarray;
     var leibiao = arr.filter((ele, index) => {

@@ -11,7 +11,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    debugger
     var arr = JSON.parse(options.can);
     if (arr[0]["photo1"] != null && arr[0]["photo1"] != "") //头像为空不执行拼接
     {

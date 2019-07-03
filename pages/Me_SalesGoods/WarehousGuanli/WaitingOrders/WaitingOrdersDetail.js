@@ -13,7 +13,6 @@ Page({
 
     var wlno = e.detail.value.wlno;
    
-    debugger
     //调用添加接口
     var appid = wx.getStorageSync('appid');
     var uuid = wx.getStorageSync('uuid');
@@ -26,9 +25,7 @@ Page({
       utoken: utoken
     }
     var this11 = this;
-    debugger
     comm.unitWebsitePro('PostOutOrderSave', tempData, function (data) {
-      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({
@@ -57,7 +54,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '待出订单详细',
     })
-debugger
     var id = options.hid;
     this.setData({
       hid:id
@@ -73,7 +69,6 @@ debugger
     }
     var this11 = this;
     comm.unitWebsitePro('PostOutOrderDetail', tempData, function(data) {
-      debugger
       var shuju1 = data.RspData.outorderdetail[0];
 
       this11.setData({

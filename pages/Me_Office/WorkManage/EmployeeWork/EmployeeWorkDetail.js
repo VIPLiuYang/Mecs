@@ -58,9 +58,7 @@ Page({
       utoken: utoken
     }
     var this11 = this;
-    debugger
     comm.unitWebsitePro('PostWorkDetail', tempData, function (data) {
-      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({
@@ -85,7 +83,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    debugger
     var id = options.id;
     this.setData({
       id: id
@@ -102,7 +99,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostWorkDetail', tempData, function (data) {
-      debugger
       //详情数据
       var shuju = data.RspData.workdetail[0];
       //批复详细

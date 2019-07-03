@@ -23,11 +23,8 @@ Page({
       utoken: utoken
     }
     var this11 = this;
-    debugger
     comm.unitWebsitePro('PostCardRecordDetail', tempData1, function(data) {
-      debugger
       var shuju = data.RspData.cardrecorddetail[0];
-   
       this11.setData({
         xiangqing: shuju,
       })

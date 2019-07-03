@@ -87,9 +87,7 @@ Page({
       utoken: utoken
     }
     var this11 = this;
-    debugger;
     comm.unitWebsitePro('PostCkProductList', tempData, function(data) {
-      debugger;
 
       var liebiao = data.RspData.ckproductlist;
 

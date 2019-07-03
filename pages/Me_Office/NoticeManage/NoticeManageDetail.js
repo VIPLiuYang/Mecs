@@ -25,7 +25,6 @@ Page({
           }
           var this11 = this;
           comm.unitWebsitePro('PostNoticeDetail', tempData, function (data) {
-            debugger
             var shuju = data.RspData.noticedetail[0];
             var liebiao = data.RspData.employsee;
             this11.setData({

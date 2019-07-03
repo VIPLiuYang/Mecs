@@ -24,9 +24,7 @@ Page({
             utoken: utoken
           }
           var this11 = this;
-          debugger
           comm.unitWebsitePro('PostMyPlanningDetail', tempData, function (data) {
-            debugger
             //详情数据
             var shuju = data.RspData.myplanningdetail[0];
             //批复详细

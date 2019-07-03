@@ -45,7 +45,6 @@ Page({
       var this11 = this;
 
       comm.unitWebsitePro('PostCommodity', tempData, function (data) {
-        debugger
         var hangshu = data.RspData.RowCount
         var yeshu = data.RspData.PageCount
         this11.setData({

@@ -25,7 +25,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostWork', tempData, function(data) {
-      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({

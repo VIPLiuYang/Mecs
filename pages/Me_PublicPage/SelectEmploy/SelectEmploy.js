@@ -95,7 +95,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostDept', tempData, function(data) {
-      debugger
       bumen = JSON.parse(data.RspData.Dept)
       //去key值 然后根据key值 去value值
       // var key = Object.keys(liebiao[0])   //sort() 对keys值进行排序

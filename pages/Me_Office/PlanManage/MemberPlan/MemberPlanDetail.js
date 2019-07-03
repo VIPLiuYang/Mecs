@@ -57,9 +57,7 @@ Page({
       utoken: utoken
     }
     var this11 = this;
-    debugger
     comm.unitWebsitePro('PostStafPlanningDetail', tempData, function (data) {
-      debugger
       var bool = data.RspCode;
       if (bool == "0000") {
         wx.showToast({
@@ -101,7 +99,6 @@ Page({
     }
     var this11 = this;
     comm.unitWebsitePro('PostStafPlanningDetail', tempData, function(data) {
-      debugger
       //详情数据
       var shuju = data.RspData.stafplanningdetail[0];
       //批复详细

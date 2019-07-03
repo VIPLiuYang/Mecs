@@ -81,8 +81,6 @@ Page({
     var this11 = this;
 
     comm.unitWebsitePro('PostCustomerList', tempData, function(data) {
-      debugger;
-
       var liebiao = data.RspData.customerlist;
 
       for (var i = 0; i < liebiao.length; i++) {
