@@ -12,3 +12,10 @@ height: auto;
 font-size: 30rpx;
 line-height: 47rpx;
 }
+.fontcss{
+font-size: 36rpx;
+}
+.fontcss01{
+font-size: 34rpx;
+line-height: 60rpx;
+}

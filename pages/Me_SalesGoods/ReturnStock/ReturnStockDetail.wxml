@@ -1,43 +1,41 @@
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">添加</view></cu-custom> 
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">退货入库详情</view></cu-custom> 
  <view class='ziview'>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
-        <view class="weui-cell__bd">出库编号：
+        <view class="weui-cell__bd fontcss">出库编号：
          <text class='text-grey'>{{shuju["<rkCode>k__BackingField"]}}</text>
          </view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单人： <text class='text-grey'>{{shuju["<addUserName>k__BackingField"]}}</text></view>
+        <view class="weui-cell__bd fontcss">制单人： <text class='text-grey'>{{shuju["<addUserName>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">制单时间： <text class='text-grey'>{{shuju["<addTime>k__BackingField"]}}</text></view>
+        <view class="weui-cell__bd fontcss">制单时间： <text class='text-grey'>{{shuju["<addTime>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">供应商： <text class='text-grey'>{{shuju["<supplierName>k__BackingField"]}}</text></view>
+        <view class="weui-cell__bd fontcss">供应商： <text class='text-grey'>{{shuju["<supplierName>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">入库时间： <text class='text-grey'>{{shuju["<operateTime>k__BackingField"]}}</text></view>
+        <view class="weui-cell__bd fontcss">入库时间： <text class='text-grey'>{{shuju["<operateTime>k__BackingField"]}}</text></view>
       </view>
       <view class="weui-cell">
-        <view class="weui-cell__bd">备注： <text class='text-grey'>{{shuju["<remark>k__BackingField"]}}</text></view>
+        <view class="weui-cell__bd fontcss">备注： <text class='text-grey'>{{shuju["<remark>k__BackingField"]}}</text></view>
       </view>
     </view>
   </view>
 
  <view class="weui-panel__hd">产品列表</view>
-
-
 <view class='contentView' wx:for='{{liebiao}}'>
-  <view class='contentView02_1'>
+  <view class='contentView02_1 fontcss01'>
     商品名称: <text class='text-grey'>{{item["<proName>k__BackingField"]}}</text>
   </view>
-  <view class='contentView02_1'>
+  <view class='contentView02_1 fontcss01'>
     出库仓库: <text class='text-grey'>{{item["<rkpbaseName>k__BackingField"]}}</text>
   </view>
-  <view class='contentView02_1'>
+  <view class='contentView02_1 fontcss01'>
    出库数量: <text class='text-grey'>{{item["<rkNum>k__BackingField"]}}</text>
   </view>
-   <view class='contentView02_1'>
+   <view class='contentView02_1 fontcss01'>
     价格: <text class='text-grey'>{{item["<price>k__BackingField"]}}</text>
   </view>
 </view>

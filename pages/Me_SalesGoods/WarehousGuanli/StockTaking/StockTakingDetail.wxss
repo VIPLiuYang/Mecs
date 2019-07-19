@@ -1,6 +1,6 @@
 .contentView{
  width: 90%;
- height: 160rpx;
+ height: 180rpx;
  margin: 10rpx auto;
  border-bottom: 1rpx solid #ccc;
  overflow: hidden;
@@ -11,4 +11,11 @@ width: 70%;
 height: auto;
 font-size: 30rpx;
 line-height: 47rpx;
+}
+.fontcss{
+font-size: 36rpx;
+}
+.fontcss01{
+font-size: 34rpx;
+line-height: 60rpx;
 }
