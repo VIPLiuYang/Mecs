@@ -64,7 +64,8 @@
     "pages/Me_Office/DailyManage/MyDaily/MyWeeklyAdd",
     "pages/Me_Office/DailyManage/MyDaily/MyMonthlyAdd",
     "pages/Me_Office/DailyManage/MyDaily/MyDailyDetail",
-    "utils/noData/noDate"
+    "utils/noData/noDate",
+    "pages/Me_FieldModular/MapPosition"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000",
