@@ -1,20 +1,26 @@
-@import 'style/weui.wxss';
-@import 'utils/icon/iconfont.wxss';
-@import "utils/colorui/main.wxss";
-@import "utils/colorui/icon.wxss";
+@import "/utils/icon/iconfont.wxss";
+.content{
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
 
-/**app.wxss**/
+.productNav{
+ width: 100%;
+ height: 80rpx;
+ line-height: 80rpx;
+ background-color: #16B4EE;
+ left: 0;
+ top: 0;
+ position: fixed;
+ z-index: 100;
+}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-}
-
-.canvas {
-    width: 100%;
-    height: 300px;
 }
 .productNav{
  width: 100%;
@@ -55,11 +61,11 @@ font-size: 35rpx;
   height: 60rpx;
 }
 .proNavImagesearch{
-  width: 60%;
+  width: 42%;
   height: 40rpx;
 }
-.page{
- background-color: #fff;
- font-size: 35rpx;
- color: DimGray;
+
+.weui-cells{
+  font-size: 35rpx;
 }
+

@@ -1,0 +1,6 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">考勤报表</view>
+</cu-custom>
+
+ <column-chart id="column-chart" canvasData="{{columnCanvasData}}" />

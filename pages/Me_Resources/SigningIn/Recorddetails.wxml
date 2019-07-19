@@ -1,0 +1,50 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">打卡记录详情</view>
+</cu-custom>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">姓名：
+      <text class='text-grey'>{{xiangqing["<employ>k__BackingField"]}}</text> </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">考勤日期
+      <text class='text-grey'>{{xiangqing["<addtime>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">考勤班次
+      <text class='text-grey'>{{xiangqing["<Shift>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">签到时间
+      <text class='text-grey'>{{xiangqing["<sTime>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">签到状态
+      <text class='text-grey'>{{xiangqing["<state>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">签到地点
+      <text class='text-grey'>{{xiangqing["<sAddress>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">签退时间
+      <text class='text-grey'>{{xiangqing["<eTime>k__BackingField"]}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">签退状态
+      <text class='text-grey'>{{xiangqing["<estate>k__BackingField"]}}</text>
+    </view>
+  </view>
+   <view class="weui-cell">
+    <view class="weui-cell__bd">签退地点
+      <text class='text-grey'>{{xiangqing["<eAddress>k__BackingField"]}}</text>
+    </view>
+  </view>
+</view>
