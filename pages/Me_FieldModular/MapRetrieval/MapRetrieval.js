@@ -1,11 +1,14 @@
 var comm = require('../../../utils/PublicProtocol.js'); //引用post公共函数
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    StatusBar: app.globalData.StatusBar, //手机信息
+    CustomBar: app.globalData.CustomBar, //手机信息
+    word: '', //搜索框内容 
   },
 
   /**
@@ -14,7 +17,15 @@ Page({
   onLoad: function (options) {
 
   },
-
+  // 获取搜索框内容
+  cxsearch: function (e) {
+    this.setData({
+      word: e.detail.value
+    });
+    this.setData({
+      cxsearch: true
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,16 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">地图检索</view>
+</cu-custom>
+
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" name="word" value='{{word}}' confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
+  </view>
+</view>
+
+

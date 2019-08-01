@@ -1,0 +1,61 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">拜访详情</view>
+</cu-custom>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      刘富强
+      <text>  </text>
+      <text class='text-grey'>朝阳</text>
+    </view>
+    <view class="weui-cells_after">查看详情
+
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">客户编号：
+      <text class='text-grey'>管理员</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">受访人：
+      <text class='text-grey'>受访人</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">拜访时间：
+      <text class='text-grey'>拜访时间</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">拜访情况：
+      <text class='text-grey'>拜访情况</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">下次拜访时间：
+      <text class='text-grey'>下次拜访时间</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">下次拜访目的：
+      <text class='text-grey'>下次拜访目的</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">注意事项：
+      <text class='text-grey'>注意事项</text>
+    </view>
+  </view>
+
+  <view class="wz_css">
+    <view class="wz_css01">
+      <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/come_from_lbs.png" class="wz_css01_img"></image>
+    </view>
+    <view class="wz_css02">
+      {{shuju[0]['rbAddress']}}
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,104 @@
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}" goUrl='/pages/Me_FieldModular/VisitrRecord/VisitrRecordAdd'>
+  <view slot="content">回访记录</view>
+</cu-custom>
+
+<modal hidden="{{hiddenmodalput}}" confirm-text="回复" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <view class="weui-cells_pf">
+    <view class="weui-cell2">
+      <view class="weui-cell__bd2">
+        <textarea placeholder='请输入回复内容' bindinput='neitong' value='{{content}}' class='weui-cell__bd2text'></textarea>
+      </view>
+    </view>
+  </view>
+</modal>
+
+
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" bindinput="cxsearch" name="word" value='{{word}}' confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-blue shadow-blur round" bindtap="clicksearch">搜索</button>
+  </view>
+</view>
+
+<view class='page'>
+  <view class='contentView' wx:for="{{shuju}}" wx:for-item="item">
+    <view class="cu-card dynamic {{isCard?'no-card':''}}">
+      <view class="cu-item shadow">
+
+        <view class="cu-list menu-avatar" bindtap='mingxi' data-can='{{item.stafdailydetail}}'>
+            <view class="content flex-sub" style='line-height:70rpx'>
+               <view  >我是标题</view>
+              <view  >拜访人:{{item.employ}}</view>
+              <view >
+                拜访时间:{{item.createtime}}
+              </view>
+              <view>
+                  回访情况：{{item.Content}}
+              </view>
+              
+            </view>
+        </view>
+        <view class="wz_css">
+          <view class="wz_css01">
+            <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/come_from_lbs.png" class="wz_css01_img"></image>
+          </view>
+          <view class="wz_css02">
+            {{item.rbAddress}}
+          </view>
+          <view class="text-gray text-sm text-right padding dz_css">
+            <a bindtap='dianzan' data-id="{{item.id}}">
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.fabulouslist.length==null ? '0' : item.fabulouslist.length}}</a>
+
+            <a bindtap='tkReply' data-id="{{item.id}}" data-type="0" data-ribaoid='{{item.id}}'>
+              <text class="cuIcon-messagefill margin-lr-xs"></text> {{item.replylist.length==null ? '0' : item.replylist.length}}</a>
+
+          </view>
+        </view>
+        <view class="dz_list">
+          <view class="dz_list01">
+            <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/praise_h.png" class="dz_list01_img"></image>
+          </view>
+          <view class="dz_list02">
+            <text wx:for="{{item.fabulouslist}}" wx:for-item="dz"> {{dz.Employ}} </text>
+          </view>
+        </view>
+
+        <view class="cu-list menu-avatar comment solids-top">
+          <view wx:for="{{item.replylist}}" wx:for-item="hf">
+
+            <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+              <view class="flex" wx:if="{{hf.beihuifuren ==null}}" bindtap='tkReply' data-type='1' data-id='{{hf.replyid}}' data-ribaoid='{{item.id}}'>
+                <view>{{hf.employ}}：</view>
+                <view class="flex-sub">{{hf.replyContent}}</view>
+              </view>
+
+              <view class="flex" wx:else bindtap='tkReply' data-type='1' data-id='{{hf.replyid}}' data-ribaoid='{{item.id}}'>
+                <view style='word-break:break-all;'>
+                  {{hf.employ}} 回复 {{hf.beihuifuren}}：
+                </view>
+
+                <view class="flex-sub">{{hf.replyContent}}</view>
+              </view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-panel__ft" wx:if="{{isxs}}" bindtap='clickgd'>
+    <view class="weui-cell weui-cell_access weui-cell_link">
+      <view class="weui-cell__bd">查看更多</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{show}}">
+  <noData>
+    <view bindtap='a'>暂无数据</view>
+  </noData>
+</view>

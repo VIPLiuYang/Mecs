@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "查看启动日志",
+  "usingComponents": {
+    "mytree": "../components/mytree/mytree",
+    "maap": "/pages/search/search"
+  }
+}

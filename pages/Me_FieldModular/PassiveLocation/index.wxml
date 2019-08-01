@@ -1,0 +1,16 @@
+
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">被动定位</view>
+</cu-custom>
+
+
+<view class='typelist selected {{animationHidden?"":"animation"}}'  hidden='{{selectedHidden}}' bindtap='backTap'>
+  <text>{{selectedItem.text}}</text>
+</view>
+<scroll-view class="searchbar-result" style='top:{{scrollTop}}px'>
+  <view class='typelist' data-item='{{item.treelist}}' data-user='{{item.userlist}}' wx:for="{{datalists}}" wx:key="{{index}}" bindtap='selectList'>
+    <text>{{item.text}}</text>
+  </view>
+</scroll-view>
+

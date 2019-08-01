@@ -1,0 +1,51 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+        <view slot="backText">返回</view>
+        <view slot="content">回访详情</view>
+</cu-custom>
+<view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell" >
+                <view class="weui-cell__bd">
+                刘富强  <text>  </text>
+                         <text class='text-grey'>朝阳</text>
+                </view>
+                  <view class="weui-cells_after">查看详情
+                      
+                </view>
+        </view>
+        <view class="weui-cell">
+                <view class="weui-cell__bd">经办人：
+                        <text class='text-grey'>管理员</text>
+                </view>
+        </view>
+        <view class="weui-cell">
+                <view class="weui-cell__bd">回访时间：
+                        <text class='text-grey'>回访时间</text>
+                </view>
+        </view>
+           <view class="weui-cell">
+                <view class="weui-cell__bd">被回访人：
+                        <text class='text-grey'>被回访人</text>
+                </view>
+        </view>
+           <view class="weui-cell">
+                <view class="weui-cell__bd">被回访人职务：
+                        <text class='text-grey'>被回访人职务</text>
+                </view>
+        </view>
+           <view class="weui-cell">
+                <view class="weui-cell__bd">联系方式：
+                        <text class='text-grey'>联系方式</text>
+                </view>
+        </view>
+           <view class="weui-cell">
+                <view class="weui-cell__bd">反馈情况：
+                        <text class='text-grey'>反馈情况</text>
+                </view>
+        </view>
+           <view class="weui-cell">
+                <view class="weui-cell__bd">备注：
+                        <text class='text-grey'>备注</text>
+                </view>
+        </view>
+       
+</view>

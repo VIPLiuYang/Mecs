@@ -1,0 +1,60 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">拍照管理详情</view>
+</cu-custom>
+
+<view class="weui-cells weui-cells_after-title">
+  <view class="wz_css">
+                                   <view class="wz_css01">
+                                     <image src="http://mecs.ip165.com/WeiXin/Style/Image/tubiao/come_from_lbs.png" class="wz_css01_img"></image>
+                                   </view>
+                                   <view class="wz_css02">
+                                     {{shuju[0]['rbAddress']}}
+                                   </view>
+        </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <text class='text-grey'>{{shuju['title']}}</text> 
+      </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__bd">照片分类：
+      <text class='text-grey'>{{shuju["username"]}}</text>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__bd">业务员：
+      <text class='text-grey'>{{shuju["createtime"]}}</text>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__bd">上报时间：
+      <view wx:for="{{liebiao}}">
+        <text class='text-grey'>{{item['employ']}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__bd">描述：
+      <text class='text-grey'>{{shuju["content"]}}</text>
+    </view>
+  </view>
+ <view class="grid flex-sub padding-lr col-3 grid-square">
+                                        <view class="bg-img" style="background-image:url({{shuju[0]['photo1']}})">
+                                        </view>
+                                        <view class="bg-img" style="background-image:url({{shuju[0]['photo2']}})">
+                                        </view>
+                                        <view class="bg-img" style="background-image:url({{shuju[0]['photo2']}})">
+                                        </view>
+        </view>
+  <!-- <view class="weui-cell">
+    <view class="weui-cell__bd">附件：
+      <text class='text-grey'>{{shuju["fjpath"]}}</text>
+    </view>
+  </view> -->
+
+</view>

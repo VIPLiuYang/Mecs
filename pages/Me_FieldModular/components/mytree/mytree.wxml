@@ -1,0 +1,9 @@
+<view class="ul">
+  <view class="li-item" bindtap='{{isBranch?"toggle":"tapItem"}}' data-itemid='{{ model.id }}'>
+    <text>{{model.text}}</text>
+      <image src="/images/{{open?'jian':'jia'}}.jpg" class="menu-img" wx:if='{{ isBranch }}' ></image>
+  </view>
+  <view style='padding-left: 50rpx;' wx:if='{{ isBranch }}' hidden='{{ !open }}'>
+    <mytree wx:for='{{ model }}' wx:key='id' model='{{ item }}'></mytree>
+  </view>
+</view>

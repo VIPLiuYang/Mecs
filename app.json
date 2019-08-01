@@ -65,7 +65,11 @@
     "pages/Me_Office/DailyManage/MyDaily/MyMonthlyAdd",
     "pages/Me_Office/DailyManage/MyDaily/MyDailyDetail",
     "utils/noData/noDate",
-    "pages/Me_FieldModular/MapPosition"
+    "pages/Me_FieldModular/MapPosition/MapPosition",
+    "pages/Me_FieldModular/PhotoManagement/PhotoManagement",
+    "pages/Me_FieldModular/PassiveLocation/PassiveLocation",
+    "pages/Me_FieldModular/ActiveLocation/active",
+    "pages/Me_FieldModular/ActiveLocation/ActiveLocation"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000",

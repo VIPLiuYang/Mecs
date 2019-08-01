@@ -7,44 +7,27 @@
     <view class="weui-cells weui-cells_after-title">
 
       <view class="cu-form-group border">
-        <view class="title">地址：</view>
+        <view class="title">当前位置：</view>
         <input placeholder="请选择地址" bindtap="address" decode="{{true}}">{{address}}</input>
         <text class="cuIcon-locationfill text-orange"></text>
       </view>
 
-      <view class="daily_block  margin-top">
+      <view class="cu-form-group border">
+        <view class="title">客户名称：</view>
+              <input class="weui-input" name="employ" disabled="disabled" placeholder="点击进行选择+" bindtap='tianjia' value='{{ryname}}'/>
+
+      </view>
+      
+        <view class="daily_block  margin-top">
         <view class="title_daily">
-          今日日报：
+          描述：
         </view>
         <view class="content_daily">
           <view class="cu-form-group">
-            <textarea name="dailyContent" placeholder="请输入今日日报"></textarea>
+            <textarea name="dailyContent" placeholder="请输入描述"></textarea>
           </view>
         </view>
       </view>
-
-      <view class="daily_block  margin-top">
-        <view class="title_daily">
-          明日计划：
-        </view>
-        <view class="content_daily">
-          <view class="cu-form-group">
-            <textarea name="plan" placeholder="请输入明日计划"></textarea>
-          </view>
-        </view>
-      </view>
-
-      <view class="daily_block  margin-top">
-        <view class="title_daily">
-          今日总结：
-        </view>
-        <view class="content_daily">
-          <view class="cu-form-group">
-            <textarea name="summary" placeholder="请输入今日总结"></textarea>
-          </view>
-        </view>
-      </view>
-
 
       <!-- 图片上传信息 -->
       <view class="page__bd">

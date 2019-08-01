@@ -1,4 +1,4 @@
-var comm = require('../../../utils/PublicProtocol.js'); //引用post公共函数
+// pages/Me_FieldModular/ActiveLocation/active.js
 Page({
 
   /**

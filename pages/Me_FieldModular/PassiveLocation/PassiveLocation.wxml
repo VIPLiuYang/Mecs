@@ -1,0 +1,15 @@
+
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">被动定位</view>
+</cu-custom>
+<view>
+  <mytree model='{{ treeData }}' bind:tapitem='tapItem'></mytree>
+</view>
+
+<!-- <view>
+<maap></maap>
+</view> -->
+ <button class="weui-btn" type="default" bindtap='tz' plain="true">地图位置</button>
+<!-- <button bindtap='tz'></button> -->
+

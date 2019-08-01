@@ -1,6 +1,4 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">当前位置</view>
+  <view slot="content">主动定位</view>
 </cu-custom>
-
-
